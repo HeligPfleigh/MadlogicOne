@@ -2,5 +2,9 @@
   "clientcode.instruction": "Please write down your client code",
   "clientcode.agree": "I agree with the ",
   "clientcode.policy": "privacy policy",
-  "clientcode.next": "Next"
+  "clientcode.next": "Next",
+  "login.email": "Email",
+  "login.login": "Login",
+  "login.username": "Username",
+  "login.password": "Password"
 }

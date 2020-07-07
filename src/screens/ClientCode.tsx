@@ -17,7 +17,7 @@ const styles = StyleSheet.create({
     backgroundColor: 'white',
   },
   imageContainer: {
-    flex: 2,
+    flex: 1,
     justifyContent: 'center',
     alignItems: 'center',
   },
@@ -36,12 +36,14 @@ const styles = StyleSheet.create({
     color: Colors.blue500,
   },
   btnContainer: {
-    flex: 2,
+    flex: 1,
     alignItems: 'center',
+    justifyContent: 'center',
   },
   next: {
     width: '50%',
-    marginTop: 50,
+    backgroundColor: Colors.red500,
+    color: Colors.white,
   },
 });
 
@@ -63,7 +65,7 @@ export default function ClientCode({
   const handlePressNext = () => {
     // TODO
     navigation.navigate(NavigatorMap.Login, {
-      registrationType: RegistrationType.EMAIL,
+      registrationType: RegistrationType.ACCOUNT,
     });
   };
 
@@ -104,6 +106,7 @@ export default function ClientCode({
           onPress={handlePressNext}
           mode="contained"
           disabled={!agreeWithPolicy}
+          uppercase={false}
           style={styles.next}>
           {formatMessage({id: 'clientcode.next'})}
         </Button>

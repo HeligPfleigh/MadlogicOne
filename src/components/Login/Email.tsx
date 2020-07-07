@@ -1,11 +1,12 @@
-import React, {useEffect, useState} from 'react';
+import React, {useState} from 'react';
 import {View, StyleSheet, Image} from 'react-native';
-import {TextInput, Button} from 'react-native-paper';
+import {TextInput, Button, Colors} from 'react-native-paper';
+import {useIntl} from 'react-intl';
 
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    padding: 10,
+    padding: 16,
   },
   imageContainer: {
     flex: 1,
@@ -20,8 +21,17 @@ const styles = StyleSheet.create({
     flex: 1,
   },
   input: {
-    marginTop: 10,
-    marginBottom: 10,
+    marginBottom: 16,
+  },
+  btnContainer: {
+    flex: 1,
+    alignItems: 'center',
+    justifyContent: 'center',
+  },
+  login: {
+    width: '50%',
+    backgroundColor: Colors.red500,
+    color: Colors.white,
   },
 });
 
@@ -31,13 +41,11 @@ function validateEmail(email: string) {
 }
 
 export default function LoginByEmail() {
-  const [email, setEmail] = useState('test@1.com');
-  const [disableBtn, setDisable] = useState(false);
+  const {formatMessage} = useIntl();
+  const [email, setEmail] = useState<string>('');
+  const [disableBtn] = useState<boolean>(false);
 
-  const handlePressRegister = () => {
-    // TODO
-    setDisable(true);
-  };
+  const handlePressRegister = () => {};
 
   return (
     <View style={styles.container}>
@@ -53,16 +61,20 @@ export default function LoginByEmail() {
       <View style={styles.content}>
         <TextInput
           style={styles.input}
-          label="Email"
+          label={formatMessage({id: 'login.email'})}
           value={email}
           onChangeText={setEmail}
           mode="outlined"
         />
+      </View>
+      <View style={styles.btnContainer}>
         <Button
           onPress={handlePressRegister}
           mode="contained"
-          disabled={!validateEmail(email) || disableBtn}>
-          Register
+          disabled={!validateEmail(email) || disableBtn}
+          uppercase={false}
+          style={styles.login}>
+          {formatMessage({id: 'login.login'})}
         </Button>
       </View>
     </View>
