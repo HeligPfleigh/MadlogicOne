@@ -5,6 +5,7 @@ import {useIntl} from 'react-intl';
 import {SvgUri} from 'react-native-svg';
 import {useFormik} from 'formik';
 import {noop, isEmpty} from 'lodash';
+import Yup from 'yup';
 
 const styles = StyleSheet.create({
   container: {
@@ -43,6 +44,11 @@ type AccountFormValue = {
   password: string;
 };
 
+const AccountSchema = Yup.object().shape({
+  username: Yup.string().required('login.errors.username.required'),
+  password: Yup.string().required('login.errors.password.required'),
+});
+
 export default function LoginByAccount() {
   const {formatMessage} = useIntl();
 
@@ -56,14 +62,7 @@ export default function LoginByAccount() {
       username: '',
       password: '',
     },
-    validate: (values) => {
-      if (!values.username) {
-        return {username: 'login.errors.username.required'};
-      }
-      if (!values.password) {
-        return {password: 'login.errors.password.required'};
-      }
-    },
+    validationSchema: AccountSchema,
     onSubmit: (values) => {
       // TODO
       console.log(values);
@@ -84,7 +83,7 @@ export default function LoginByAccount() {
           style={styles.input}
           label={formatMessage({id: 'login.username'})}
           value={username}
-          onChangeText={handleChange(username) || noop}
+          onChangeText={handleChange('username') || noop}
           mode="outlined"
         />
         <TextInput

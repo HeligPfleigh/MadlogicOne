@@ -6,6 +6,7 @@ import {useIntl} from 'react-intl';
 import {StackScreenProps} from '@react-navigation/stack';
 import {useFormik} from 'formik';
 import noop from 'lodash/noop';
+import Yup from 'yup';
 
 import {Madlogic} from '../assets/images';
 import NavigatorMap from '../navigations/NavigatorMap';
@@ -58,6 +59,10 @@ type ClientCodeFormValue = {
   clientCode: string;
 };
 
+const ClientCodeSchema = Yup.object().shape({
+  clientCode: Yup.string().required('clientcode.errors.code.required'),
+});
+
 export default function ClientCode({
   navigation,
 }: ClientCodeScreenNavigationProps) {
@@ -74,11 +79,7 @@ export default function ClientCode({
     initialValues: {
       clientCode: '',
     },
-    validate: (values) => {
-      if (!values.clientCode) {
-        return {clientCode: 'clientcode.errors.codeRequired'};
-      }
-    },
+    validationSchema: ClientCodeSchema,
     onSubmit: (values) => {
       console.log(values);
       navigation.navigate(NavigatorMap.Login, {

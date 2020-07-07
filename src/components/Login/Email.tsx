@@ -4,6 +4,7 @@ import {TextInput, Button, Colors} from 'react-native-paper';
 import {useIntl} from 'react-intl';
 import {useFormik} from 'formik';
 import {isEmpty, noop} from 'lodash';
+import Yup from 'yup';
 
 const styles = StyleSheet.create({
   container: {
@@ -37,14 +38,15 @@ const styles = StyleSheet.create({
   },
 });
 
-function validateEmail(email: string) {
-  const re = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
-  return re.test(String(email).toLowerCase());
-}
-
 type EmailFormValue = {
   email: string;
 };
+
+const EmailSchema = Yup.object().shape({
+  email: Yup.string()
+    .email('login.errors.email.invalid')
+    .required('login.errors.email.required'),
+});
 
 export default function LoginByEmail() {
   const {formatMessage} = useIntl();
@@ -58,14 +60,7 @@ export default function LoginByEmail() {
     initialValues: {
       email: '',
     },
-    validate: (values) => {
-      if (!values.email) {
-        return {email: 'login.errors.email.required'};
-      }
-      if (!validateEmail(values.email)) {
-        return {email: 'login.errors.email.invalid'};
-      }
-    },
+    validationSchema: EmailSchema,
     onSubmit: (values) => {
       // TODO
       console.log(values);
