@@ -1,9 +1,10 @@
 import React, {useState} from 'react';
 import {View, StyleSheet, TouchableOpacity} from 'react-native';
 import {TextInput, Button, Text, Checkbox, useTheme} from 'react-native-paper';
+import {Colors} from 'react-native-paper';
+import {useIntl} from 'react-intl';
 
 import {Madlogic} from '../assets/images';
-import {Colors} from 'react-native-paper';
 
 const styles = StyleSheet.create({
   container: {
@@ -41,6 +42,7 @@ export default function ClientCode() {
   const theme = useTheme();
   const [clientCode, setClientCode] = useState<string>('');
   const [agreeWithPolicy, setAgreeWithPolicy] = useState<boolean>(false);
+  const {formatMessage} = useIntl();
 
   const toggleAgreeWithPolicy = () => setAgreeWithPolicy((prev) => !prev);
 
@@ -55,7 +57,7 @@ export default function ClientCode() {
         <Madlogic width={500} height={100} />
       </View>
       <View style={styles.content}>
-        <Text>Please write down your client code</Text>
+        <Text>{formatMessage({id: 'clientcode.instruction'})}</Text>
         <TextInput
           style={styles.input}
           label="Client Code"

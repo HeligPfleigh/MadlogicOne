@@ -111,6 +111,14 @@ def enableProguardInReleaseBuilds = false
  */
 def jscFlavor = 'org.webkit:android-jsc:+'
 
+  /**
+   * Use the international variant of JavaScriptCore
+   * This variant includes the ICU i18n library to make APIs like `Date.toLocaleString`
+   * and `String.localeCompare` work when using with locales other than en-US.
+   * Note that this variant is about 6MiB larger per architecture than the default.
+   */
+def useIntlJsc = true
+
 /**
  * Whether to enable the Hermes VM.
  *
