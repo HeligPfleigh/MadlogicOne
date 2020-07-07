@@ -5,7 +5,7 @@ import MaterialIcons from 'react-native-vector-icons/MaterialIcons';
 import MaterialCommunityIcons from 'react-native-vector-icons/MaterialCommunityIcons';
 import {Provider as PaperProvider} from 'react-native-paper';
 
-import theme from './configs/theme';
+import theme from './core/theme';
 
 MaterialIcons.loadFont();
 MaterialCommunityIcons.loadFont();

@@ -1,0 +1,43 @@
+{
+  "name": "Tenant name",
+  "secret": "",
+  "logo": {
+    "logo": "https://urltoimage.png",
+    "logoURL": "https://www.madlogic.nl"
+  },
+  "color": "#FF0000",
+  "about": "aboutHTML",
+  "registration": {
+    "registrationType": "1",
+    "adfsURL": "https://...",
+    "callbackPrefix": "https://sqoony.com"
+  },
+  "feature": [
+    "qr"
+  ],
+  "tabs": [
+    {
+      "icon": "iconURL",
+      "title": "News",
+      "type": "news",
+      "style": 1
+    },
+    {
+      "icon": "iconURL",
+      "title": "HTML",
+      "type": "html",
+      "url": "https://www.madlogic.nl/{device}/page"
+    },
+    {
+      "icon": "iconURL",
+      "title": "Channels",
+      "type": "channel",
+      "style": 2
+    },
+    {
+      "icon": "iconURL",
+      "title": "Journeys",
+      "type": "programs"
+    }
+  ]
+}
