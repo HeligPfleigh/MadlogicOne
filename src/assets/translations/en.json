@@ -1,3 +1,6 @@
 {
-  "clientcode.instruction": "Please write down your client code"
+  "clientcode.instruction": "Please write down your client code",
+  "clientcode.agree": "I agree with the ",
+  "clientcode.policy": "privacy policy",
+  "clientcode.next": "Next"
 }

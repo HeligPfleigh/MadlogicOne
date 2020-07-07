@@ -1,4 +1,5 @@
 import NavigatorMap from './NavigatorMap';
+import {RegistrationType} from '../core/const';
 
 export type RootStackParamsList = {
   [NavigatorMap.AuthStack]: undefined;
@@ -6,7 +7,9 @@ export type RootStackParamsList = {
 };
 
 export type AuthStackParamsList = {
-  [NavigatorMap.Login]: undefined;
+  [NavigatorMap.Login]: {
+    registrationType: keyof typeof RegistrationType;
+  };
   [NavigatorMap.ClientCode]: undefined;
   [NavigatorMap.Privacy]: undefined;
   [NavigatorMap.ForgotPassword]: undefined;

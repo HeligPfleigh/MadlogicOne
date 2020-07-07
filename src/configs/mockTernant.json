@@ -2,7 +2,7 @@
   "name": "Tenant name",
   "secret": "",
   "logo": {
-    "logo": "https://urltoimage.png",
+    "logo": "https://www.google.com/images/branding/googlelogo/2x/googlelogo_color_272x92dp.png",
     "logoURL": "https://www.madlogic.nl"
   },
   "color": "#FF0000",
@@ -12,9 +12,7 @@
     "adfsURL": "https://...",
     "callbackPrefix": "https://sqoony.com"
   },
-  "feature": [
-    "qr"
-  ],
+  "feature": ["qr"],
   "tabs": [
     {
       "icon": "iconURL",

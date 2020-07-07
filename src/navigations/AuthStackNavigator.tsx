@@ -5,14 +5,16 @@ import {AuthStackParamsList} from './types';
 import NavigatorMap from './NavigatorMap';
 import DefaultScreen from '../screens/Default';
 import ClientCodeScreen from '../screens/ClientCode';
+import LoginScreen from '../screens/Login';
+import PrivacyScreen from '../screens/Privacy';
 
 const Stack = createStackNavigator<AuthStackParamsList>();
 
 const AuthStackNavigator = () => (
-  <Stack.Navigator headerMode="none">
+  <Stack.Navigator>
     <Stack.Screen name={NavigatorMap.ClientCode} component={ClientCodeScreen} />
-    <Stack.Screen name={NavigatorMap.Login} component={DefaultScreen} />
-    <Stack.Screen name={NavigatorMap.Privacy} component={DefaultScreen} />
+    <Stack.Screen name={NavigatorMap.Login} component={LoginScreen} />
+    <Stack.Screen name={NavigatorMap.Privacy} component={PrivacyScreen} />
     <Stack.Screen
       name={NavigatorMap.ForgotPassword}
       component={DefaultScreen}

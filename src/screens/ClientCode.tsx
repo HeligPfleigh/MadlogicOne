@@ -3,8 +3,12 @@ import {View, StyleSheet, TouchableOpacity} from 'react-native';
 import {TextInput, Button, Text, Checkbox, useTheme} from 'react-native-paper';
 import {Colors} from 'react-native-paper';
 import {useIntl} from 'react-intl';
+import {StackScreenProps} from '@react-navigation/stack';
 
 import {Madlogic} from '../assets/images';
+import NavigatorMap from '../navigations/NavigatorMap';
+import {AuthStackParamsList} from '../navigations/types';
+import {RegistrationType} from '../core/const';
 
 const styles = StyleSheet.create({
   container: {
@@ -18,7 +22,7 @@ const styles = StyleSheet.create({
     alignItems: 'center',
   },
   content: {
-    flex: 3,
+    flex: 1,
   },
   input: {
     marginTop: 10,
@@ -31,14 +35,24 @@ const styles = StyleSheet.create({
   privacyTxt: {
     color: Colors.blue500,
   },
+  btnContainer: {
+    flex: 2,
+    alignItems: 'center',
+  },
   next: {
     width: '50%',
-    marginLeft: '25%',
     marginTop: 50,
   },
 });
 
-export default function ClientCode() {
+type ClientCodeScreenNavigationProps = StackScreenProps<
+  AuthStackParamsList,
+  NavigatorMap.ClientCode
+>;
+
+export default function ClientCode({
+  navigation,
+}: ClientCodeScreenNavigationProps) {
   const theme = useTheme();
   const [clientCode, setClientCode] = useState<string>('');
   const [agreeWithPolicy, setAgreeWithPolicy] = useState<boolean>(false);
@@ -46,9 +60,16 @@ export default function ClientCode() {
 
   const toggleAgreeWithPolicy = () => setAgreeWithPolicy((prev) => !prev);
 
-  const handlePressNext = () => {};
+  const handlePressNext = () => {
+    // TODO
+    navigation.navigate(NavigatorMap.Login, {
+      registrationType: RegistrationType.EMAIL,
+    });
+  };
 
-  const handlePressPolicy = () => {};
+  const handlePressPolicy = () => {
+    navigation.navigate(NavigatorMap.Privacy);
+  };
 
   return (
     <View
@@ -70,17 +91,21 @@ export default function ClientCode() {
             status={agreeWithPolicy ? 'checked' : 'unchecked'}
             onPress={toggleAgreeWithPolicy}
           />
-          <Text>I agree with the </Text>
+          <Text>{formatMessage({id: 'clientcode.agree'})}</Text>
           <TouchableOpacity onPress={handlePressPolicy}>
-            <Text style={styles.privacyTxt}>privacy policy</Text>
+            <Text style={styles.privacyTxt}>
+              {formatMessage({id: 'clientcode.policy'})}
+            </Text>
           </TouchableOpacity>
         </View>
+      </View>
+      <View style={styles.btnContainer}>
         <Button
           onPress={handlePressNext}
           mode="contained"
           disabled={!agreeWithPolicy}
           style={styles.next}>
-          Next
+          {formatMessage({id: 'clientcode.next'})}
         </Button>
       </View>
     </View>
