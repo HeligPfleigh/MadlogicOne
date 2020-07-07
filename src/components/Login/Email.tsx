@@ -3,8 +3,8 @@ import {View, StyleSheet, Image} from 'react-native';
 import {TextInput, Button, Colors} from 'react-native-paper';
 import {useIntl} from 'react-intl';
 import {useFormik} from 'formik';
-import {isEmpty, noop} from 'lodash';
-import Yup from 'yup';
+import noop from 'lodash/noop';
+import * as Yup from 'yup';
 
 const styles = StyleSheet.create({
   container: {
@@ -91,7 +91,7 @@ export default function LoginByEmail() {
         <Button
           onPress={handleSubmit}
           mode="contained"
-          disabled={!isEmpty(errors)}
+          disabled={Boolean(errors.email)}
           uppercase={false}
           style={styles.login}>
           {formatMessage({id: 'login.login'})}

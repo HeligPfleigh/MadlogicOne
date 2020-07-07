@@ -6,7 +6,7 @@ import {useIntl} from 'react-intl';
 import {StackScreenProps} from '@react-navigation/stack';
 import {useFormik} from 'formik';
 import noop from 'lodash/noop';
-import Yup from 'yup';
+import * as Yup from 'yup';
 
 import {Madlogic} from '../assets/images';
 import NavigatorMap from '../navigations/NavigatorMap';

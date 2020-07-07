@@ -4,8 +4,8 @@ import {TextInput, Button, Colors} from 'react-native-paper';
 import {useIntl} from 'react-intl';
 import {SvgUri} from 'react-native-svg';
 import {useFormik} from 'formik';
-import {noop, isEmpty} from 'lodash';
-import Yup from 'yup';
+import noop from 'lodash/noop';
+import * as Yup from 'yup';
 
 const styles = StyleSheet.create({
   container: {
@@ -69,6 +69,8 @@ export default function LoginByAccount() {
     },
   });
 
+  console.log(errors);
+
   return (
     <KeyboardAvoidingView style={styles.container}>
       <View style={styles.imageContainer}>
@@ -99,7 +101,7 @@ export default function LoginByAccount() {
         <Button
           onPress={handleSubmit}
           mode="contained"
-          disabled={isEmpty(errors)}
+          disabled={Boolean(errors.password) || Boolean(errors.username)}
           uppercase={false}
           style={styles.login}>
           {formatMessage({id: 'login.login'})}
