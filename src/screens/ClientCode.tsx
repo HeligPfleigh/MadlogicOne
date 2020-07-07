@@ -4,6 +4,8 @@ import {TextInput, Button, Text, Checkbox, useTheme} from 'react-native-paper';
 import {Colors} from 'react-native-paper';
 import {useIntl} from 'react-intl';
 import {StackScreenProps} from '@react-navigation/stack';
+import {useFormik} from 'formik';
+import noop from 'lodash/noop';
 
 import {Madlogic} from '../assets/images';
 import NavigatorMap from '../navigations/NavigatorMap';
@@ -13,7 +15,7 @@ import {RegistrationType} from '../core/const';
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    padding: 10,
+    padding: 16,
     backgroundColor: 'white',
   },
   imageContainer: {
@@ -25,8 +27,8 @@ const styles = StyleSheet.create({
     flex: 1,
   },
   input: {
-    marginTop: 10,
-    marginBottom: 10,
+    marginTop: 8,
+    marginBottom: 8,
   },
   checkbox: {
     flexDirection: 'row',
@@ -52,22 +54,40 @@ type ClientCodeScreenNavigationProps = StackScreenProps<
   NavigatorMap.ClientCode
 >;
 
+type ClientCodeFormValue = {
+  clientCode: string;
+};
+
 export default function ClientCode({
   navigation,
 }: ClientCodeScreenNavigationProps) {
   const theme = useTheme();
-  const [clientCode, setClientCode] = useState<string>('');
   const [agreeWithPolicy, setAgreeWithPolicy] = useState<boolean>(false);
   const {formatMessage} = useIntl();
 
-  const toggleAgreeWithPolicy = () => setAgreeWithPolicy((prev) => !prev);
+  const {
+    handleSubmit,
+    handleChange,
+    values: {clientCode},
+    errors,
+  } = useFormik<ClientCodeFormValue>({
+    initialValues: {
+      clientCode: '',
+    },
+    validate: (values) => {
+      if (!values.clientCode) {
+        return {clientCode: 'clientcode.errors.codeRequired'};
+      }
+    },
+    onSubmit: (values) => {
+      console.log(values);
+      navigation.navigate(NavigatorMap.Login, {
+        registrationType: RegistrationType.ACCOUNT,
+      });
+    },
+  });
 
-  const handlePressNext = () => {
-    // TODO
-    navigation.navigate(NavigatorMap.Login, {
-      registrationType: RegistrationType.ACCOUNT,
-    });
-  };
+  const toggleAgreeWithPolicy = () => setAgreeWithPolicy((prev) => !prev);
 
   const handlePressPolicy = () => {
     navigation.navigate(NavigatorMap.Privacy);
@@ -85,7 +105,7 @@ export default function ClientCode({
           style={styles.input}
           label="Client Code"
           value={clientCode}
-          onChangeText={setClientCode}
+          onChangeText={handleChange('clientCode') || noop}
           mode="outlined"
         />
         <View style={styles.checkbox}>
@@ -103,9 +123,9 @@ export default function ClientCode({
       </View>
       <View style={styles.btnContainer}>
         <Button
-          onPress={handlePressNext}
+          onPress={handleSubmit}
           mode="contained"
-          disabled={!agreeWithPolicy}
+          disabled={!agreeWithPolicy || Boolean(errors.clientCode)}
           uppercase={false}
           style={styles.next}>
           {formatMessage({id: 'clientcode.next'})}

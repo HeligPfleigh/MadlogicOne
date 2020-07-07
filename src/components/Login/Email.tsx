@@ -1,7 +1,9 @@
-import React, {useState} from 'react';
+import React from 'react';
 import {View, StyleSheet, Image} from 'react-native';
 import {TextInput, Button, Colors} from 'react-native-paper';
 import {useIntl} from 'react-intl';
+import {useFormik} from 'formik';
+import {isEmpty, noop} from 'lodash';
 
 const styles = StyleSheet.create({
   container: {
@@ -40,12 +42,35 @@ function validateEmail(email: string) {
   return re.test(String(email).toLowerCase());
 }
 
+type EmailFormValue = {
+  email: string;
+};
+
 export default function LoginByEmail() {
   const {formatMessage} = useIntl();
-  const [email, setEmail] = useState<string>('');
-  const [disableBtn] = useState<boolean>(false);
 
-  const handlePressRegister = () => {};
+  const {
+    handleSubmit,
+    handleChange,
+    values: {email},
+    errors,
+  } = useFormik<EmailFormValue>({
+    initialValues: {
+      email: '',
+    },
+    validate: (values) => {
+      if (!values.email) {
+        return {email: 'login.errors.email.required'};
+      }
+      if (!validateEmail(values.email)) {
+        return {email: 'login.errors.email.invalid'};
+      }
+    },
+    onSubmit: (values) => {
+      // TODO
+      console.log(values);
+    },
+  });
 
   return (
     <View style={styles.container}>
@@ -63,15 +88,15 @@ export default function LoginByEmail() {
           style={styles.input}
           label={formatMessage({id: 'login.email'})}
           value={email}
-          onChangeText={setEmail}
+          onChangeText={handleChange('email') || noop}
           mode="outlined"
         />
       </View>
       <View style={styles.btnContainer}>
         <Button
-          onPress={handlePressRegister}
+          onPress={handleSubmit}
           mode="contained"
-          disabled={!validateEmail(email) || disableBtn}
+          disabled={!isEmpty(errors)}
           uppercase={false}
           style={styles.login}>
           {formatMessage({id: 'login.login'})}

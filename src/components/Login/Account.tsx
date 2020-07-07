@@ -1,8 +1,10 @@
-import React, {useState} from 'react';
+import React from 'react';
 import {View, StyleSheet, KeyboardAvoidingView} from 'react-native';
 import {TextInput, Button, Colors} from 'react-native-paper';
 import {useIntl} from 'react-intl';
 import {SvgUri} from 'react-native-svg';
+import {useFormik} from 'formik';
+import {noop, isEmpty} from 'lodash';
 
 const styles = StyleSheet.create({
   container: {
@@ -36,12 +38,37 @@ const styles = StyleSheet.create({
   },
 });
 
+type AccountFormValue = {
+  username: string;
+  password: string;
+};
+
 export default function LoginByAccount() {
   const {formatMessage} = useIntl();
-  const [username, setUsername] = useState<string>('');
-  const [password, setPassword] = useState<string>('');
 
-  const handlePressRegister = () => {};
+  const {
+    handleSubmit,
+    handleChange,
+    values: {username, password},
+    errors,
+  } = useFormik<AccountFormValue>({
+    initialValues: {
+      username: '',
+      password: '',
+    },
+    validate: (values) => {
+      if (!values.username) {
+        return {username: 'login.errors.username.required'};
+      }
+      if (!values.password) {
+        return {password: 'login.errors.password.required'};
+      }
+    },
+    onSubmit: (values) => {
+      // TODO
+      console.log(values);
+    },
+  });
 
   return (
     <KeyboardAvoidingView style={styles.container}>
@@ -57,22 +84,23 @@ export default function LoginByAccount() {
           style={styles.input}
           label={formatMessage({id: 'login.username'})}
           value={username}
-          onChangeText={setUsername}
+          onChangeText={handleChange(username) || noop}
           mode="outlined"
         />
         <TextInput
           style={styles.input}
           label={formatMessage({id: 'login.password'})}
           value={password}
-          onChangeText={setPassword}
+          onChangeText={handleChange('password') || noop}
           mode="outlined"
           secureTextEntry
         />
       </View>
       <View style={styles.btnContainer}>
         <Button
-          onPress={handlePressRegister}
+          onPress={handleSubmit}
           mode="contained"
+          disabled={isEmpty(errors)}
           uppercase={false}
           style={styles.login}>
           {formatMessage({id: 'login.login'})}
