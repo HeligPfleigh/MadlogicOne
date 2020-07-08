@@ -1,7 +1,13 @@
 import React, {useState} from 'react';
 import {View, StyleSheet, TouchableOpacity} from 'react-native';
-import {TextInput, Button, Text, Checkbox, useTheme} from 'react-native-paper';
-import {Colors} from 'react-native-paper';
+import {
+  TextInput,
+  Button,
+  Text,
+  Checkbox,
+  useTheme,
+  Colors,
+} from 'react-native-paper';
 import {useIntl} from 'react-intl';
 import {StackScreenProps} from '@react-navigation/stack';
 import {useFormik} from 'formik';
@@ -12,6 +18,7 @@ import {Madlogic} from '../assets/images';
 import NavigatorMap from '../navigations/NavigatorMap';
 import {AuthStackParamsList} from '../navigations/types';
 import {RegistrationType} from '../core/const';
+import {useStores} from '../core/hooks/useStores';
 
 const styles = StyleSheet.create({
   container: {
@@ -69,6 +76,9 @@ export default function ClientCode({
   const [agreeWithPolicy, setAgreeWithPolicy] = useState<boolean>(false);
   const {formatMessage} = useIntl();
 
+  const store = useStores();
+  console.log(store);
+
   const {
     handleSubmit,
     handleChange,
@@ -77,6 +87,9 @@ export default function ClientCode({
   } = useFormik<ClientCodeFormValue>({
     initialValues: {
       clientCode: '',
+    },
+    initialErrors: {
+      clientCode: 'clientcode.errors.code.required',
     },
     validationSchema: ClientCodeSchema,
     onSubmit: (values) => {
