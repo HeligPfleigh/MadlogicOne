@@ -33,7 +33,6 @@ const styles = StyleSheet.create({
   },
   login: {
     width: '50%',
-    backgroundColor: Colors.red500,
     color: Colors.white,
   },
 });
@@ -93,6 +92,7 @@ export default function LoginByEmail() {
           mode="contained"
           disabled={Boolean(errors.email)}
           uppercase={false}
+          color={Colors.red500}
           style={styles.login}>
           {formatMessage({id: 'login.login'})}
         </Button>

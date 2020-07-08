@@ -45,7 +45,6 @@ const styles = StyleSheet.create({
   },
   next: {
     width: '50%',
-    backgroundColor: Colors.red500,
     color: Colors.white,
   },
 });
@@ -128,6 +127,7 @@ export default function ClientCode({
           mode="contained"
           disabled={!agreeWithPolicy || Boolean(errors.clientCode)}
           uppercase={false}
+          color={Colors.red500}
           style={styles.next}>
           {formatMessage({id: 'clientcode.next'})}
         </Button>

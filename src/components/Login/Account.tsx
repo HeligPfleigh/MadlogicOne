@@ -34,7 +34,6 @@ const styles = StyleSheet.create({
   },
   login: {
     width: '50%',
-    backgroundColor: Colors.red500,
     color: Colors.white,
   },
 });
@@ -103,6 +102,7 @@ export default function LoginByAccount() {
           mode="contained"
           disabled={Boolean(errors.password) || Boolean(errors.username)}
           uppercase={false}
+          color={Colors.red500}
           style={styles.login}>
           {formatMessage({id: 'login.login'})}
         </Button>
