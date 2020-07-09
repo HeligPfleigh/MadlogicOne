@@ -1,4 +1,4 @@
-import React, {useState} from 'react';
+import React from 'react';
 import {View, StyleSheet, TouchableOpacity} from 'react-native';
 import {
   TextInput,
@@ -63,6 +63,7 @@ type ClientCodeScreenNavigationProps = StackScreenProps<
 
 type ClientCodeFormValue = {
   clientCode: string;
+  privacy: boolean;
 };
 
 const ClientCodeSchema = Yup.object().shape({
@@ -71,23 +72,25 @@ const ClientCodeSchema = Yup.object().shape({
 
 function ClientCode({navigation}: ClientCodeScreenNavigationProps) {
   const theme = useTheme();
-  const [agreeWithPolicy, setAgreeWithPolicy] = useState<boolean>(false);
   const {formatMessage} = useIntl();
 
   const {
     handleSubmit,
     handleChange,
-    values: {clientCode},
+    setFieldValue,
+    values: {clientCode, privacy},
     errors,
   } = useFormik<ClientCodeFormValue>({
     initialValues: {
       clientCode: '',
+      privacy: false,
     },
     initialErrors: {
       clientCode: 'clientcode.errors.code.required',
     },
     validationSchema: ClientCodeSchema,
     onSubmit: (values) => {
+      // TODO: fetch ternant data here
       console.log(values);
       navigation.navigate(NavigatorMap.Login, {
         registrationType: RegistrationType.ACCOUNT,
@@ -95,7 +98,7 @@ function ClientCode({navigation}: ClientCodeScreenNavigationProps) {
     },
   });
 
-  const toggleAgreeWithPolicy = () => setAgreeWithPolicy((prev) => !prev);
+  const toggleAgreeWithPolicy = () => setFieldValue('privacy', !privacy);
 
   const handlePressPolicy = () => {
     navigation.navigate(NavigatorMap.Privacy);
@@ -118,7 +121,7 @@ function ClientCode({navigation}: ClientCodeScreenNavigationProps) {
         />
         <View style={styles.checkbox}>
           <Checkbox.Android
-            status={agreeWithPolicy ? 'checked' : 'unchecked'}
+            status={privacy ? 'checked' : 'unchecked'}
             onPress={toggleAgreeWithPolicy}
           />
           <Text>{formatMessage({id: 'clientcode.agree'})}</Text>
@@ -133,7 +136,7 @@ function ClientCode({navigation}: ClientCodeScreenNavigationProps) {
         <Button
           onPress={handleSubmit}
           mode="contained"
-          disabled={!agreeWithPolicy || Boolean(errors.clientCode)}
+          disabled={!privacy || Boolean(errors.clientCode)}
           uppercase={false}
           color={Colors.red500}
           style={styles.next}>

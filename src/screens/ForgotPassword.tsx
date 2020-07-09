@@ -26,7 +26,7 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     justifyContent: 'center',
   },
-  login: {
+  submit: {
     width: '50%',
     color: Colors.white,
   },
@@ -38,11 +38,11 @@ type EmailFormValue = {
 
 const EmailSchema = Yup.object().shape({
   email: Yup.string()
-    .email('login.errors.email.invalid')
-    .required('login.errors.email.required'),
+    .email('forgotPassword.errors.email.invalid')
+    .required('forgotPassword.errors.email.required'),
 });
 
-export default function LoginByEmail() {
+export default function ForgotPassword() {
   const {formatMessage} = useIntl();
 
   const {
@@ -86,8 +86,8 @@ export default function LoginByEmail() {
           disabled={Boolean(errors.email)}
           uppercase={false}
           color={Colors.red500}
-          style={styles.login}>
-          {formatMessage({id: 'login.login'})}
+          style={styles.submit}>
+          {formatMessage({id: 'forgotPassword.submit'})}
         </Button>
       </View>
     </View>

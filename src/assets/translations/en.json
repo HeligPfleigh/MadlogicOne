@@ -6,5 +6,7 @@
   "login.email": "Email",
   "login.login": "Login",
   "login.username": "Username",
-  "login.password": "Password"
+  "login.password": "Password",
+  "login.forgotPassword": "Forgot your password",
+  "forgotPassword.submit": "Submit"
 }

@@ -3,10 +3,10 @@ import {createStackNavigator} from '@react-navigation/stack';
 
 import {AuthStackParamsList} from './types';
 import NavigatorMap from './NavigatorMap';
-import DefaultScreen from '../screens/Default';
 import ClientCodeScreen from '../screens/ClientCode';
 import LoginScreen from '../screens/Login';
 import PrivacyScreen from '../screens/Privacy';
+import ForgotPasswordScreen from '../screens/ForgotPassword';
 
 const Stack = createStackNavigator<AuthStackParamsList>();
 
@@ -21,7 +21,7 @@ const AuthStackNavigator = () => (
     />
     <Stack.Screen
       name={NavigatorMap.ForgotPassword}
-      component={DefaultScreen}
+      component={ForgotPasswordScreen}
       options={{headerShown: true}}
     />
   </Stack.Navigator>

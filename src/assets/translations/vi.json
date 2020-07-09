@@ -6,5 +6,7 @@
   "login.email": "TODO",
   "login.login": "TODO",
   "login.username": "TODO",
-  "login.password": "TODO"
+  "login.password": "TODO",
+  "login.forgotPassword": "TODO",
+  "forgotPassword.submit": "TODO"
 }

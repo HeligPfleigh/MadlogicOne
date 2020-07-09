@@ -1,11 +1,20 @@
 import React from 'react';
-import {View, StyleSheet, KeyboardAvoidingView} from 'react-native';
+import {
+  View,
+  StyleSheet,
+  KeyboardAvoidingView,
+  TouchableOpacity,
+  Text,
+} from 'react-native';
 import {TextInput, Button, Colors} from 'react-native-paper';
 import {useIntl} from 'react-intl';
 import {SvgUri} from 'react-native-svg';
 import {useFormik} from 'formik';
 import noop from 'lodash/noop';
 import * as Yup from 'yup';
+import {useNavigation} from '@react-navigation/native';
+
+import NavigatorMap from '../../navigations/NavigatorMap';
 
 const styles = StyleSheet.create({
   container: {
@@ -36,6 +45,10 @@ const styles = StyleSheet.create({
     width: '50%',
     color: Colors.white,
   },
+  forgotTxt: {
+    marginTop: 16,
+    color: Colors.blue500,
+  },
 });
 
 type AccountFormValue = {
@@ -50,6 +63,7 @@ const AccountSchema = Yup.object().shape({
 
 export default function LoginByAccount() {
   const {formatMessage} = useIntl();
+  const navigation = useNavigation();
 
   const {
     handleSubmit,
@@ -68,7 +82,8 @@ export default function LoginByAccount() {
     },
   });
 
-  console.log(errors);
+  const handlePressForgotPwd = () =>
+    navigation.navigate(NavigatorMap.ForgotPassword);
 
   return (
     <KeyboardAvoidingView style={styles.container}>
@@ -106,6 +121,11 @@ export default function LoginByAccount() {
           style={styles.login}>
           {formatMessage({id: 'login.login'})}
         </Button>
+        <TouchableOpacity onPress={handlePressForgotPwd}>
+          <Text style={styles.forgotTxt}>
+            {formatMessage({id: 'login.forgotPassword'})}
+          </Text>
+        </TouchableOpacity>
       </View>
     </KeyboardAvoidingView>
   );
