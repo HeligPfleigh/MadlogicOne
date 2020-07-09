@@ -10,7 +10,8 @@ enum NavigatorMap {
   AppTab = 'App Tab',
   Broadcasts = 'Broadcasts',
   Channels = 'Channels',
-  Journeys = 'Journeys',
+  Programs = 'Programs',
+  HTML = 'HTML',
 }
 
 export default NavigatorMap;

@@ -13,5 +13,9 @@
   "login.forgotPassword": "Forgot your password",
   "privacy.title": "Privacy",
   "forgotPassword.title": "Forgot password",
-  "forgotPassword.submit": "Submit"
+  "forgotPassword.submit": "Submit",
+  "broadcasts.title": "Broadcasts",
+  "channels.title": "Channels",
+  "programs.title": "Programs",
+  "html.title": "Others"
 }

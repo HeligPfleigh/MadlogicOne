@@ -1,5 +1,7 @@
-import {observable, action} from 'mobx';
+import {observable, action, autorun} from 'mobx';
+
 import {TabTypes} from '../const';
+import NavigatorMap from '../../navigations/NavigatorMap';
 
 class Tab {
   constructor(type: string, icon?: string, title?: string) {
@@ -20,12 +22,18 @@ class Tab {
 }
 
 export default class TabsStore {
-  @observable tabs = [
-    new Tab(TabTypes.NEWS),
-    new Tab(TabTypes.CHANNEL),
-    new Tab(TabTypes.HTML),
-    new Tab(TabTypes.PROGRAMS),
-  ];
+  @observable tabs = {
+    [NavigatorMap.Broadcasts]: new Tab(TabTypes.NEWS),
+    [NavigatorMap.Channels]: new Tab(TabTypes.CHANNEL),
+    [NavigatorMap.HTML]: new Tab(TabTypes.HTML),
+    [NavigatorMap.Programs]: new Tab(TabTypes.PROGRAMS),
+  };
+
+  constructor() {
+    autorun(() => {
+      this.tabs[NavigatorMap.HTML].toggleTab(false);
+    }, {});
+  }
 
   // @action
   // loadTernantTabSetting = (setting: any) => {

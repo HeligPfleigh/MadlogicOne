@@ -8,6 +8,7 @@ import TabsStore from '../stores/TabsStore';
 type TStore = {
   languageStore: LanguageStore;
   themeStore: ThemeStore;
+  tabsStore: TabsStore;
 };
 
 export const StoresContext = createContext<TStore | null>(null);

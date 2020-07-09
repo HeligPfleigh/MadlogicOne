@@ -24,5 +24,6 @@ export type AppStackParamsList = {
 export type AppTabParamsList = {
   [NavigatorMap.Broadcasts]: undefined;
   [NavigatorMap.Channels]: undefined;
-  [NavigatorMap.Journeys]: undefined;
+  [NavigatorMap.Programs]: undefined;
+  [NavigatorMap.HTML]: undefined;
 };
