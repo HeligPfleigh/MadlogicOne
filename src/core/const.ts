@@ -17,6 +17,8 @@ export interface Logo {
 
 export interface Tab {
   type: TabTypes;
+  icon?: string;
+  title?: string;
 }
 
 export interface TernantSetting {
