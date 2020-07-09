@@ -13,18 +13,17 @@ import {StackScreenProps} from '@react-navigation/stack';
 import {useFormik} from 'formik';
 import noop from 'lodash/noop';
 import * as Yup from 'yup';
+import {observer} from 'mobx-react-lite';
 
 import {Madlogic} from '../assets/images';
 import NavigatorMap from '../navigations/NavigatorMap';
 import {AuthStackParamsList} from '../navigations/types';
 import {RegistrationType} from '../core/const';
-import {observer} from 'mobx-react-lite';
 
 const styles = StyleSheet.create({
   container: {
     flex: 1,
     padding: 16,
-    backgroundColor: 'white',
   },
   imageContainer: {
     flex: 1,
@@ -114,7 +113,7 @@ function ClientCode({navigation}: ClientCodeScreenNavigationProps) {
         <Text>{formatMessage({id: 'clientcode.instruction'})}</Text>
         <TextInput
           style={styles.input}
-          label="Client Code"
+          label={formatMessage({id: 'clientcode.title'})}
           value={clientCode}
           onChangeText={handleChange('clientCode') || noop}
           mode="outlined"

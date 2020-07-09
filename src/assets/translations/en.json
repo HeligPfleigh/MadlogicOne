@@ -1,12 +1,17 @@
 {
+  "default.message": "Oop! This feature is in development",
+  "clientcode.title": "Client Code",
   "clientcode.instruction": "Please write down your client code",
   "clientcode.agree": "I agree with the ",
   "clientcode.policy": "privacy policy",
   "clientcode.next": "Next",
+  "login.title": "Login",
   "login.email": "Email",
   "login.login": "Login",
   "login.username": "Username",
   "login.password": "Password",
   "login.forgotPassword": "Forgot your password",
+  "privacy.title": "Privacy",
+  "forgotPassword.title": "Forgot password",
   "forgotPassword.submit": "Submit"
 }

@@ -9,18 +9,14 @@ import AppStack from './AppStackNavigator';
 const Stack = createStackNavigator<RootStackParamsList>();
 
 export default function RootNavigator() {
-  const [isAuthorized] = useState(false);
+  const [isAuthorized] = useState(true);
 
   return (
-    <Stack.Navigator>
+    <Stack.Navigator headerMode="none">
       {isAuthorized ? (
         <Stack.Screen name={NavigatorMap.AppStack} component={AppStack} />
       ) : (
-        <Stack.Screen
-          name={NavigatorMap.AuthStack}
-          component={AuthStack}
-          options={{header: () => null}}
-        />
+        <Stack.Screen name={NavigatorMap.AuthStack} component={AuthStack} />
       )}
     </Stack.Navigator>
   );

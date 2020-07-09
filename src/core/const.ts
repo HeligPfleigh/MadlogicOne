@@ -15,6 +15,10 @@ export interface Logo {
   logoURL: string;
 }
 
+export interface Tab {
+  type: TabTypes;
+}
+
 export interface TernantSetting {
   name: string;
   secret: string;
@@ -23,7 +27,7 @@ export interface TernantSetting {
   color: string;
   about: string;
   features: string[];
-  tabs: any[];
+  tabs: Tab[];
 }
 
 export enum SupportedLanguages {
@@ -34,4 +38,11 @@ export enum SupportedLanguages {
 export enum SupportedThemes {
   LIGHT = 'light',
   // DARK = 'dark',
+}
+
+export enum TabTypes {
+  NEWS = 'news',
+  HTML = 'html',
+  CHANNEL = 'channel',
+  PROGRAMS = 'programs',
 }

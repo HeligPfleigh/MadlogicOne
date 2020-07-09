@@ -1,5 +1,6 @@
 import 'intl';
 import 'intl/locale-data/jsonp/en';
+import 'intl/locale-data/jsonp/vi';
 import 'react-native-gesture-handler';
 import 'mobx-react-lite/batchingForReactNative';
 
