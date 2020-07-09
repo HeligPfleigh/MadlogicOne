@@ -25,7 +25,7 @@ const AppStackNavigator = () => {
   const theme = useTheme();
   const store = useStores();
   const {formatMessage} = useIntl();
-  const tabs = store?.tabsStore.tabs;
+  const tabs = store?.ternantStore.tabs;
   return (
     <Tab.Navigator barStyle={{backgroundColor: theme.colors.background}}>
       {tabs?.[NavigatorMap.Broadcasts].enable && (

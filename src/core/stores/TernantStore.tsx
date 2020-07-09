@@ -21,7 +21,7 @@ class Tab {
   };
 }
 
-export default class TabsStore {
+export default class TernantStore {
   @observable tabs = {
     [NavigatorMap.Broadcasts]: new Tab(TabTypes.NEWS),
     [NavigatorMap.Channels]: new Tab(TabTypes.CHANNEL),

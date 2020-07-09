@@ -1,8 +1,8 @@
 {
-  "name": "Tenant name",
+  "name": "Madlogic",
   "secret": "",
   "logo": {
-    "logo": "https://www.google.com/images/branding/googlelogo/2x/googlelogo_color_272x92dp.png",
+    "logo": "https://www.madlogic.nl/wp-content/uploads/2019/10/Madlogic-logo-white-letters-1-e1570520948474.png",
     "logoURL": "https://www.madlogic.nl"
   },
   "color": "#FF0000",
