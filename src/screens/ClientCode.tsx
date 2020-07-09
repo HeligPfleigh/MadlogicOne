@@ -18,7 +18,7 @@ import {Madlogic} from '../assets/images';
 import NavigatorMap from '../navigations/NavigatorMap';
 import {AuthStackParamsList} from '../navigations/types';
 import {RegistrationType} from '../core/const';
-import {useStores} from '../core/hooks/useStores';
+import {observer} from 'mobx-react-lite';
 
 const styles = StyleSheet.create({
   container: {
@@ -69,15 +69,10 @@ const ClientCodeSchema = Yup.object().shape({
   clientCode: Yup.string().required('clientcode.errors.code.required'),
 });
 
-export default function ClientCode({
-  navigation,
-}: ClientCodeScreenNavigationProps) {
+function ClientCode({navigation}: ClientCodeScreenNavigationProps) {
   const theme = useTheme();
   const [agreeWithPolicy, setAgreeWithPolicy] = useState<boolean>(false);
   const {formatMessage} = useIntl();
-
-  const store = useStores();
-  console.log(store);
 
   const {
     handleSubmit,
@@ -148,3 +143,5 @@ export default function ClientCode({
     </View>
   );
 }
+
+export default observer(ClientCode);

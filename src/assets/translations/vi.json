@@ -1,3 +1,10 @@
 {
-  "clientcode.instruction": "TODO"
+  "clientcode.instruction": "TODO",
+  "clientcode.agree": "TODO",
+  "clientcode.policy": "TODO",
+  "clientcode.next": "TODO",
+  "login.email": "TODO",
+  "login.login": "TODO",
+  "login.username": "TODO",
+  "login.password": "TODO"
 }

@@ -1,8 +1,9 @@
 import 'intl';
 import 'intl/locale-data/jsonp/en';
 import 'react-native-gesture-handler';
+import 'mobx-react-lite/batchingForReactNative';
 
-import React, {useState, useEffect} from 'react';
+import React, {useEffect} from 'react';
 import {NavigationContainer} from '@react-navigation/native';
 import MaterialIcons from 'react-native-vector-icons/MaterialIcons';
 import MaterialCommunityIcons from 'react-native-vector-icons/MaterialCommunityIcons';
@@ -10,50 +11,56 @@ import {Provider as PaperProvider} from 'react-native-paper';
 import {IntlProvider} from 'react-intl';
 import * as RNLocalize from 'react-native-localize';
 import {I18nManager} from 'react-native';
+import {observer} from 'mobx-react-lite';
 
-import en from './assets/translations/en.json';
-import vi from './assets/translations/vi.json';
-import theme from './core/theme';
+import RootNavigator from './navigations/RootNavigator';
+import {StoreProvider} from './core/contexts';
+import {SupportedLanguages} from './core/const';
+import {useStores} from './core/hooks/useStores';
 
 MaterialIcons.loadFont();
 MaterialCommunityIcons.loadFont();
 
-import RootNavigator from './navigations/RootNavigator';
-
-const translationGetters: Record<string, any> = {
-  en,
-  vi,
-};
-
-export default function App() {
-  const [locale, setLocale] = useState<string>('en');
-  const [messages, setMessages] = useState(en);
+function App() {
+  const store = useStores();
 
   const handleLocalizationChange = () => {
-    const fallback = {languageTag: 'en', isRTL: false};
+    const fallback = {languageTag: SupportedLanguages.EN, isRTL: false};
     const {languageTag, isRTL} =
-      RNLocalize.findBestAvailableLanguage(Object.keys(translationGetters)) ||
+      RNLocalize.findBestAvailableLanguage(Object.keys(SupportedLanguages)) ||
       fallback;
 
     // update layout direction
     I18nManager.forceRTL(isRTL);
-    setLocale(languageTag);
-    setMessages(translationGetters[languageTag]);
+    store?.languageStore.changeLanguage(languageTag);
   };
 
   useEffect(() => {
     RNLocalize.addEventListener('change', handleLocalizationChange);
     return () =>
       RNLocalize.removeEventListener('change', handleLocalizationChange);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   return (
-    <IntlProvider locale={locale} messages={messages}>
-      <PaperProvider theme={theme}>
+    <IntlProvider
+      locale={store?.languageStore.language || SupportedLanguages.EN}
+      messages={store?.languageStore.messages}>
+      <PaperProvider theme={store?.themeStore.theme}>
         <NavigationContainer>
           <RootNavigator />
         </NavigationContainer>
       </PaperProvider>
     </IntlProvider>
+  );
+}
+
+const AppWithLocale = observer(App);
+
+export default function () {
+  return (
+    <StoreProvider>
+      <AppWithLocale />
+    </StoreProvider>
   );
 }

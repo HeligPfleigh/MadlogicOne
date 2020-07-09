@@ -25,3 +25,13 @@ export interface TernantSetting {
   features: string[];
   tabs: any[];
 }
+
+export enum SupportedLanguages {
+  EN = 'en',
+  VI = 'vi',
+}
+
+export enum SupportedThemes {
+  LIGHT = 'light',
+  // DARK = 'dark',
+}
