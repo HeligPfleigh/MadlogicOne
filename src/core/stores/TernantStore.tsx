@@ -2,6 +2,7 @@ import {observable, action, autorun} from 'mobx';
 
 import {TabTypes} from '../const';
 import NavigatorMap from '../../navigations/NavigatorMap';
+import {AppTabParamsList} from '../../navigations/types';
 
 class Tab {
   constructor(type: string, icon?: string, title?: string) {
@@ -21,8 +22,10 @@ class Tab {
   };
 }
 
+type ITabs = Record<keyof AppTabParamsList, Tab>;
+
 export default class TernantStore {
-  @observable tabs = {
+  @observable tabs: ITabs = {
     [NavigatorMap.Broadcasts]: new Tab(TabTypes.NEWS),
     [NavigatorMap.Channels]: new Tab(TabTypes.CHANNEL),
     [NavigatorMap.HTML]: new Tab(TabTypes.HTML),
