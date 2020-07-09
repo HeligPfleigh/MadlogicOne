@@ -5,7 +5,7 @@ export enum RegistrationType {
 }
 
 export interface Registration {
-  registrationType: RegistrationType;
+  registrationType: RegistrationType | string;
   adfsURL?: string;
   callbackPrefix?: string;
 }
@@ -16,7 +16,7 @@ export interface Logo {
 }
 
 export interface Tab {
-  type: TabTypes;
+  type: TabTypes | string;
   icon?: string;
   title?: string;
 }
@@ -28,7 +28,7 @@ export interface TernantSetting {
   logo: Logo;
   color: string;
   about: string;
-  features: string[];
+  features?: string[];
   tabs: Tab[];
 }
 
@@ -47,4 +47,10 @@ export enum TabTypes {
   HTML = 'html',
   CHANNEL = 'channel',
   PROGRAMS = 'programs',
+}
+
+export enum SnackType {
+  ERROR = 'error',
+  INFO = 'info',
+  SUCCESS = 'success',
 }

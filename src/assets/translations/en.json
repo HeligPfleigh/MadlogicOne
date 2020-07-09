@@ -5,6 +5,7 @@
   "clientcode.agree": "I agree with the ",
   "clientcode.policy": "privacy policy",
   "clientcode.next": "Next",
+  "clientcode.error.notfound": "Client code not found. Please try again!",
   "login.title": "Login",
   "login.email": "Email",
   "login.login": "Login",

@@ -9,7 +9,7 @@ import AppStack from './AppStackNavigator';
 const Stack = createStackNavigator<RootStackParamsList>();
 
 export default function RootNavigator() {
-  const [isAuthorized] = useState(true);
+  const [isAuthorized] = useState(false);
 
   return (
     <Stack.Navigator headerMode="none">

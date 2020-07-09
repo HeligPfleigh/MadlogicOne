@@ -19,6 +19,8 @@ import {Madlogic} from '../assets/images';
 import NavigatorMap from '../navigations/NavigatorMap';
 import {AuthStackParamsList} from '../navigations/types';
 import {RegistrationType} from '../core/const';
+import {getTernantSetting} from '../core/api';
+import {useStores} from '../core/hooks/useStores';
 
 const styles = StyleSheet.create({
   container: {
@@ -71,7 +73,19 @@ const ClientCodeSchema = Yup.object().shape({
 
 function ClientCode({navigation}: ClientCodeScreenNavigationProps) {
   const theme = useTheme();
+  const store = useStores();
   const {formatMessage} = useIntl();
+
+  const handleSubmitClientCode = async ({clientCode}: ClientCodeFormValue) => {
+    try {
+      await getTernantSetting(clientCode);
+      navigation.navigate(NavigatorMap.Login, {
+        registrationType: RegistrationType.ACCOUNT,
+      });
+    } catch (error) {
+      store?.snackStore.setError('clientcode.error.notfound');
+    }
+  };
 
   const {
     handleSubmit,
@@ -88,20 +102,12 @@ function ClientCode({navigation}: ClientCodeScreenNavigationProps) {
       clientCode: 'clientcode.errors.code.required',
     },
     validationSchema: ClientCodeSchema,
-    onSubmit: (values) => {
-      // TODO: fetch ternant data here
-      console.log(values);
-      navigation.navigate(NavigatorMap.Login, {
-        registrationType: RegistrationType.ACCOUNT,
-      });
-    },
+    onSubmit: handleSubmitClientCode,
   });
 
   const toggleAgreeWithPolicy = () => setFieldValue('privacy', !privacy);
 
-  const handlePressPolicy = () => {
-    navigation.navigate(NavigatorMap.Privacy);
-  };
+  const handlePressPolicy = () => navigation.navigate(NavigatorMap.Privacy);
 
   return (
     <View

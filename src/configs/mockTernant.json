@@ -8,32 +8,32 @@
   "color": "#FF0000",
   "about": "aboutHTML",
   "registration": {
-    "registrationType": "1",
+    "registrationType": "EMAIL",
     "adfsURL": "https://...",
     "callbackPrefix": "https://sqoony.com"
   },
-  "feature": ["qr"],
+  "features": ["qr"],
   "tabs": [
     {
-      "icon": "iconURL",
+      "icon": "",
       "title": "News",
       "type": "news",
       "style": 1
     },
     {
-      "icon": "iconURL",
+      "icon": "",
       "title": "HTML",
       "type": "html",
-      "url": "https://www.madlogic.nl/{device}/page"
+      "url": "https://www.madlogic.nl/magic/"
     },
     {
-      "icon": "iconURL",
+      "icon": "",
       "title": "Channels",
       "type": "channel",
       "style": 2
     },
     {
-      "icon": "iconURL",
+      "icon": "",
       "title": "Journeys",
       "type": "programs"
     }

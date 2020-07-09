@@ -18,6 +18,7 @@ import RootNavigator from './navigations/RootNavigator';
 import {StoreProvider} from './core/contexts';
 import {SupportedLanguages} from './core/const';
 import {useStores} from './core/hooks/useStores';
+import CustomSnackbar from './components/CustomSnackbar';
 
 MaterialIcons.loadFont();
 MaterialCommunityIcons.loadFont();
@@ -51,6 +52,7 @@ function App() {
         <NavigationContainer>
           <RootNavigator />
         </NavigationContainer>
+        <CustomSnackbar />
       </PaperProvider>
     </IntlProvider>
   );

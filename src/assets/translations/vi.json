@@ -5,6 +5,7 @@
   "clientcode.agree": "TODO",
   "clientcode.policy": "TODO",
   "clientcode.next": "TODO",
+  "clientcode.error.notfound": "Client code not found. Please try again!",
   "login.title": "TODO",
   "login.email": "TODO",
   "login.login": "TODO",
