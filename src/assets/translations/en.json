@@ -18,5 +18,7 @@
   "broadcasts.title": "Broadcasts",
   "channels.title": "Channels",
   "programs.title": "Programs",
-  "html.title": "Others"
+  "html.title": "Others",
+  "about.title": "About",
+  "setting.title": "Setting"
 }

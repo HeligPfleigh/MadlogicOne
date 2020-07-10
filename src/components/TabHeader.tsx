@@ -3,6 +3,13 @@ import {View, StyleSheet, Image, TouchableOpacity} from 'react-native';
 import MaterialCommunityIcons from 'react-native-vector-icons/MaterialCommunityIcons';
 import {observer} from 'mobx-react-lite';
 import {useNavigation} from '@react-navigation/native';
+import {
+  Menu,
+  MenuOptions,
+  MenuOption,
+  MenuTrigger,
+} from 'react-native-popup-menu';
+import {useIntl} from 'react-intl';
 
 import {useStores} from '../core/hooks/useStores';
 import {MadlogicLogo} from '../assets/images';
@@ -36,11 +43,17 @@ const styles = StyleSheet.create({
     width: 20,
     height: 20,
   },
+  menu: {
+    width: 100,
+    borderRadius: 8,
+    paddingHorizontal: 8,
+  },
 });
 
 function TabHeader() {
   const store = useStores();
   const navigation = useNavigation();
+  const {formatMessage} = useIntl();
 
   const handlePressLogo = () => {
     if (store?.ternantStore.logo?.logoURL) {
@@ -49,6 +62,10 @@ function TabHeader() {
       });
     }
   };
+
+  const handleNavigateToAbout = () => navigation.navigate(NavigatorMap.About);
+  const handleNavigateToSetting = () =>
+    navigation.navigate(NavigatorMap.Setting);
 
   return (
     <View style={styles.root}>
@@ -67,9 +84,25 @@ function TabHeader() {
           />
         </TouchableOpacity>
       </View>
-      <TouchableOpacity onPress={() => {}}>
-        <MaterialCommunityIcons name="dots-horizontal" size={20} color="red" />
-      </TouchableOpacity>
+      <Menu>
+        <MenuTrigger>
+          <MaterialCommunityIcons
+            name="dots-horizontal"
+            size={20}
+            color="red"
+          />
+        </MenuTrigger>
+        <MenuOptions optionsContainerStyle={styles.menu}>
+          <MenuOption
+            onSelect={handleNavigateToAbout}
+            text={formatMessage({id: 'about.title'})}
+          />
+          <MenuOption
+            onSelect={handleNavigateToSetting}
+            text={formatMessage({id: 'setting.title'})}
+          />
+        </MenuOptions>
+      </Menu>
     </View>
   );
 }

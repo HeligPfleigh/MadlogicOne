@@ -13,6 +13,7 @@ import {IntlProvider} from 'react-intl';
 import * as RNLocalize from 'react-native-localize';
 import {I18nManager} from 'react-native';
 import {observer} from 'mobx-react-lite';
+import {MenuProvider} from 'react-native-popup-menu';
 
 import RootNavigator from './navigations/RootNavigator';
 import {StoreProvider} from './core/contexts';
@@ -49,10 +50,12 @@ function App() {
       locale={store?.languageStore.language || SupportedLanguages.EN}
       messages={store?.languageStore.messages}>
       <PaperProvider theme={store?.themeStore.theme}>
-        <NavigationContainer>
-          <RootNavigator />
-        </NavigationContainer>
-        <CustomSnackbar />
+        <MenuProvider>
+          <NavigationContainer>
+            <RootNavigator />
+          </NavigationContainer>
+          <CustomSnackbar />
+        </MenuProvider>
       </PaperProvider>
     </IntlProvider>
   );
