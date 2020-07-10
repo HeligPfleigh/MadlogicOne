@@ -1,4 +1,4 @@
-import {observable, action, runInAction} from 'mobx';
+import {observable, action} from 'mobx';
 
 import {SnackType} from '../const';
 
@@ -13,10 +13,10 @@ export default class SnackStore {
   setError(id: string) {
     this.type = SnackType.ERROR;
     this.titleId = id;
-    setTimeout(() => {
-      runInAction(() => {
-        this.titleId = '';
-      });
-    }, 2000);
   }
+
+  @action
+  clearSnack = () => {
+    this.titleId = '';
+  };
 }

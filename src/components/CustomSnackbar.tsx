@@ -1,6 +1,5 @@
 import React from 'react';
 import {Snackbar, Colors} from 'react-native-paper';
-import {noop} from 'lodash';
 import {useIntl} from 'react-intl';
 import {observer} from 'mobx-react-lite';
 import {StyleSheet} from 'react-native';
@@ -29,8 +28,9 @@ function CustomSnackbar() {
 
   return (
     <Snackbar
+      duration={2000}
       visible={Boolean(store?.snackStore.titleId)}
-      onDismiss={noop}
+      onDismiss={store?.snackStore.clearSnack}
       style={styles[store?.snackStore.type]}>
       {formatMessage({id: store?.snackStore.titleId})}
     </Snackbar>

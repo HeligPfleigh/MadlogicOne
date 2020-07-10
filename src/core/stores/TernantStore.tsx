@@ -1,4 +1,5 @@
 import {observable, action} from 'mobx';
+import {persist} from 'mobx-persist';
 
 import {TabTypes, Logo, Registration, TernantSetting} from '../const';
 import NavigatorMap from '../../navigations/NavigatorMap';
@@ -16,35 +17,47 @@ class Tab {
   @observable icon?: string;
   @observable title?: string;
   @observable enable: boolean;
-
-  // @action toggleTab = (status: boolean) => {
-  //   this.enable = status;
-  // };
 }
 
 type ITabs = Record<keyof AppTabParamsList | string, Tab>;
 
 export default class TernantStore {
-  @observable tabs: ITabs = {
+  @persist('object')
+  @observable
+  tabs: ITabs = {
     [NavigatorMap.Broadcasts]: new Tab(TabTypes.NEWS),
     [NavigatorMap.Channels]: new Tab(TabTypes.CHANNEL),
     [NavigatorMap.HTML]: new Tab(TabTypes.HTML),
     [NavigatorMap.Programs]: new Tab(TabTypes.PROGRAMS),
   };
 
-  @observable name?: string;
-  @observable secret?: string;
-  @observable registration?: Registration;
-  @observable logo?: Logo;
-  @observable color?: string;
-  @observable about?: string;
-  @observable features?: string[];
+  @persist
+  @observable
+  name?: string;
 
-  // constructor() {
-  //   autorun(() => {
-  //     this.tabs[NavigatorMap.HTML].toggleTab(false);
-  //   }, {});
-  // }
+  @persist
+  @observable
+  secret?: string;
+
+  @persist('object')
+  @observable
+  registration?: Registration;
+
+  @persist('object')
+  @observable
+  logo?: Logo;
+
+  @persist
+  @observable
+  color?: string;
+
+  @persist
+  @observable
+  about?: string;
+
+  @persist('list')
+  @observable
+  features?: string[];
 
   @action
   loadTernantTabSetting = (setting: TernantSetting) => {

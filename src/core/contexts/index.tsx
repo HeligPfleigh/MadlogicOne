@@ -1,5 +1,7 @@
 import React, {createContext, ReactNode} from 'react';
 import {useLocalStore} from 'mobx-react-lite';
+import AsyncStorage from '@react-native-community/async-storage';
+import {create} from 'mobx-persist';
 
 import LanguageStore from '../stores/LanguageStore';
 import ThemeStore from '../stores/ThemeStore';
@@ -18,11 +20,19 @@ type TStore = {
 export const StoresContext = createContext<TStore | null>(null);
 
 export const StoreProvider = ({children}: {children: ReactNode}) => {
+  const hydrate = create({
+    storage: AsyncStorage,
+    jsonify: true,
+  });
+
   const languageStore = new LanguageStore();
   const themeStore = new ThemeStore();
   const ternantStore = new TernantStore();
   const snackStore = new SnackStore();
   const authorizationStore = new AuthorizationStore();
+
+  hydrate('authorizationStore', authorizationStore);
+  hydrate('ternantStore', ternantStore);
 
   const store = useLocalStore<TStore>(() => ({
     themeStore,

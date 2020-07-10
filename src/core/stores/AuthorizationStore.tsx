@@ -1,6 +1,8 @@
 import {observable, action} from 'mobx';
+import {persist} from 'mobx-persist';
 
 export default class AuthorizationStore {
+  @persist
   @observable
   isAuthorized: boolean = false;
 
