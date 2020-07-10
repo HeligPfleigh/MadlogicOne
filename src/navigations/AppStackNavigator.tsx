@@ -5,6 +5,7 @@ import {AppStackParamsList} from './types';
 import NavigatorMap from './NavigatorMap';
 import AppTab from './AppTabNavigator';
 import DefaultScreen from '../screens/Default';
+import LogoScreen from '../screens/Logo';
 
 const Stack = createStackNavigator<AppStackParamsList>();
 
@@ -17,6 +18,7 @@ const AppStackNavigator = () => (
     />
     <Stack.Screen name={NavigatorMap.About} component={DefaultScreen} />
     <Stack.Screen name={NavigatorMap.Setting} component={DefaultScreen} />
+    <Stack.Screen name={NavigatorMap.Logo} component={LogoScreen} />
   </Stack.Navigator>
 );
 

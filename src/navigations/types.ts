@@ -19,6 +19,9 @@ export type AppStackParamsList = {
   [NavigatorMap.AppTab]: undefined;
   [NavigatorMap.Setting]: undefined;
   [NavigatorMap.About]: undefined;
+  [NavigatorMap.Logo]: {
+    uri: string;
+  };
 };
 
 export type AppTabParamsList = {

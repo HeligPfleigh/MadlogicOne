@@ -10,6 +10,7 @@ import NavigatorMap from './NavigatorMap';
 import DefaultScreen from '../screens/Default';
 import {useStores} from '../core/hooks/useStores';
 import {Broadcast, Channel, Journey} from '../assets/images';
+import NewsScreen from '../screens/News';
 
 const Tab = createMaterialBottomTabNavigator<AppTabParamsList>();
 
@@ -26,6 +27,7 @@ interface IConfig {
   name: keyof AppTabParamsList;
   defaultLabelId: string;
   defaultIcon: ImageSourcePropType;
+  component: React.ComponentType<any>;
 }
 
 const tabConfigs: IConfig[] = [
@@ -34,24 +36,28 @@ const tabConfigs: IConfig[] = [
     name: NavigatorMap.Broadcasts,
     defaultLabelId: 'broadcasts.title',
     defaultIcon: Broadcast,
+    component: NewsScreen,
   },
   {
     id: 2,
     name: NavigatorMap.Channels,
     defaultLabelId: 'channels.title',
     defaultIcon: Channel,
+    component: DefaultScreen,
   },
   {
     id: 3,
     name: NavigatorMap.Programs,
     defaultLabelId: 'programs.title',
     defaultIcon: Journey,
+    component: DefaultScreen,
   },
   {
     id: 4,
     name: NavigatorMap.HTML,
     defaultLabelId: 'html.title',
     defaultIcon: Journey,
+    component: DefaultScreen,
   },
 ];
 
@@ -64,11 +70,11 @@ const AppStackNavigator = () => {
     <Tab.Navigator barStyle={{backgroundColor: theme.colors.background}}>
       {tabConfigs
         .filter(({name}) => tabs?.[name].enable)
-        .map(({id, name, defaultLabelId, defaultIcon}) => (
+        .map(({id, name, defaultLabelId, defaultIcon, component}) => (
           <Tab.Screen
             key={`tab-${id}`}
             name={name}
-            component={DefaultScreen}
+            component={component}
             options={{
               tabBarLabel:
                 tabs?.[name].title || formatMessage({id: defaultLabelId}),
