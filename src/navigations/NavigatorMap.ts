@@ -1,4 +1,5 @@
 enum NavigatorMap {
+  Bootstrap = 'Bootstrap',
   AuthStack = 'Auth Stack',
   Login = 'Login',
   ClientCode = 'Client Code',

@@ -6,6 +6,9 @@ export default class AuthorizationStore {
   @observable
   isAuthorized: boolean = false;
 
+  @observable
+  loadingPersistData: boolean = true;
+
   constructor() {
     // TODO: may be fetch authorized data from async storage here by autorun function
   }
@@ -16,5 +19,9 @@ export default class AuthorizationStore {
 
   @action logout = () => {
     this.isAuthorized = false;
+  };
+
+  @action finishLoadPersistData = () => {
+    this.loadingPersistData = false;
   };
 }

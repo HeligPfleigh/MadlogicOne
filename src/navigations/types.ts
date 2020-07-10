@@ -2,6 +2,7 @@ import NavigatorMap from './NavigatorMap';
 import {RegistrationType} from '../core/const';
 
 export type RootStackParamsList = {
+  [NavigatorMap.Bootstrap]: undefined;
   [NavigatorMap.AuthStack]: undefined;
   [NavigatorMap.AppStack]: undefined;
 };

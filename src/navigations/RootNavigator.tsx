@@ -7,6 +7,7 @@ import NavigatorMap from './NavigatorMap';
 import AuthStack from './AuthStackNavigator';
 import AppStack from './AppStackNavigator';
 import {useStores} from '../core/hooks/useStores';
+import Bootstrap from '../screens/Bootstrap';
 
 const Stack = createStackNavigator<RootStackParamsList>();
 
@@ -15,6 +16,9 @@ function RootNavigator() {
 
   return (
     <Stack.Navigator headerMode="none">
+      {store?.authorizationStore.loadingPersistData && (
+        <Stack.Screen name={NavigatorMap.Bootstrap} component={Bootstrap} />
+      )}
       {store?.authorizationStore.isAuthorized ? (
         <Stack.Screen name={NavigatorMap.AppStack} component={AppStack} />
       ) : (

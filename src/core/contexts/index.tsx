@@ -31,8 +31,12 @@ export const StoreProvider = ({children}: {children: ReactNode}) => {
   const snackStore = new SnackStore();
   const authorizationStore = new AuthorizationStore();
 
-  hydrate('authorizationStore', authorizationStore);
-  hydrate('ternantStore', ternantStore);
+  Promise.all([
+    hydrate('authorizationStore', authorizationStore),
+    hydrate('ternantStore', ternantStore),
+  ]).then(() => {
+    authorizationStore.finishLoadPersistData();
+  });
 
   const store = useLocalStore<TStore>(() => ({
     themeStore,
