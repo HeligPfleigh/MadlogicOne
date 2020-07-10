@@ -1,19 +1,21 @@
-import React, {useState} from 'react';
+import React from 'react';
 import {createStackNavigator} from '@react-navigation/stack';
+import {observer} from 'mobx-react-lite';
 
 import {RootStackParamsList} from './types';
 import NavigatorMap from './NavigatorMap';
 import AuthStack from './AuthStackNavigator';
 import AppStack from './AppStackNavigator';
+import {useStores} from '../core/hooks/useStores';
 
 const Stack = createStackNavigator<RootStackParamsList>();
 
-export default function RootNavigator() {
-  const [isAuthorized] = useState(false);
+function RootNavigator() {
+  const store = useStores();
 
   return (
     <Stack.Navigator headerMode="none">
-      {isAuthorized ? (
+      {store?.authorizationStore.isAuthorized ? (
         <Stack.Screen name={NavigatorMap.AppStack} component={AppStack} />
       ) : (
         <Stack.Screen name={NavigatorMap.AuthStack} component={AuthStack} />
@@ -21,3 +23,5 @@ export default function RootNavigator() {
     </Stack.Navigator>
   );
 }
+
+export default observer(RootNavigator);

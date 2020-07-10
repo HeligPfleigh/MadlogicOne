@@ -78,9 +78,12 @@ function ClientCode({navigation}: ClientCodeScreenNavigationProps) {
 
   const handleSubmitClientCode = async ({clientCode}: ClientCodeFormValue) => {
     try {
-      await getTernantSetting(clientCode);
+      const setting = await getTernantSetting(clientCode);
+      store?.ternantStore.loadTernantTabSetting(setting);
       navigation.navigate(NavigatorMap.Login, {
-        registrationType: RegistrationType.ACCOUNT,
+        registrationType:
+          store?.ternantStore.registration?.registrationType ||
+          RegistrationType.EMAIL,
       });
     } catch (error) {
       store?.snackStore.setError('clientcode.error.notfound');

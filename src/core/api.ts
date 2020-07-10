@@ -12,7 +12,6 @@ const instance = axios.create({
 
 export const getTernantSetting = (
   _clientCode: string,
-): Promise<TernantSetting> =>
-  Math.random() > 0.5 ? Promise.resolve(mockTernant) : Promise.reject('');
+): Promise<TernantSetting> => Promise.resolve(mockTernant as any);
 
 export default instance;

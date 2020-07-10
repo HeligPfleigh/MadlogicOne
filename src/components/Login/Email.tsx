@@ -1,11 +1,13 @@
 import React from 'react';
-import {View, StyleSheet} from 'react-native';
+import {View, StyleSheet, Image} from 'react-native';
 import {TextInput, Button, Colors} from 'react-native-paper';
 import {useIntl} from 'react-intl';
 import {useFormik} from 'formik';
 import noop from 'lodash/noop';
 import * as Yup from 'yup';
-import {SvgUri} from 'react-native-svg';
+import {observer} from 'mobx-react-lite';
+
+import {useStores} from '../../core/hooks/useStores';
 
 const styles = StyleSheet.create({
   container: {
@@ -14,6 +16,12 @@ const styles = StyleSheet.create({
   },
   imageContainer: {
     flex: 1,
+  },
+  image: {
+    flex: 1,
+    width: null as any,
+    height: null as any,
+    resizeMode: 'contain',
   },
   content: {
     flex: 1,
@@ -42,8 +50,9 @@ const EmailSchema = Yup.object().shape({
     .required('login.errors.email.required'),
 });
 
-export default function LoginByEmail() {
+function LoginByEmail() {
   const {formatMessage} = useIntl();
+  const store = useStores();
 
   const {
     handleSubmit,
@@ -54,20 +63,21 @@ export default function LoginByEmail() {
     initialValues: {
       email: '',
     },
+    initialErrors: {
+      email: 'login.errors.email.required',
+    },
     validationSchema: EmailSchema,
-    onSubmit: (values) => {
-      // TODO
-      console.log(values);
+    onSubmit: () => {
+      store?.authorizationStore.authorize();
     },
   });
 
   return (
     <View style={styles.container}>
       <View style={styles.imageContainer}>
-        <SvgUri
-          width="100%"
-          height="100%"
-          uri="http://thenewcode.com/assets/images/thumbnails/homer-simpson.svg"
+        <Image
+          style={styles.image}
+          source={{uri: store?.ternantStore.logo?.logo}}
         />
       </View>
       <View style={styles.content}>
@@ -93,3 +103,5 @@ export default function LoginByEmail() {
     </View>
   );
 }
+
+export default observer(LoginByEmail);

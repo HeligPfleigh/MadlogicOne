@@ -5,7 +5,7 @@ export enum RegistrationType {
 }
 
 export interface Registration {
-  registrationType: RegistrationType | string;
+  registrationType: RegistrationType;
   adfsURL?: string;
   callbackPrefix?: string;
 }
@@ -16,7 +16,7 @@ export interface Logo {
 }
 
 export interface Tab {
-  type: TabTypes | string;
+  type: TabTypes;
   icon?: string;
   title?: string;
 }

@@ -5,16 +5,18 @@ import {
   KeyboardAvoidingView,
   TouchableOpacity,
   Text,
+  Image,
 } from 'react-native';
 import {TextInput, Button, Colors} from 'react-native-paper';
 import {useIntl} from 'react-intl';
-import {SvgUri} from 'react-native-svg';
 import {useFormik} from 'formik';
 import noop from 'lodash/noop';
 import * as Yup from 'yup';
 import {useNavigation} from '@react-navigation/native';
+import {observer} from 'mobx-react-lite';
 
 import NavigatorMap from '../../navigations/NavigatorMap';
+import {useStores} from '../../core/hooks/useStores';
 
 const styles = StyleSheet.create({
   container: {
@@ -61,9 +63,10 @@ const AccountSchema = Yup.object().shape({
   password: Yup.string().required('login.errors.password.required'),
 });
 
-export default function LoginByAccount() {
+function LoginByAccount() {
   const {formatMessage} = useIntl();
   const navigation = useNavigation();
+  const store = useStores();
 
   const {
     handleSubmit,
@@ -76,9 +79,8 @@ export default function LoginByAccount() {
       password: '',
     },
     validationSchema: AccountSchema,
-    onSubmit: (values) => {
-      // TODO
-      console.log(values);
+    onSubmit: () => {
+      store?.authorizationStore.authorize();
     },
   });
 
@@ -88,10 +90,9 @@ export default function LoginByAccount() {
   return (
     <KeyboardAvoidingView style={styles.container}>
       <View style={styles.imageContainer}>
-        <SvgUri
-          width="100%"
-          height="100%"
-          uri="http://thenewcode.com/assets/images/thumbnails/homer-simpson.svg"
+        <Image
+          style={styles.image}
+          source={{uri: store?.ternantStore.logo?.logo}}
         />
       </View>
       <View style={styles.content}>
@@ -130,3 +131,5 @@ export default function LoginByAccount() {
     </KeyboardAvoidingView>
   );
 }
+
+export default observer(LoginByAccount);
