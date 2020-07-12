@@ -1,6 +1,6 @@
 import React from 'react';
 import {View, StyleSheet, Image} from 'react-native';
-import {TextInput, Button, Colors} from 'react-native-paper';
+import {TextInput, Button, Colors, useTheme} from 'react-native-paper';
 import {useIntl} from 'react-intl';
 import {useFormik} from 'formik';
 import noop from 'lodash/noop';
@@ -8,20 +8,11 @@ import * as Yup from 'yup';
 import {observer} from 'mobx-react-lite';
 
 import {useStores} from '../../core/hooks/useStores';
+import {useGlobalStyles} from '../../core/hooks/useGlobalStyle';
 
 const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    padding: 16,
-  },
   imageContainer: {
     flex: 1,
-  },
-  image: {
-    flex: 1,
-    width: null as any,
-    height: null as any,
-    resizeMode: 'contain',
   },
   content: {
     flex: 1,
@@ -52,7 +43,9 @@ const EmailSchema = Yup.object().shape({
 
 function LoginByEmail() {
   const {formatMessage} = useIntl();
+  const theme = useTheme();
   const store = useStores();
+  const [globalStyles] = useGlobalStyles(theme);
 
   const {
     handleSubmit,
@@ -73,10 +66,10 @@ function LoginByEmail() {
   });
 
   return (
-    <View style={styles.container}>
+    <View style={globalStyles.container}>
       <View style={styles.imageContainer}>
         <Image
-          style={styles.image}
+          style={globalStyles.fullFlexImage}
           source={{uri: store?.ternantStore.logo?.logo}}
         />
       </View>

@@ -21,12 +21,9 @@ import {AuthStackParamsList} from '../navigations/types';
 import {RegistrationType} from '../core/const';
 import {getTernantSetting} from '../core/api';
 import {useStores} from '../core/hooks/useStores';
+import {useGlobalStyles} from '../core/hooks/useGlobalStyle';
 
 const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    padding: 16,
-  },
   imageContainer: {
     flex: 1,
     justifyContent: 'center',
@@ -74,6 +71,7 @@ const ClientCodeSchema = Yup.object().shape({
 function ClientCode({navigation}: ClientCodeScreenNavigationProps) {
   const theme = useTheme();
   const store = useStores();
+  const [globalStyles] = useGlobalStyles(theme);
   const {formatMessage} = useIntl();
 
   const handleSubmitClientCode = async ({clientCode}: ClientCodeFormValue) => {
@@ -113,8 +111,7 @@ function ClientCode({navigation}: ClientCodeScreenNavigationProps) {
   const handlePressPolicy = () => navigation.navigate(NavigatorMap.Privacy);
 
   return (
-    <View
-      style={[styles.container, {backgroundColor: theme.colors.background}]}>
+    <View style={globalStyles.container}>
       <View style={styles.imageContainer}>
         <Madlogic width={500} height={100} />
       </View>

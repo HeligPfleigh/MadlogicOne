@@ -4,11 +4,10 @@ import {useTheme} from 'react-native-paper';
 import {observer} from 'mobx-react-lite';
 
 import {Madlogic} from '../assets/images';
+import {useGlobalStyles} from '../core/hooks/useGlobalStyle';
 
 const styles = StyleSheet.create({
   container: {
-    flex: 1,
-    padding: 16,
     justifyContent: 'center',
     alignItems: 'center',
   },
@@ -16,9 +15,9 @@ const styles = StyleSheet.create({
 
 function Bootstrap() {
   const theme = useTheme();
+  const [globalStyles] = useGlobalStyles(theme);
   return (
-    <View
-      style={[styles.container, {backgroundColor: theme.colors.background}]}>
+    <View style={[styles.container, globalStyles.container]}>
       <Madlogic width={500} height={100} />
     </View>
   );

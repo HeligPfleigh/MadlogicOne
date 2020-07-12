@@ -1,68 +1,106 @@
-import React from 'react';
+import React, {useEffect} from 'react';
 import {StyleSheet, View} from 'react-native';
-import {Switch, Text, Colors} from 'react-native-paper';
+import {Switch, Text, Colors, useTheme} from 'react-native-paper';
 import noop from 'lodash/noop';
 import Slider from '@react-native-community/slider';
+import {observer} from 'mobx-react-lite';
+import {useIntl} from 'react-intl';
+import Animated, {
+  Value,
+  timing,
+  Easing,
+  interpolate,
+  Extrapolate,
+} from 'react-native-reanimated';
+
+import {useGlobalStyles} from '../core/hooks/useGlobalStyle';
 
 const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    padding: 16,
-    backgroundColor: 'white',
-  },
   item: {
     marginVertical: 8,
     padding: 16,
-    backgroundColor: 'white',
-    borderRadius: 4,
-    shadowColor: 'black',
-    shadowOffset: {
-      width: 0,
-      height: -1,
-    },
-    shadowOpacity: 0.15,
-    shadowRadius: 8,
-    elevation: 5,
+  },
+  itemContainer: {
+    flexDirection: 'row',
+    alignItems: 'center',
   },
   switch: {
     marginRight: 16,
   },
+  slider: {
+    width: '100%',
+    marginTop: 8,
+  },
+  storageTxt: {
+    textAlign: 'center',
+  },
 });
 
+const SLIDER_HEIGHT = 40;
+
+const AnimatedSlider = Animated.createAnimatedComponent(Slider);
+
 const Setting = () => {
+  const theme = useTheme();
+  const {formatMessage} = useIntl();
+  const [globalStyles] = useGlobalStyles(theme);
+  const [isSwitchStorageOn, setIsSwitchStorageOn] = React.useState(false);
+
+  const height = new Value(isSwitchStorageOn ? 0 : SLIDER_HEIGHT);
+
+  const anim = timing(height, {
+    duration: 200,
+    toValue: isSwitchStorageOn ? SLIDER_HEIGHT : 0,
+    easing: Easing.inOut(Easing.linear),
+  });
+
+  const toggleSwitch = () => setIsSwitchStorageOn((prev) => !prev);
+  const opacity = interpolate(height, {
+    inputRange: [0, SLIDER_HEIGHT],
+    outputRange: [0, 1],
+    extrapolate: Extrapolate.CLAMP,
+  });
+
+  useEffect(() => {
+    anim.start();
+  }, [isSwitchStorageOn, anim]);
   return (
-    <View style={styles.container}>
-      <View style={styles.item}>
-        <View style={{flexDirection: 'row', alignItems: 'center'}}>
+    <View style={globalStyles.container}>
+      <View style={[styles.item, globalStyles.shadowBox]}>
+        <View style={styles.itemContainer}>
           <Switch
             value={false}
             onValueChange={noop}
             style={styles.switch}
             color={Colors.blue500}
           />
-
-          <Text>Sync only via wifi</Text>
+          <Text>{formatMessage({id: 'setting.sync.wifi'})}</Text>
         </View>
       </View>
-      <View style={styles.item}>
-        <View style={{flexDirection: 'row', alignItems: 'center'}}>
+      <View style={[styles.item, globalStyles.shadowBox]}>
+        <Animated.View style={styles.itemContainer}>
           <Switch
-            value={true}
-            onValueChange={noop}
-            style={styles.switch}
+            value={isSwitchStorageOn}
+            onValueChange={toggleSwitch}
+            style={[styles.switch]}
             color={Colors.blue500}
           />
-          <Text>Max storage use</Text>
-        </View>
-        <Slider
-          style={{width: '100%', height: 40, marginTop: 8}}
-          minimumTrackTintColor={Colors.blue500}
-          thumbTintColor={Colors.blue500}
-        />
-        <Text style={{textAlign: 'center'}}>100MB</Text>
+          <Text>{formatMessage({id: 'setting.max.storage'})}</Text>
+        </Animated.View>
+        <Animated.View style={{height}}>
+          <AnimatedSlider
+            style={[styles.slider, {opacity}]}
+            minimumTrackTintColor={Colors.blue500}
+            thumbTintColor={Colors.blue500}
+            onValueChange={console.log}
+          />
+          <Animated.Text style={[styles.storageTxt, {opacity}]}>
+            100MB
+          </Animated.Text>
+        </Animated.View>
       </View>
     </View>
   );
 };
 
-export default Setting;
+export default observer(Setting);

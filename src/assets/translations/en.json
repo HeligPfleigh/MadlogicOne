@@ -20,5 +20,7 @@
   "programs.title": "Programs",
   "html.title": "Others",
   "about.title": "About",
-  "setting.title": "Setting"
+  "setting.title": "Setting",
+  "setting.sync.wifi": "Sync only via wifi",
+  "setting.max.storage": "Max storage use"
 }

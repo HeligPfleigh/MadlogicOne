@@ -1,17 +1,15 @@
 import React from 'react';
 import {View, StyleSheet} from 'react-native';
-import {TextInput, Button, Colors} from 'react-native-paper';
+import {TextInput, Button, Colors, useTheme} from 'react-native-paper';
 import {useIntl} from 'react-intl';
 import {useFormik} from 'formik';
 import noop from 'lodash/noop';
 import * as Yup from 'yup';
 import {SvgUri} from 'react-native-svg';
 
+import {useGlobalStyles} from '../core/hooks/useGlobalStyle';
+
 const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    padding: 16,
-  },
   imageContainer: {
     flex: 1,
   },
@@ -43,7 +41,9 @@ const EmailSchema = Yup.object().shape({
 });
 
 export default function ForgotPassword() {
+  const theme = useTheme();
   const {formatMessage} = useIntl();
+  const [globalStyles] = useGlobalStyles(theme);
 
   const {
     handleSubmit,
@@ -62,7 +62,7 @@ export default function ForgotPassword() {
   });
 
   return (
-    <View style={styles.container}>
+    <View style={globalStyles.container}>
       <View style={styles.imageContainer}>
         <SvgUri
           width="100%"
