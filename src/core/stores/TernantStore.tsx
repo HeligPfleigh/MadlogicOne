@@ -35,10 +35,6 @@ export default class TernantStore {
   @observable
   name?: string;
 
-  @persist
-  @observable
-  secret?: string;
-
   @persist('object')
   @observable
   registration?: Registration;
@@ -62,7 +58,6 @@ export default class TernantStore {
   @action
   loadTernantTabSetting = (setting: TernantSetting) => {
     this.name = setting.name;
-    this.secret = setting.secret;
     this.registration = setting.registration;
     this.logo = setting.logo;
     this.color = setting.color;
@@ -70,12 +65,13 @@ export default class TernantStore {
     this.features = setting.features;
 
     Object.keys(this.tabs).forEach((key) => {
-      this.tabs[key].enable = false;
       const tabData = setting.tabs.find(
         ({type}) => type === this.tabs[key].type,
       );
       if (tabData) {
-        this.tabs[key] = new Tab(key, tabData.icon, tabData.title);
+        this.tabs[key] = new Tab(tabData.type, tabData.icon, tabData.title);
+      } else {
+        this.tabs[key].enable = false;
       }
     });
   };

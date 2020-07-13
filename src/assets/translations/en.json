@@ -22,5 +22,6 @@
   "about.title": "About",
   "setting.title": "Setting",
   "setting.sync.wifi": "Sync only via wifi",
-  "setting.max.storage": "Max storage use"
+  "setting.max.storage": "Max storage use",
+  "setting.logout": "Logout"
 }

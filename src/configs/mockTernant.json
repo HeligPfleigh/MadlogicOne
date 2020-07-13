@@ -1,6 +1,5 @@
 {
   "name": "Madlogic",
-  "secret": "",
   "logo": {
     "logo": "https://cdn.shortpixel.ai/client/to_webp,q_glossy,ret_img,w_64,h_59/https://www.madlogic.nl/wp-content/uploads/2019/10/Madlogic-logo-e1570520792913.png",
     "logoURL": "https://www.madlogic.nl"
@@ -9,7 +8,8 @@
   "about": "<h1>Madlogic</h1>",
   "registration": {
     "registrationType": "EMAIL",
-    "adfsURL": "https://...",
+    "secret": "c716ec680dd74c1eb89e08c323dde41d",
+    "baseUrl": "https://portal-dev.madlogic.nl:20000",
     "callbackPrefix": "https://sqoony.com"
   },
   "features": ["qr"],

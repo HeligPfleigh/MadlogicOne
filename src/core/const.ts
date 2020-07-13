@@ -6,7 +6,8 @@ export enum RegistrationType {
 
 export interface Registration {
   registrationType: RegistrationType;
-  adfsURL?: string;
+  secret: string;
+  baseUrl: string;
   callbackPrefix?: string;
 }
 

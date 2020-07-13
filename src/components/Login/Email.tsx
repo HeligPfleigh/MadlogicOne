@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useEffect, useState} from 'react';
 import {View, StyleSheet, Image} from 'react-native';
 import {TextInput, Button, Colors, useTheme} from 'react-native-paper';
 import {useIntl} from 'react-intl';
@@ -6,6 +6,11 @@ import {useFormik} from 'formik';
 import noop from 'lodash/noop';
 import * as Yup from 'yup';
 import {observer} from 'mobx-react-lite';
+import {
+  registerWithEmail,
+  eventEmitter,
+  MADLOGIC_SDK_EVENTS,
+} from 'react-native-madlogic';
 
 import {useStores} from '../../core/hooks/useStores';
 import {useGlobalStyles} from '../../core/hooks/useGlobalStyle';
@@ -46,6 +51,7 @@ function LoginByEmail() {
   const theme = useTheme();
   const store = useStores();
   const [globalStyles] = useGlobalStyles(theme);
+  const [disableBtn, setDisable] = useState(false);
 
   const {
     handleSubmit,
@@ -61,9 +67,25 @@ function LoginByEmail() {
     },
     validationSchema: EmailSchema,
     onSubmit: () => {
-      store?.authorizationStore.authorize();
+      registerWithEmail(email);
+      setDisable(true);
+      // store?.authorizationStore.authorize();
     },
   });
+
+  useEffect(() => {
+    const registerError = eventEmitter.addListener(
+      MADLOGIC_SDK_EVENTS.EVENT_REGISTER_ERROR,
+      () => {
+        store?.snackStore.setError('login.fail');
+        setDisable(false);
+      },
+    );
+    return () => {
+      registerError.remove();
+    };
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
 
   return (
     <View style={globalStyles.container}>
@@ -86,7 +108,7 @@ function LoginByEmail() {
         <Button
           onPress={handleSubmit}
           mode="contained"
-          disabled={Boolean(errors.email)}
+          disabled={Boolean(errors.email) || disableBtn}
           uppercase={false}
           color={Colors.red500}
           style={styles.login}>

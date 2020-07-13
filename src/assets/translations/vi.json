@@ -5,7 +5,7 @@
   "clientcode.agree": "TODO",
   "clientcode.policy": "TODO",
   "clientcode.next": "TODO",
-  "clientcode.error.notfound": "Client code not found. Please try again!",
+  "clientcode.error.notfound": "TODO",
   "login.title": "TODO",
   "login.email": "TODO",
   "login.login": "TODO",
@@ -22,5 +22,6 @@
   "about.title": "TODO",
   "setting.title": "TODO",
   "setting.sync.wifi": "TODO",
-  "setting.max.storage": "TODO"
+  "setting.max.storage": "TODO",
+  "setting.logout": "TODO"
 }

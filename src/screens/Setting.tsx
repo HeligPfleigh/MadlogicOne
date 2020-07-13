@@ -1,6 +1,6 @@
 import React, {useEffect} from 'react';
 import {StyleSheet, View} from 'react-native';
-import {Switch, Text, Colors, useTheme} from 'react-native-paper';
+import {Switch, Text, Colors, useTheme, Button} from 'react-native-paper';
 import noop from 'lodash/noop';
 import Slider from '@react-native-community/slider';
 import {observer} from 'mobx-react-lite';
@@ -12,8 +12,10 @@ import Animated, {
   interpolate,
   Extrapolate,
 } from 'react-native-reanimated';
+import {close} from 'react-native-madlogic';
 
 import {useGlobalStyles} from '../core/hooks/useGlobalStyle';
+import {useStores} from '../core/hooks/useStores';
 
 const styles = StyleSheet.create({
   item: {
@@ -34,6 +36,15 @@ const styles = StyleSheet.create({
   storageTxt: {
     textAlign: 'center',
   },
+  btnContainer: {
+    marginVertical: 8,
+    alignItems: 'center',
+    justifyContent: 'center',
+  },
+  logout: {
+    width: '50%',
+    color: Colors.white,
+  },
 });
 
 const SLIDER_HEIGHT = 60;
@@ -45,6 +56,7 @@ const Setting = () => {
   const {formatMessage} = useIntl();
   const [globalStyles] = useGlobalStyles(theme);
   const [isSwitchStorageOn, setIsSwitchStorageOn] = React.useState(false);
+  const store = useStores();
 
   const height = new Value(isSwitchStorageOn ? 0 : SLIDER_HEIGHT);
 
@@ -64,6 +76,11 @@ const Setting = () => {
   useEffect(() => {
     anim.start();
   }, [isSwitchStorageOn, anim]);
+
+  const handleLogout = () => {
+    close();
+    store?.authorizationStore.logout();
+  };
   return (
     <View style={globalStyles.container}>
       <View style={[styles.item, globalStyles.shadowBox]}>
@@ -98,6 +115,16 @@ const Setting = () => {
             100MB
           </Animated.Text>
         </Animated.View>
+      </View>
+      <View style={styles.btnContainer}>
+        <Button
+          onPress={handleLogout}
+          mode="contained"
+          uppercase={false}
+          color={Colors.red500}
+          style={styles.logout}>
+          {formatMessage({id: 'setting.logout'})}
+        </Button>
       </View>
     </View>
   );
