@@ -36,7 +36,7 @@ const styles = StyleSheet.create({
   },
 });
 
-const SLIDER_HEIGHT = 40;
+const SLIDER_HEIGHT = 60;
 
 const AnimatedSlider = Animated.createAnimatedComponent(Slider);
 
@@ -87,7 +87,7 @@ const Setting = () => {
           />
           <Text>{formatMessage({id: 'setting.max.storage'})}</Text>
         </Animated.View>
-        <Animated.View style={{height}}>
+        <Animated.View style={{height, justifyContent: 'center'}}>
           <AnimatedSlider
             style={[styles.slider, {opacity}]}
             minimumTrackTintColor={Colors.blue500}

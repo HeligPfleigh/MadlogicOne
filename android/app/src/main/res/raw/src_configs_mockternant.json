@@ -1,0 +1,41 @@
+{
+  "name": "Madlogic",
+  "secret": "",
+  "logo": {
+    "logo": "https://cdn.shortpixel.ai/client/to_webp,q_glossy,ret_img,w_64,h_59/https://www.madlogic.nl/wp-content/uploads/2019/10/Madlogic-logo-e1570520792913.png",
+    "logoURL": "https://www.madlogic.nl"
+  },
+  "color": "#FF0000",
+  "about": "<h1>Madlogic</h1>",
+  "registration": {
+    "registrationType": "EMAIL",
+    "adfsURL": "https://...",
+    "callbackPrefix": "https://sqoony.com"
+  },
+  "features": ["qr"],
+  "tabs": [
+    {
+      "icon": "",
+      "title": "News",
+      "type": "news",
+      "style": 1
+    },
+    {
+      "icon": "",
+      "title": "HTML",
+      "type": "html",
+      "url": "https://www.madlogic.nl/magic/"
+    },
+    {
+      "icon": "",
+      "title": "Channels",
+      "type": "channel",
+      "style": 2
+    },
+    {
+      "icon": "",
+      "title": "Journeys",
+      "type": "programs"
+    }
+  ]
+}
