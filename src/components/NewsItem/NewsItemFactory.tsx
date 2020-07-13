@@ -30,34 +30,25 @@ export default function NewsItemFactory({
   const handlePlayBroadcast = () => playBroadcast(id);
   const handleDeleteBroadcast = () => deleteBroadcast(id);
   const handleShareBroadcast = () => share(id);
+
+  let BroadcastItem;
   switch (style) {
     case NewsItemStyle.STYLE1:
-      return (
-        <Style1
-          {...props}
-          onPlayBroadcast={handlePlayBroadcast}
-          onDeleteBroadcast={handleDeleteBroadcast}
-          onShareBroadcast={handleShareBroadcast}
-        />
-      );
+      BroadcastItem = Style1;
+      break;
     case NewsItemStyle.STYLE2:
-      return (
-        <Style2
-          {...props}
-          onPlayBroadcast={handlePlayBroadcast}
-          onDeleteBroadcast={handleDeleteBroadcast}
-          onShareBroadcast={handleShareBroadcast}
-        />
-      );
+      BroadcastItem = Style2;
+      break;
     case NewsItemStyle.STYLE3:
     default:
-      return (
-        <Style3
-          {...props}
-          onPlayBroadcast={handlePlayBroadcast}
-          onDeleteBroadcast={handleDeleteBroadcast}
-          onShareBroadcast={handleShareBroadcast}
-        />
-      );
+      BroadcastItem = Style3;
   }
+  return (
+    <BroadcastItem
+      {...props}
+      onPlayBroadcast={handlePlayBroadcast}
+      onDeleteBroadcast={handleDeleteBroadcast}
+      onShareBroadcast={handleShareBroadcast}
+    />
+  );
 }
