@@ -23,5 +23,8 @@
   "setting.title": "Setting",
   "setting.sync.wifi": "Sync only via wifi",
   "setting.max.storage": "Max storage use",
-  "setting.logout": "Logout"
+  "setting.logout": "Logout",
+  "news.watched": "Watched",
+  "news.delete": "Delete",
+  "news.share": "Share"
 }

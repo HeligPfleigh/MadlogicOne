@@ -20,6 +20,7 @@ export interface Tab {
   type: TabTypes;
   icon?: string;
   title?: string;
+  style?: number;
 }
 
 export interface TernantSetting {
@@ -54,4 +55,15 @@ export enum SnackType {
   ERROR = 'error',
   INFO = 'info',
   SUCCESS = 'success',
+}
+
+export enum NewsItemStyle {
+  STYLE1 = 1,
+  STYLE2 = 2,
+  STYLE3 = 3,
+}
+
+export enum ChannelsItemStyle {
+  STYLE1 = 1,
+  STYLE2 = 2,
 }

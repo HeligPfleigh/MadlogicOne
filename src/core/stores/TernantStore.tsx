@@ -6,17 +6,19 @@ import NavigatorMap from '../../navigations/NavigatorMap';
 import {AppTabParamsList} from '../../navigations/types';
 
 class Tab {
-  constructor(type: string, icon?: string, title?: string) {
+  constructor(type: string, icon?: string, title?: string, style?: number) {
     this.type = type;
     this.icon = icon;
     this.title = title;
     this.enable = true;
+    this.style = style;
   }
 
   @observable type: string;
   @observable icon?: string;
   @observable title?: string;
   @observable enable: boolean;
+  @observable style?: number;
 }
 
 type ITabs = Record<keyof AppTabParamsList | string, Tab>;
@@ -69,7 +71,12 @@ export default class TernantStore {
         ({type}) => type === this.tabs[key].type,
       );
       if (tabData) {
-        this.tabs[key] = new Tab(tabData.type, tabData.icon, tabData.title);
+        this.tabs[key] = new Tab(
+          tabData.type,
+          tabData.icon,
+          tabData.title,
+          tabData.style,
+        );
       } else {
         this.tabs[key].enable = false;
       }
