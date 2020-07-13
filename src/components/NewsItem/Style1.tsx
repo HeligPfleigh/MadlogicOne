@@ -32,6 +32,17 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
     padding: 16,
   },
+  menu: {
+    width: 120,
+    borderRadius: 8,
+    paddingHorizontal: 8,
+  },
+  menuOptionContainer: {
+    flexDirection: 'row',
+  },
+  menuOptionTxt: {
+    marginLeft: 16,
+  },
 });
 
 function Style1({
@@ -56,15 +67,23 @@ function Style1({
             color={Colors.redA700}
           />
         </MenuTrigger>
-        <MenuOptions>
-          <MenuOption
-            onSelect={onDeleteBroadcast}
-            text={formatMessage({id: 'news.delete'})}
-          />
-          <MenuOption
-            onSelect={onShareBroadcast}
-            text={formatMessage({id: 'news.share'})}
-          />
+        <MenuOptions optionsContainerStyle={styles.menu}>
+          <MenuOption onSelect={onDeleteBroadcast}>
+            <View style={styles.menuOptionContainer}>
+              <MaterialCommunityIcons name="delete" size={20} />
+              <Text style={styles.menuOptionTxt}>
+                {formatMessage({id: 'news.delete'})}
+              </Text>
+            </View>
+          </MenuOption>
+          <MenuOption onSelect={onShareBroadcast}>
+            <View style={styles.menuOptionContainer}>
+              <MaterialCommunityIcons name="share" size={20} />
+              <Text style={styles.menuOptionTxt}>
+                {formatMessage({id: 'news.share'})}
+              </Text>
+            </View>
+          </MenuOption>
         </MenuOptions>
       </Menu>
     </TouchableOpacity>

@@ -10,10 +10,12 @@ import {
   MenuTrigger,
 } from 'react-native-popup-menu';
 import {useIntl} from 'react-intl';
+import {Text, useTheme} from 'react-native-paper';
 
 import {useStores} from '../core/hooks/useStores';
 import {MadlogicLogo} from '../assets/images';
 import NavigatorMap from '../navigations/NavigatorMap';
+import {useGlobalStyles} from '../core/hooks/useGlobalStyle';
 
 const styles = StyleSheet.create({
   root: {
@@ -33,20 +35,20 @@ const styles = StyleSheet.create({
     width: 50,
     height: 50,
   },
-  image: {
-    flex: 1,
-    width: null as any,
-    height: null as any,
-    resizeMode: 'contain',
-  },
   noIcon: {
     width: 20,
     height: 20,
   },
   menu: {
-    width: 100,
+    width: 120,
     borderRadius: 8,
     paddingHorizontal: 8,
+  },
+  menuOptionContainer: {
+    flexDirection: 'row',
+  },
+  menuOptionTxt: {
+    marginLeft: 16,
   },
 });
 
@@ -54,6 +56,8 @@ function TabHeader() {
   const store = useStores();
   const navigation = useNavigation();
   const {formatMessage} = useIntl();
+  const theme = useTheme();
+  const [globalStyles] = useGlobalStyles(theme);
 
   const handlePressLogo = () => {
     if (store?.ternantStore.logo?.logoURL) {
@@ -80,7 +84,7 @@ function TabHeader() {
                 ? {uri: store?.ternantStore.logo?.logo}
                 : MadlogicLogo
             }
-            style={styles.image}
+            style={globalStyles.fullFlexImage}
           />
         </TouchableOpacity>
       </View>
@@ -93,14 +97,22 @@ function TabHeader() {
           />
         </MenuTrigger>
         <MenuOptions optionsContainerStyle={styles.menu}>
-          <MenuOption
-            onSelect={handleNavigateToAbout}
-            text={formatMessage({id: 'about.title'})}
-          />
-          <MenuOption
-            onSelect={handleNavigateToSetting}
-            text={formatMessage({id: 'setting.title'})}
-          />
+          <MenuOption onSelect={handleNavigateToAbout}>
+            <View style={styles.menuOptionContainer}>
+              <MaterialCommunityIcons name="account-question" size={20} />
+              <Text style={styles.menuOptionTxt}>
+                {formatMessage({id: 'about.title'})}
+              </Text>
+            </View>
+          </MenuOption>
+          <MenuOption onSelect={handleNavigateToSetting}>
+            <View style={styles.menuOptionContainer}>
+              <MaterialCommunityIcons name="cog" size={20} />
+              <Text style={styles.menuOptionTxt}>
+                {formatMessage({id: 'setting.title'})}
+              </Text>
+            </View>
+          </MenuOption>
         </MenuOptions>
       </Menu>
     </View>
