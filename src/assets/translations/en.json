@@ -26,5 +26,6 @@
   "setting.logout": "Logout",
   "news.watched": "Watched",
   "news.delete": "Delete",
-  "news.share": "Share"
+  "news.share": "Share",
+  "news.search": "Search"
 }
