@@ -34,6 +34,8 @@ export const StoreProvider = ({children}: {children: ReactNode}) => {
   Promise.all([
     hydrate('authorizationStore', authorizationStore),
     hydrate('ternantStore', ternantStore),
+    hydrate('themeStore', themeStore),
+    hydrate('languageStore', languageStore),
   ]).then(() => {
     authorizationStore.finishLoadPersistData();
   });

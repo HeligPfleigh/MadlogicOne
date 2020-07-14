@@ -96,10 +96,18 @@ function TabHeader() {
             color="red"
           />
         </MenuTrigger>
-        <MenuOptions optionsContainerStyle={styles.menu}>
+        <MenuOptions
+          optionsContainerStyle={[
+            styles.menu,
+            {backgroundColor: theme.colors.background},
+          ]}>
           <MenuOption onSelect={handleNavigateToAbout}>
             <View style={styles.menuOptionContainer}>
-              <MaterialCommunityIcons name="account-question" size={20} />
+              <MaterialCommunityIcons
+                name="account-question"
+                size={20}
+                color={theme.colors.text}
+              />
               <Text style={styles.menuOptionTxt}>
                 {formatMessage({id: 'about.title'})}
               </Text>
@@ -107,7 +115,11 @@ function TabHeader() {
           </MenuOption>
           <MenuOption onSelect={handleNavigateToSetting}>
             <View style={styles.menuOptionContainer}>
-              <MaterialCommunityIcons name="cog" size={20} />
+              <MaterialCommunityIcons
+                name="cog"
+                size={20}
+                color={theme.colors.text}
+              />
               <Text style={styles.menuOptionTxt}>
                 {formatMessage({id: 'setting.title'})}
               </Text>

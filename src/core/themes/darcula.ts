@@ -5,8 +5,8 @@ const theme = {
   dark: true,
   colors: {
     ...DefaultTheme.colors,
-    background: 'rgba(0, 0, 0, 1)',
-    text: Colors.white,
+    background: '#1D2330',
+    text: Colors.indigo100,
   },
 };
 

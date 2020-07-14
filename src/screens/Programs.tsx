@@ -56,6 +56,9 @@ const styles = StyleSheet.create({
     right: 20,
     backgroundColor: Colors.indigo100,
   },
+  text2: {
+    color: Colors.black,
+  },
 });
 
 type ProgramsScreenProps = MaterialBottomTabScreenProps<
@@ -97,7 +100,7 @@ function Programs({navigation}: ProgramsScreenProps) {
           <>
             <View style={[styles.icon, styles.eventAmount]} />
             <View style={[styles.icon, styles.eventAmountUpper]}>
-              <Text>{events.length}</Text>
+              <Text style={styles.text2}>{events.length}</Text>
             </View>
           </>
         )}

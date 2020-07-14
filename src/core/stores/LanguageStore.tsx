@@ -1,4 +1,5 @@
 import {observable, action, computed} from 'mobx';
+import {persist} from 'mobx-persist';
 
 import {SupportedLanguages} from '../const';
 import en from '../../assets/translations/en.json';
@@ -10,6 +11,7 @@ const translationGetters: Record<string, any> = {
 };
 
 export default class LanguageStore {
+  @persist
   @observable
   language: SupportedLanguages = SupportedLanguages.EN;
 

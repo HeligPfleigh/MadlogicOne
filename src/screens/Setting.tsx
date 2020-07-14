@@ -42,7 +42,13 @@ const Setting = () => {
     <View style={globalStyles.container}>
       {[WifiOnlySetting, MaxStorageSetting, ThemeSetting, LanguageSetting].map(
         (ItemSetting, idx) => (
-          <View style={[styles.item, globalStyles.shadowBox]} key={idx}>
+          <View
+            style={[
+              styles.item,
+              globalStyles.shadowBox,
+              {backgroundColor: theme.colors.background},
+            ]}
+            key={idx}>
             <ItemSetting />
           </View>
         ),

@@ -1,6 +1,6 @@
 import React from 'react';
 import {View, StyleSheet, Image, TouchableOpacity} from 'react-native';
-import {Text, Colors} from 'react-native-paper';
+import {Text, Colors, useTheme} from 'react-native-paper';
 import {
   Menu,
   MenuTrigger,
@@ -53,9 +53,13 @@ function Style1({
   onShareBroadcast,
 }: INewsItem) {
   const {formatMessage} = useIntl();
+  const theme = useTheme();
   return (
     <TouchableOpacity style={styles.item} onPress={onPlayBroadcast}>
-      <Image source={{uri: image}} style={styles.image} />
+      <Image
+        source={{uri: image}}
+        style={[styles.image, {backgroundColor: theme.colors.background}]}
+      />
       <View style={styles.content}>
         <Text>{name}</Text>
       </View>
@@ -67,10 +71,18 @@ function Style1({
             color={Colors.redA700}
           />
         </MenuTrigger>
-        <MenuOptions optionsContainerStyle={styles.menu}>
+        <MenuOptions
+          optionsContainerStyle={[
+            styles.menu,
+            {backgroundColor: theme.colors.background},
+          ]}>
           <MenuOption onSelect={onDeleteBroadcast}>
             <View style={styles.menuOptionContainer}>
-              <MaterialCommunityIcons name="delete" size={20} />
+              <MaterialCommunityIcons
+                name="delete"
+                size={20}
+                color={theme.colors.text}
+              />
               <Text style={styles.menuOptionTxt}>
                 {formatMessage({id: 'news.delete'})}
               </Text>
@@ -78,7 +90,11 @@ function Style1({
           </MenuOption>
           <MenuOption onSelect={onShareBroadcast}>
             <View style={styles.menuOptionContainer}>
-              <MaterialCommunityIcons name="share" size={20} />
+              <MaterialCommunityIcons
+                name="share"
+                size={20}
+                color={theme.colors.text}
+              />
               <Text style={styles.menuOptionTxt}>
                 {formatMessage({id: 'news.share'})}
               </Text>

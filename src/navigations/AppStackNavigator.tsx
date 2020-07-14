@@ -1,5 +1,7 @@
 import React from 'react';
 import {createStackNavigator} from '@react-navigation/stack';
+import {observer} from 'mobx-react-lite';
+import {useTheme} from 'react-native-paper';
 
 import {AppStackParamsList} from './types';
 import NavigatorMap from './NavigatorMap';
@@ -12,31 +14,39 @@ import EventsScreen from '../screens/Events';
 
 const Stack = createStackNavigator<AppStackParamsList>();
 
-const AppStackNavigator = () => (
-  <Stack.Navigator screenOptions={{headerBackTitleVisible: false}}>
-    <Stack.Screen
-      name={NavigatorMap.AppTab}
-      component={AppTab}
-      options={{header: () => null}}
-    />
-    <Stack.Screen name={NavigatorMap.About} component={AboutScreen} />
-    <Stack.Screen name={NavigatorMap.Setting} component={SettingScreen} />
-    <Stack.Screen name={NavigatorMap.Logo} component={LogoScreen} />
-    <Stack.Screen
-      name={NavigatorMap.ChannelDetail}
-      component={ChannelDetailScreen}
-      options={({route}) => ({
-        title: route.params.name || NavigatorMap.ChannelDetail,
-      })}
-    />
-    <Stack.Screen
-      name={NavigatorMap.Events}
-      component={EventsScreen}
-      options={({route}) => ({
-        title: route.params.name || NavigatorMap.Events,
-      })}
-    />
-  </Stack.Navigator>
-);
+const AppStackNavigator = () => {
+  const theme = useTheme();
+  return (
+    <Stack.Navigator
+      screenOptions={{
+        headerBackTitleVisible: false,
+        headerStyle: {backgroundColor: theme.colors.background},
+        headerTitleStyle: {color: theme.colors.text},
+      }}>
+      <Stack.Screen
+        name={NavigatorMap.AppTab}
+        component={AppTab}
+        options={{header: () => null}}
+      />
+      <Stack.Screen name={NavigatorMap.About} component={AboutScreen} />
+      <Stack.Screen name={NavigatorMap.Setting} component={SettingScreen} />
+      <Stack.Screen name={NavigatorMap.Logo} component={LogoScreen} />
+      <Stack.Screen
+        name={NavigatorMap.ChannelDetail}
+        component={ChannelDetailScreen}
+        options={({route}) => ({
+          title: route.params.name || NavigatorMap.ChannelDetail,
+        })}
+      />
+      <Stack.Screen
+        name={NavigatorMap.Events}
+        component={EventsScreen}
+        options={({route}) => ({
+          title: route.params.name || NavigatorMap.Events,
+        })}
+      />
+    </Stack.Navigator>
+  );
+};
 
-export default AppStackNavigator;
+export default observer(AppStackNavigator);

@@ -45,8 +45,6 @@ function App() {
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
-  console.log(store?.themeStore.theme);
-
   return (
     <IntlProvider
       locale={store?.languageStore.language || SupportedLanguages.EN}

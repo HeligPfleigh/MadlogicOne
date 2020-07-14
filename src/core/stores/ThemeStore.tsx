@@ -1,4 +1,5 @@
 import {observable, action, computed} from 'mobx';
+import {persist} from 'mobx-persist';
 
 import {SupportedThemes} from '../const';
 import light from '../themes/light';
@@ -10,8 +11,9 @@ const themeGetters: Record<string, any> = {
 };
 
 export default class ThemeStore {
+  @persist
   @observable
-  themeName: SupportedThemes = SupportedThemes.LIGHT;
+  themeName: SupportedThemes = SupportedThemes.DACULAR;
 
   @action
   setTheme(newTheme: SupportedThemes) {
