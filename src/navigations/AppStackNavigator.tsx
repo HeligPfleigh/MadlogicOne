@@ -13,7 +13,7 @@ import EventsScreen from '../screens/Events';
 const Stack = createStackNavigator<AppStackParamsList>();
 
 const AppStackNavigator = () => (
-  <Stack.Navigator>
+  <Stack.Navigator screenOptions={{headerBackTitleVisible: false}}>
     <Stack.Screen
       name={NavigatorMap.AppTab}
       component={AppTab}

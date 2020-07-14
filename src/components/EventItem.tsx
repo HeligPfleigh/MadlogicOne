@@ -7,6 +7,8 @@ import {
   Platform,
 } from 'react-native';
 import {Event, triggerEvent} from 'react-native-madlogic';
+import {Colors} from 'react-native-paper';
+import MaterialCommunityIcons from 'react-native-vector-icons/MaterialCommunityIcons';
 
 const styles = StyleSheet.create({
   item: {
@@ -45,7 +47,7 @@ export default function EventItem({name, contents}: Event) {
         source={{uri: image}}
         style={styles.imageContainer}
         imageStyle={styles.image}>
-        <Text>Play</Text>
+        <MaterialCommunityIcons size={60} name="play" color={Colors.white} />
       </ImageBackground>
       <Text style={styles.text}>{name}</Text>
     </TouchableOpacity>

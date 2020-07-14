@@ -14,7 +14,7 @@ const Stack = createStackNavigator<AuthStackParamsList>();
 const AuthStackNavigator = () => {
   const {formatMessage} = useIntl();
   return (
-    <Stack.Navigator>
+    <Stack.Navigator screenOptions={{headerBackTitleVisible: false}}>
       <Stack.Screen
         name={NavigatorMap.ClientCode}
         component={ClientCodeScreen}
