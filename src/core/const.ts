@@ -42,7 +42,7 @@ export enum SupportedLanguages {
 
 export enum SupportedThemes {
   LIGHT = 'light',
-  // DARK = 'dark',
+  DACULAR = 'darcula',
 }
 
 export enum TabTypes {

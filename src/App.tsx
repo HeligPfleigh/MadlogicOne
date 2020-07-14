@@ -35,7 +35,7 @@ function App() {
 
     // update layout direction
     I18nManager.forceRTL(isRTL);
-    store?.languageStore.changeLanguage(languageTag);
+    store?.languageStore.changeLanguage(languageTag as SupportedLanguages);
   };
 
   useEffect(() => {
@@ -44,6 +44,8 @@ function App() {
       RNLocalize.removeEventListener('change', handleLocalizationChange);
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
+
+  console.log(store?.themeStore.theme);
 
   return (
     <IntlProvider

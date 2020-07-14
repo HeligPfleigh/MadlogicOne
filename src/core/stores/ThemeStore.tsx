@@ -2,17 +2,19 @@ import {observable, action, computed} from 'mobx';
 
 import {SupportedThemes} from '../const';
 import light from '../themes/light';
+import darcula from '../themes/darcula';
 
 const themeGetters: Record<string, any> = {
   light,
+  darcula,
 };
 
 export default class ThemeStore {
   @observable
-  themeName: string = SupportedThemes.LIGHT;
+  themeName: SupportedThemes = SupportedThemes.LIGHT;
 
   @action
-  setTheme(newTheme: string) {
+  setTheme(newTheme: SupportedThemes) {
     this.themeName = newTheme;
   }
 

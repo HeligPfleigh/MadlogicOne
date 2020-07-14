@@ -7,8 +7,10 @@ import {close} from 'react-native-madlogic';
 
 import {useGlobalStyles} from '../core/hooks/useGlobalStyle';
 import {useStores} from '../core/hooks/useStores';
-import WifiOnlySetting from '../components/WifiOnlySetting';
-import MaxStorageSetting from '../components/MaxStorageSetting';
+import WifiOnlySetting from '../components/Setting/WifiOnly';
+import MaxStorageSetting from '../components/Setting/MaxStorage';
+import ThemeSetting from '../components/Setting/Theme';
+import LanguageSetting from '../components/Setting/Language';
 
 const styles = StyleSheet.create({
   item: {
@@ -38,12 +40,13 @@ const Setting = () => {
   };
   return (
     <View style={globalStyles.container}>
-      <View style={[styles.item, globalStyles.shadowBox]}>
-        <WifiOnlySetting />
-      </View>
-      <View style={[styles.item, globalStyles.shadowBox]}>
-        <MaxStorageSetting />
-      </View>
+      {[WifiOnlySetting, MaxStorageSetting, ThemeSetting, LanguageSetting].map(
+        (ItemSetting, idx) => (
+          <View style={[styles.item, globalStyles.shadowBox]} key={idx}>
+            <ItemSetting />
+          </View>
+        ),
+      )}
       <View style={styles.btnContainer}>
         <Button
           onPress={handleLogout}

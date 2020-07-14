@@ -11,10 +11,10 @@ const translationGetters: Record<string, any> = {
 
 export default class LanguageStore {
   @observable
-  language: string = SupportedLanguages.EN;
+  language: SupportedLanguages = SupportedLanguages.EN;
 
   @action
-  changeLanguage(newLanguage: string) {
+  changeLanguage(newLanguage: SupportedLanguages) {
     this.language = newLanguage;
   }
 
