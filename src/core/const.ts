@@ -21,6 +21,7 @@ export interface Tab {
   icon?: string;
   title?: string;
   style?: number;
+  url?: string;
 }
 
 export interface TernantSetting {
