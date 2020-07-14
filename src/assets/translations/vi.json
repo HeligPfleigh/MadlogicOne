@@ -19,7 +19,10 @@
   "channels.title": "TODO",
   "channels.subscribe": "TODO",
   "channels.unsubscribe": "TODO",
+  "channel.detail.error.loadData": "TODO",
+  "channels.error.loadData": "TODO",
   "programs.title": "TODO",
+  "programs.error.loadData": "TODO",
   "html.title": "TODO",
   "about.title": "TODO",
   "setting.title": "TODO",
@@ -29,5 +32,6 @@
   "news.watched": "TODO",
   "news.delete": "TODO",
   "news.share": "TODO",
+  "news.error.loadData": "TODO",
   "news.search": "TODO"
 }

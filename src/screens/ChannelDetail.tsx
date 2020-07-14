@@ -39,8 +39,9 @@ export default function ChannelDetail({route}: ChannelDetailScreenProps) {
       }
       setRefreshing(false);
     } catch (error) {
-      console.error(error);
+      store?.snackStore.setError('channel.detail.error.loadData');
     }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [route.params.segmentId]);
 
   useEffect(() => {

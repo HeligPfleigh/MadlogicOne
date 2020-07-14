@@ -10,12 +10,13 @@ import {
 import {useTheme, Text} from 'react-native-paper';
 import {getPrograms, Program} from 'react-native-madlogic';
 import {MaterialBottomTabScreenProps} from '@react-navigation/material-bottom-tabs';
+import {observer} from 'mobx-react-lite';
 
 import TabHeader from '../components/TabHeader';
 import {useGlobalStyles} from '../core/hooks/useGlobalStyle';
-import {observer} from 'mobx-react-lite';
 import {AppTabParamsList} from '../navigations/types';
 import NavigatorMap from '../navigations/NavigatorMap';
+import {useStores} from '../core/hooks/useStores';
 
 const styles = StyleSheet.create({
   item: {
@@ -48,14 +49,16 @@ function Programs({navigation}: ProgramsScreenProps) {
   const [programs, setPrograms] = useState<Program[]>([]);
   const theme = useTheme();
   const [globalStyles] = useGlobalStyles(theme);
+  const store = useStores();
 
   const loadData = useCallback(async () => {
     try {
       const list = await getPrograms();
       setPrograms(list);
     } catch (error) {
-      console.error(error);
+      store?.snackStore.setError('programs.error.loadData');
     }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   useEffect(() => {

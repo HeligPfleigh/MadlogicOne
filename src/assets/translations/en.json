@@ -19,7 +19,10 @@
   "channels.title": "Channels",
   "channels.subscribe": "Subscribe",
   "channels.unsubscribe": "Unsubscribe",
+  "channel.detail.error.loadData": "Fail to load channel detail",
+  "channels.error.loadData": "Fail to load channels data",
   "programs.title": "Programs",
+  "programs.error.loadData": "Fail to load programs",
   "html.title": "Others",
   "about.title": "About",
   "setting.title": "Setting",
@@ -29,5 +32,6 @@
   "news.watched": "Watched",
   "news.delete": "Delete",
   "news.share": "Share",
+  "news.error.loadData": "Fail to load news",
   "news.search": "Search"
 }

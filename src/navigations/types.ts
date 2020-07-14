@@ -1,3 +1,5 @@
+import {Event} from 'react-native-madlogic';
+
 import NavigatorMap from './NavigatorMap';
 import {RegistrationType} from '../core/const';
 

@@ -32,8 +32,9 @@ function News() {
       setBroadcasts(list);
       setRefreshing(false);
     } catch (error) {
-      console.error(error);
+      store?.snackStore.setError('news.error.loadData');
     }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [setBroadcasts]);
 
   useEffect(() => {

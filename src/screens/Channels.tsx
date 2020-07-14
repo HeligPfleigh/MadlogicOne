@@ -29,8 +29,9 @@ function Channels() {
       setChannels(list);
       setRefreshing(false);
     } catch (error) {
-      console.error(error);
+      store?.snackStore.setError('channels.error.loadData');
     }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [setChannels]);
 
   useEffect(() => {
