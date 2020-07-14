@@ -17,6 +17,8 @@
   "forgotPassword.submit": "Submit",
   "broadcasts.title": "Broadcasts",
   "channels.title": "Channels",
+  "channels.subscribe": "Subscribe",
+  "channels.unsubscribe": "Unsubscribe",
   "programs.title": "Programs",
   "html.title": "Others",
   "about.title": "About",
@@ -26,5 +28,6 @@
   "setting.logout": "Logout",
   "news.watched": "Watched",
   "news.delete": "Delete",
-  "news.share": "Share"
+  "news.share": "Share",
+  "news.search": "Search"
 }

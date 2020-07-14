@@ -11,6 +11,7 @@ import DefaultScreen from '../screens/Default';
 import {useStores} from '../core/hooks/useStores';
 import {Broadcast, Channel, Journey} from '../assets/images';
 import NewsScreen from '../screens/News';
+import ChannelsScreen from '../screens/Channels';
 
 const Tab = createMaterialBottomTabNavigator<AppTabParamsList>();
 
@@ -43,7 +44,7 @@ const tabConfigs: IConfig[] = [
     name: NavigatorMap.Channels,
     defaultLabelId: 'channels.title',
     defaultIcon: Channel,
-    component: DefaultScreen,
+    component: ChannelsScreen,
   },
   {
     id: 3,

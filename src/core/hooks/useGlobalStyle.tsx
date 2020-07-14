@@ -25,6 +25,9 @@ export const useGlobalStyles = (theme: Theme) => {
       height: null as any,
       resizeMode: 'contain',
     },
+    flatlistFooter: {
+      marginBottom: 100,
+    },
   });
 
   return [styles];

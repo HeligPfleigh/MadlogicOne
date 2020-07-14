@@ -1,12 +1,6 @@
 import React, {useCallback, useState, useEffect} from 'react';
 import {observer} from 'mobx-react-lite';
-import {
-  SafeAreaView,
-  FlatList,
-  RefreshControl,
-  View,
-  StyleSheet,
-} from 'react-native';
+import {SafeAreaView, FlatList, RefreshControl, View} from 'react-native';
 import {
   Broadcast,
   eventEmitter,
@@ -22,12 +16,6 @@ import {useGlobalStyles} from '../core/hooks/useGlobalStyle';
 import NewsItemFactory from '../components/NewsItem/NewsItemFactory';
 import {useStores} from '../core/hooks/useStores';
 import NavigatorMap from '../navigations/NavigatorMap';
-
-const styles = StyleSheet.create({
-  footer: {
-    marginBottom: 100,
-  },
-});
 
 function News() {
   const [broadcasts, setBroadcasts] = useState<Broadcast[]>([]);
@@ -111,7 +99,9 @@ function News() {
             />
           )}
           keyExtractor={({id}: Broadcast) => id}
-          ListFooterComponent={() => <View style={styles.footer} />}
+          ListFooterComponent={() => (
+            <View style={globalStyles.flatlistFooter} />
+          )}
         />
       </SafeAreaView>
     </View>

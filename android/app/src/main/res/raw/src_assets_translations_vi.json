@@ -17,6 +17,8 @@
   "forgotPassword.submit": "TODO",
   "broadcasts.title": "TODO",
   "channels.title": "TODO",
+  "channels.subscribe": "TODO",
+  "channels.unsubscribe": "TODO",
   "programs.title": "TODO",
   "html.title": "TODO",
   "about.title": "TODO",
@@ -26,5 +28,6 @@
   "setting.logout": "TODO",
   "news.watched": "TODO",
   "news.delete": "TODO",
-  "news.share": "TODO"
+  "news.share": "TODO",
+  "news.search": "TODO"
 }
