@@ -7,7 +7,7 @@ import {
   TouchableOpacity,
   View,
 } from 'react-native';
-import {useTheme, Text} from 'react-native-paper';
+import {useTheme, Text, Colors} from 'react-native-paper';
 import {getPrograms, Program} from 'react-native-madlogic';
 import {MaterialBottomTabScreenProps} from '@react-navigation/material-bottom-tabs';
 import {observer} from 'mobx-react-lite';
@@ -17,6 +17,7 @@ import {useGlobalStyles} from '../core/hooks/useGlobalStyle';
 import {AppTabParamsList} from '../navigations/types';
 import NavigatorMap from '../navigations/NavigatorMap';
 import {useStores} from '../core/hooks/useStores';
+import {event} from 'react-native-reanimated';
 
 const styles = StyleSheet.create({
   item: {
@@ -37,6 +38,23 @@ const styles = StyleSheet.create({
   text: {
     fontSize: 16,
     fontWeight: '400',
+  },
+  icon: {
+    position: 'absolute',
+    width: 30,
+    height: 20,
+  },
+  eventAmountUpper: {
+    justifyContent: 'center',
+    alignItems: 'center',
+    top: 24,
+    right: 24,
+    backgroundColor: Colors.white,
+  },
+  eventAmount: {
+    top: 20,
+    right: 20,
+    backgroundColor: Colors.indigo100,
   },
 });
 
@@ -75,6 +93,14 @@ function Programs({navigation}: ProgramsScreenProps) {
           style={styles.imageContainer}
           imageStyle={styles.image}
         />
+        {event.length && (
+          <>
+            <View style={[styles.icon, styles.eventAmount]} />
+            <View style={[styles.icon, styles.eventAmountUpper]}>
+              <Text>{events.length}</Text>
+            </View>
+          </>
+        )}
         <Text>{name}</Text>
       </TouchableOpacity>
     );

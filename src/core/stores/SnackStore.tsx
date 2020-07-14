@@ -16,6 +16,18 @@ export default class SnackStore {
   }
 
   @action
+  info(id: string) {
+    this.type = SnackType.INFO;
+    this.titleId = id;
+  }
+
+  @action
+  success(id: string) {
+    this.type = SnackType.SUCCESS;
+    this.titleId = id;
+  }
+
+  @action
   clearSnack = () => {
     this.titleId = '';
   };
