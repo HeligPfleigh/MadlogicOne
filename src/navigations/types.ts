@@ -27,6 +27,10 @@ export type AppStackParamsList = {
     segmentId: string;
     name: string;
   };
+  [NavigatorMap.Events]: {
+    name: string;
+    events: Event[];
+  };
 };
 
 export type AppTabParamsList = {

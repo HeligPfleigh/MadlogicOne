@@ -8,6 +8,7 @@ import LogoScreen from '../screens/Logo';
 import AboutScreen from '../screens/About';
 import SettingScreen from '../screens/Setting';
 import ChannelDetailScreen from '../screens/ChannelDetail';
+import EventsScreen from '../screens/Events';
 
 const Stack = createStackNavigator<AppStackParamsList>();
 
@@ -26,6 +27,13 @@ const AppStackNavigator = () => (
       component={ChannelDetailScreen}
       options={({route}) => ({
         title: route.params.name || NavigatorMap.ChannelDetail,
+      })}
+    />
+    <Stack.Screen
+      name={NavigatorMap.Events}
+      component={EventsScreen}
+      options={({route}) => ({
+        title: route.params.name || NavigatorMap.Events,
       })}
     />
   </Stack.Navigator>

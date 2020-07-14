@@ -7,12 +7,13 @@ import {Image, StyleSheet, ImageSourcePropType} from 'react-native';
 
 import {AppTabParamsList} from './types';
 import NavigatorMap from './NavigatorMap';
-import DefaultScreen from '../screens/Default';
+// import DefaultScreen from '../screens/Default';
 import {useStores} from '../core/hooks/useStores';
 import {Broadcast, Channel, Journey} from '../assets/images';
 import NewsScreen from '../screens/News';
 import ChannelsScreen from '../screens/Channels';
 import HTMLScreen from '../screens/HTML';
+import ProgramsScreen from '../screens/Programs';
 
 const Tab = createMaterialBottomTabNavigator<AppTabParamsList>();
 
@@ -52,7 +53,7 @@ const tabConfigs: IConfig[] = [
     name: NavigatorMap.Programs,
     defaultLabelId: 'programs.title',
     defaultIcon: Journey,
-    component: DefaultScreen,
+    component: ProgramsScreen,
   },
   {
     id: 4,
