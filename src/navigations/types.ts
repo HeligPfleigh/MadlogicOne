@@ -23,6 +23,10 @@ export type AppStackParamsList = {
   [NavigatorMap.Logo]: {
     uri: string;
   };
+  [NavigatorMap.ChannelDetail]: {
+    segmentId: string;
+    name: string;
+  };
 };
 
 export type AppTabParamsList = {

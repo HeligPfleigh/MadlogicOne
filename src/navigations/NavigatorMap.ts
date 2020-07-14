@@ -14,6 +14,7 @@ enum NavigatorMap {
   Programs = 'Programs',
   HTML = 'HTML',
   Logo = 'Logo',
+  ChannelDetail = 'Channel Detail',
 }
 
 export default NavigatorMap;

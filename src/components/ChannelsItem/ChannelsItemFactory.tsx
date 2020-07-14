@@ -1,9 +1,11 @@
 import React from 'react';
 import {Segment, joinSegment, leaveSegment} from 'react-native-madlogic';
+import {useNavigation} from '@react-navigation/native';
 
 import {ChannelsItemStyle} from '../../core/const';
 import Style2 from './Style2';
 import Style1 from './Style1';
+import NavigatorMap from '../../navigations/NavigatorMap';
 
 interface IChannelsItemFactory extends Segment {
   style?: number;
@@ -18,13 +20,19 @@ export interface IChannelsItem
 
 export default function ChannelItemFactory({
   style,
-  // id,
+  id,
   name,
   ...props
 }: IChannelsItemFactory) {
+  const navigation = useNavigation();
   const handlePressSubscribe = () => joinSegment(name);
   const handlePressUnsubscribe = () => leaveSegment(name);
-  const handlePressSegment = () => {};
+  const handlePressSegment = () => {
+    navigation.navigate(NavigatorMap.ChannelDetail as any, {
+      segmentId: id,
+      name,
+    });
+  };
 
   let ChannelsItem;
   switch (style) {
