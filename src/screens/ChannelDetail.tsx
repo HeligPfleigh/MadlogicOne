@@ -1,5 +1,5 @@
 import React, {useEffect, useState, useCallback} from 'react';
-import {FlatList, StyleSheet, View} from 'react-native';
+import {FlatList, View, RefreshControl} from 'react-native';
 import {
   Broadcast,
   getBroadcastsOfChannel,
@@ -7,18 +7,13 @@ import {
   MADLOGIC_SDK_EVENTS,
 } from 'react-native-madlogic';
 import {StackScreenProps} from '@react-navigation/stack';
+import {useTheme} from 'react-native-paper';
 
 import {AppStackParamsList} from '../navigations/types';
 import NavigatorMap from '../navigations/NavigatorMap';
 import NewsItemFactory from '../components/NewsItem/NewsItemFactory';
 import {useStores} from '../core/hooks/useStores';
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    paddingHorizontal: 16,
-  },
-});
+import {useGlobalStyles} from '../core/hooks/useGlobalStyle';
 
 type ChannelDetailScreenProps = StackScreenProps<
   AppStackParamsList,
@@ -28,16 +23,21 @@ type ChannelDetailScreenProps = StackScreenProps<
 export default function ChannelDetail({route}: ChannelDetailScreenProps) {
   const [broadcasts, setBroadcasts] = useState<Broadcast[]>([]);
   const store = useStores();
+  const theme = useTheme();
+  const [globalStyles] = useGlobalStyles(theme);
+  const [refreshing, setRefreshing] = useState<boolean>(false);
 
   const loadData = useCallback(async () => {
     try {
       const id = route.params.segmentId;
+      setRefreshing(true);
       if (id) {
         const list = await getBroadcastsOfChannel(id);
         setBroadcasts(list);
       } else {
         setBroadcasts([]);
       }
+      setRefreshing(false);
     } catch (error) {
       console.error(error);
     }
@@ -59,9 +59,12 @@ export default function ChannelDetail({route}: ChannelDetailScreenProps) {
   }, [loadData]);
 
   return (
-    <View style={styles.container}>
+    <View style={globalStyles.container}>
       <FlatList
         data={broadcasts}
+        refreshControl={
+          <RefreshControl onRefresh={loadData} refreshing={refreshing} />
+        }
         renderItem={({item}) => (
           <NewsItemFactory
             style={store?.ternantStore.tabs[NavigatorMap.Broadcasts].style}
@@ -69,6 +72,7 @@ export default function ChannelDetail({route}: ChannelDetailScreenProps) {
           />
         )}
         keyExtractor={({id}: Broadcast) => id}
+        ListFooterComponent={() => <View style={globalStyles.flatlistFooter} />}
       />
     </View>
   );
