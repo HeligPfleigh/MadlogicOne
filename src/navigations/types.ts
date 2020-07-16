@@ -33,6 +33,7 @@ export type AppStackParamsList = {
     name: string;
     events: Event[];
   };
+  [NavigatorMap.QRScanner]: undefined;
 };
 
 export type AppTabParamsList = {

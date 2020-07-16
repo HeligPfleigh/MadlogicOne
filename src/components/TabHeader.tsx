@@ -71,9 +71,23 @@ function TabHeader() {
   const handleNavigateToSetting = () =>
     navigation.navigate(NavigatorMap.Setting);
 
+  const QR_FEATURE = 'qr';
+
+  const isSupportScanQRCode = store?.ternantStore.features?.find(
+    (feature: string) => feature === QR_FEATURE,
+  );
+
+  const handlePressScan = () => navigation.navigate(NavigatorMap.QRScanner);
+
   return (
     <View style={styles.root}>
-      <View style={styles.noIcon} />
+      {isSupportScanQRCode ? (
+        <TouchableOpacity style={styles.noIcon} onPress={handlePressScan}>
+          <MaterialCommunityIcons name="qrcode-scan" size={20} color="red" />
+        </TouchableOpacity>
+      ) : (
+        <View style={styles.noIcon} />
+      )}
       <View style={styles.title}>
         <TouchableOpacity
           style={styles.imageContainer}

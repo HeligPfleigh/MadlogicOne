@@ -16,6 +16,7 @@ enum NavigatorMap {
   Logo = 'Logo',
   ChannelDetail = 'Channel Detail',
   Events = 'Events',
+  QRScanner = 'QR Scanner',
 }
 
 export default NavigatorMap;

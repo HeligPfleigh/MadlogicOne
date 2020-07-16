@@ -11,6 +11,7 @@ import AboutScreen from '../screens/About';
 import SettingScreen from '../screens/Setting';
 import ChannelDetailScreen from '../screens/ChannelDetail';
 import EventsScreen from '../screens/Events';
+import QRScannerScreen from '../screens/QRScanner';
 
 const Stack = createStackNavigator<AppStackParamsList>();
 
@@ -45,6 +46,7 @@ const AppStackNavigator = () => {
           title: route.params.name || NavigatorMap.Events,
         })}
       />
+      <Stack.Screen name={NavigatorMap.QRScanner} component={QRScannerScreen} />
     </Stack.Navigator>
   );
 };
