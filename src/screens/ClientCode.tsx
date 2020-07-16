@@ -92,8 +92,10 @@ function ClientCode({navigation}: ClientCodeScreenNavigationProps) {
     handleSubmit,
     handleChange,
     setFieldValue,
+    setFieldTouched,
     values: {clientCode, privacy},
     errors,
+    touched,
   } = useFormik<ClientCodeFormValue>({
     initialValues: {
       clientCode: '',
@@ -110,6 +112,11 @@ function ClientCode({navigation}: ClientCodeScreenNavigationProps) {
 
   const handlePressPolicy = () => navigation.navigate(NavigatorMap.Privacy);
 
+  const handleChangeText = (field: string) => (value: string) => {
+    setFieldTouched(field, true);
+    (handleChange(field) || noop)(value);
+  };
+
   return (
     <View style={globalStyles.container}>
       <View style={styles.imageContainer}>
@@ -121,9 +128,15 @@ function ClientCode({navigation}: ClientCodeScreenNavigationProps) {
           style={styles.input}
           label={formatMessage({id: 'clientcode.title'})}
           value={clientCode}
-          onChangeText={handleChange('clientCode') || noop}
+          onChangeText={handleChangeText('clientCode')}
           mode="outlined"
+          error={touched.clientCode && Boolean(errors.clientCode)}
         />
+        {touched.clientCode && errors.clientCode && (
+          <Text style={globalStyles.formError}>
+            {formatMessage({id: errors.clientCode})}
+          </Text>
+        )}
         <View style={styles.checkbox}>
           <Checkbox.Android
             status={privacy ? 'checked' : 'unchecked'}

@@ -66,6 +66,8 @@ function LoginByAccount() {
     handleChange,
     values: {username, password},
     errors,
+    touched,
+    setFieldTouched,
   } = useFormik<AccountFormValue>({
     initialValues: {
       username: '',
@@ -80,6 +82,11 @@ function LoginByAccount() {
   const handlePressForgotPwd = () =>
     navigation.navigate(NavigatorMap.ForgotPassword);
 
+  const handleChangeText = (field: string) => (value: string) => {
+    setFieldTouched(field, true);
+    (handleChange(field) || noop)(value);
+  };
+
   return (
     <KeyboardAvoidingView style={globalStyles.container}>
       <View style={styles.imageContainer}>
@@ -93,16 +100,18 @@ function LoginByAccount() {
           style={styles.input}
           label={formatMessage({id: 'login.username'})}
           value={username}
-          onChangeText={handleChange('username') || noop}
+          onChangeText={handleChangeText('username')}
           mode="outlined"
+          error={touched.username && Boolean(errors.username)}
         />
         <TextInput
           style={styles.input}
           label={formatMessage({id: 'login.password'})}
           value={password}
-          onChangeText={handleChange('password') || noop}
+          onChangeText={handleChangeText('password')}
           mode="outlined"
           secureTextEntry
+          error={touched.password && Boolean(errors.password)}
         />
       </View>
       <View style={styles.btnContainer}>

@@ -1,6 +1,6 @@
 import React, {useEffect, useState} from 'react';
 import {View, StyleSheet, Image} from 'react-native';
-import {TextInput, Button, Colors, useTheme} from 'react-native-paper';
+import {TextInput, Button, Colors, useTheme, Text} from 'react-native-paper';
 import {useIntl} from 'react-intl';
 import {useFormik} from 'formik';
 import noop from 'lodash/noop';
@@ -58,6 +58,8 @@ function LoginByEmail() {
     handleChange,
     values: {email},
     errors,
+    setFieldTouched,
+    touched,
   } = useFormik<EmailFormValue>({
     initialValues: {
       email: '',
@@ -69,7 +71,6 @@ function LoginByEmail() {
     onSubmit: () => {
       registerWithEmail(email);
       setDisable(true);
-      // store?.authorizationStore.authorize();
     },
   });
 
@@ -87,6 +88,11 @@ function LoginByEmail() {
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
+  const handleChangeText = (field: string) => (value: string) => {
+    setFieldTouched(field, true);
+    (handleChange(field) || noop)(value);
+  };
+
   return (
     <View style={globalStyles.container}>
       <View style={styles.imageContainer}>
@@ -100,9 +106,15 @@ function LoginByEmail() {
           style={styles.input}
           label={formatMessage({id: 'login.email'})}
           value={email}
-          onChangeText={handleChange('email') || noop}
+          onChangeText={handleChangeText('email')}
           mode="outlined"
+          error={touched.email && Boolean(errors.email)}
         />
+        {touched.email && errors.email && (
+          <Text style={globalStyles.formError}>
+            {formatMessage({id: errors.email})}
+          </Text>
+        )}
       </View>
       <View style={styles.btnContainer}>
         <Button

@@ -28,6 +28,10 @@ export const useGlobalStyles = (theme: Theme) => {
     flatlistFooter: {
       marginBottom: 100,
     },
+    formError: {
+      color: Colors.red900,
+      fontSize: 12,
+    },
   });
 
   return [styles];
