@@ -1,9 +1,8 @@
 import React, {useEffect, useState} from 'react';
 import {View, StyleSheet, Image} from 'react-native';
-import {TextInput, Button, Colors, useTheme, Text} from 'react-native-paper';
+import {Button, Colors, useTheme} from 'react-native-paper';
 import {useIntl} from 'react-intl';
-import {useFormik} from 'formik';
-import noop from 'lodash/noop';
+import {Formik} from 'formik';
 import * as Yup from 'yup';
 import {observer} from 'mobx-react-lite';
 import {
@@ -14,6 +13,7 @@ import {
 
 import {useStores} from '../../core/hooks/useStores';
 import {useGlobalStyles} from '../../core/hooks/useGlobalStyle';
+import TextInputFormik from '../Form/TextInput';
 
 const styles = StyleSheet.create({
   imageContainer: {
@@ -53,27 +53,6 @@ function LoginByEmail() {
   const [globalStyles] = useGlobalStyles(theme);
   const [disableBtn, setDisable] = useState(false);
 
-  const {
-    handleSubmit,
-    handleChange,
-    values: {email},
-    errors,
-    setFieldTouched,
-    touched,
-  } = useFormik<EmailFormValue>({
-    initialValues: {
-      email: '',
-    },
-    initialErrors: {
-      email: 'login.errors.email.required',
-    },
-    validationSchema: EmailSchema,
-    onSubmit: () => {
-      registerWithEmail(email);
-      setDisable(true);
-    },
-  });
-
   useEffect(() => {
     const registerError = eventEmitter.addListener(
       MADLOGIC_SDK_EVENTS.EVENT_REGISTER_ERROR,
@@ -88,9 +67,9 @@ function LoginByEmail() {
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
-  const handleChangeText = (field: string) => (value: string) => {
-    setFieldTouched(field, true);
-    (handleChange(field) || noop)(value);
+  const handleRegisterByEmail = ({email}: EmailFormValue) => {
+    registerWithEmail(email);
+    setDisable(true);
   };
 
   return (
@@ -101,32 +80,36 @@ function LoginByEmail() {
           source={{uri: store?.ternantStore.logo?.logo}}
         />
       </View>
-      <View style={styles.content}>
-        <TextInput
-          style={styles.input}
-          label={formatMessage({id: 'login.email'})}
-          value={email}
-          onChangeText={handleChangeText('email')}
-          mode="outlined"
-          error={touched.email && Boolean(errors.email)}
-        />
-        {touched.email && errors.email && (
-          <Text style={globalStyles.formError}>
-            {formatMessage({id: errors.email})}
-          </Text>
+      <Formik
+        initialValues={{
+          email: '',
+        }}
+        validationSchema={EmailSchema}
+        onSubmit={handleRegisterByEmail}>
+        {({handleSubmit, isValid}) => (
+          <>
+            <View style={styles.content}>
+              <TextInputFormik
+                name="email"
+                style={styles.input}
+                label={formatMessage({id: 'login.email'})}
+                mode="outlined"
+              />
+            </View>
+            <View style={styles.btnContainer}>
+              <Button
+                onPress={handleSubmit}
+                mode="contained"
+                disabled={!isValid || disableBtn}
+                uppercase={false}
+                color={Colors.red500}
+                style={styles.login}>
+                {formatMessage({id: 'login.login'})}
+              </Button>
+            </View>
+          </>
         )}
-      </View>
-      <View style={styles.btnContainer}>
-        <Button
-          onPress={handleSubmit}
-          mode="contained"
-          disabled={Boolean(errors.email) || disableBtn}
-          uppercase={false}
-          color={Colors.red500}
-          style={styles.login}>
-          {formatMessage({id: 'login.login'})}
-        </Button>
-      </View>
+      </Formik>
     </View>
   );
 }

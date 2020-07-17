@@ -13,7 +13,7 @@ const themeGetters: Record<string, any> = {
 export default class ThemeStore {
   @persist
   @observable
-  themeName: SupportedThemes = SupportedThemes.DACULAR;
+  themeName: SupportedThemes = SupportedThemes.LIGHT;
 
   @action
   setTheme(newTheme: SupportedThemes) {

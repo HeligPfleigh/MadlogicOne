@@ -20,6 +20,8 @@
   "privacy.title": "TODO",
   "forgotPassword.title": "TODO",
   "forgotPassword.submit": "TODO",
+  "forgotPassword.errors.email.required": "TODO",
+  "forgotPassword.errors.email.invalid": "TODO",
   "broadcasts.title": "TODO",
   "channels.title": "TODO",
   "channels.subscribe": "TODO",

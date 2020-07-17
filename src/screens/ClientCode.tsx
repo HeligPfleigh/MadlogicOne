@@ -1,17 +1,9 @@
 import React from 'react';
 import {View, StyleSheet, TouchableOpacity} from 'react-native';
-import {
-  TextInput,
-  Button,
-  Text,
-  Checkbox,
-  useTheme,
-  Colors,
-} from 'react-native-paper';
+import {Button, Text, useTheme, Colors} from 'react-native-paper';
 import {useIntl} from 'react-intl';
 import {StackScreenProps} from '@react-navigation/stack';
-import {useFormik} from 'formik';
-import noop from 'lodash/noop';
+import {Formik} from 'formik';
 import * as Yup from 'yup';
 import {observer} from 'mobx-react-lite';
 
@@ -22,6 +14,8 @@ import {RegistrationType} from '../core/const';
 import {getTernantSetting} from '../core/api';
 import {useStores} from '../core/hooks/useStores';
 import {useGlobalStyles} from '../core/hooks/useGlobalStyle';
+import TextInputFormik from '../components/Form/TextInput';
+import CheckboxFormik from '../components/Form/Checkbox';
 
 const styles = StyleSheet.create({
   imageContainer: {
@@ -88,79 +82,54 @@ function ClientCode({navigation}: ClientCodeScreenNavigationProps) {
     }
   };
 
-  const {
-    handleSubmit,
-    handleChange,
-    setFieldValue,
-    setFieldTouched,
-    values: {clientCode, privacy},
-    errors,
-    touched,
-  } = useFormik<ClientCodeFormValue>({
-    initialValues: {
-      clientCode: '',
-      privacy: false,
-    },
-    initialErrors: {
-      clientCode: 'clientcode.errors.code.required',
-    },
-    validationSchema: ClientCodeSchema,
-    onSubmit: handleSubmitClientCode,
-  });
-
-  const toggleAgreeWithPolicy = () => setFieldValue('privacy', !privacy);
-
   const handlePressPolicy = () => navigation.navigate(NavigatorMap.Privacy);
-
-  const handleChangeText = (field: string) => (value: string) => {
-    setFieldTouched(field, true);
-    (handleChange(field) || noop)(value);
-  };
 
   return (
     <View style={globalStyles.container}>
       <View style={styles.imageContainer}>
         <Madlogic width={500} height={100} />
       </View>
-      <View style={styles.content}>
-        <Text>{formatMessage({id: 'clientcode.instruction'})}</Text>
-        <TextInput
-          style={styles.input}
-          label={formatMessage({id: 'clientcode.title'})}
-          value={clientCode}
-          onChangeText={handleChangeText('clientCode')}
-          mode="outlined"
-          error={touched.clientCode && Boolean(errors.clientCode)}
-        />
-        {touched.clientCode && errors.clientCode && (
-          <Text style={globalStyles.formError}>
-            {formatMessage({id: errors.clientCode})}
-          </Text>
+      <Formik
+        initialValues={{
+          clientCode: '',
+          privacy: false,
+        }}
+        validationSchema={ClientCodeSchema}
+        onSubmit={handleSubmitClientCode}>
+        {({handleSubmit, isValid}) => (
+          <>
+            <View style={styles.content}>
+              <Text>{formatMessage({id: 'clientcode.instruction'})}</Text>
+              <TextInputFormik
+                name="clientCode"
+                style={styles.input}
+                label={formatMessage({id: 'clientcode.title'})}
+                mode="outlined"
+              />
+              <View style={styles.checkbox}>
+                <CheckboxFormik name="privacy" />
+                <Text>{formatMessage({id: 'clientcode.agree'})}</Text>
+                <TouchableOpacity onPress={handlePressPolicy}>
+                  <Text style={styles.privacyTxt}>
+                    {formatMessage({id: 'clientcode.policy'})}
+                  </Text>
+                </TouchableOpacity>
+              </View>
+            </View>
+            <View style={styles.btnContainer}>
+              <Button
+                onPress={handleSubmit}
+                mode="contained"
+                disabled={!isValid}
+                uppercase={false}
+                color={Colors.red500}
+                style={styles.next}>
+                {formatMessage({id: 'clientcode.next'})}
+              </Button>
+            </View>
+          </>
         )}
-        <View style={styles.checkbox}>
-          <Checkbox.Android
-            status={privacy ? 'checked' : 'unchecked'}
-            onPress={toggleAgreeWithPolicy}
-          />
-          <Text>{formatMessage({id: 'clientcode.agree'})}</Text>
-          <TouchableOpacity onPress={handlePressPolicy}>
-            <Text style={styles.privacyTxt}>
-              {formatMessage({id: 'clientcode.policy'})}
-            </Text>
-          </TouchableOpacity>
-        </View>
-      </View>
-      <View style={styles.btnContainer}>
-        <Button
-          onPress={handleSubmit}
-          mode="contained"
-          disabled={!privacy || Boolean(errors.clientCode)}
-          uppercase={false}
-          color={Colors.red500}
-          style={styles.next}>
-          {formatMessage({id: 'clientcode.next'})}
-        </Button>
-      </View>
+      </Formik>
     </View>
   );
 }

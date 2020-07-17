@@ -31,6 +31,7 @@ export const useGlobalStyles = (theme: Theme) => {
     formError: {
       color: Colors.red900,
       fontSize: 12,
+      marginBottom: 8,
     },
   });
 

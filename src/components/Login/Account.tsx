@@ -7,10 +7,9 @@ import {
   Text,
   Image,
 } from 'react-native';
-import {TextInput, Button, Colors, useTheme} from 'react-native-paper';
+import {Button, Colors, useTheme} from 'react-native-paper';
 import {useIntl} from 'react-intl';
-import {useFormik} from 'formik';
-import noop from 'lodash/noop';
+import {Formik} from 'formik';
 import * as Yup from 'yup';
 import {useNavigation} from '@react-navigation/native';
 import {observer} from 'mobx-react-lite';
@@ -18,6 +17,8 @@ import {observer} from 'mobx-react-lite';
 import NavigatorMap from '../../navigations/NavigatorMap';
 import {useStores} from '../../core/hooks/useStores';
 import {useGlobalStyles} from '../../core/hooks/useGlobalStyle';
+import TextInputFormik from '../Form/TextInput';
+import {registerWithAccount} from 'react-native-madlogic';
 
 const styles = StyleSheet.create({
   imageContainer: {
@@ -61,30 +62,11 @@ function LoginByAccount() {
   const store = useStores();
   const [globalStyles] = useGlobalStyles(theme);
 
-  const {
-    handleSubmit,
-    handleChange,
-    values: {username, password},
-    errors,
-    touched,
-    setFieldTouched,
-  } = useFormik<AccountFormValue>({
-    initialValues: {
-      username: '',
-      password: '',
-    },
-    validationSchema: AccountSchema,
-    onSubmit: () => {
-      store?.authorizationStore.authorize();
-    },
-  });
-
   const handlePressForgotPwd = () =>
     navigation.navigate(NavigatorMap.ForgotPassword);
 
-  const handleChangeText = (field: string) => (value: string) => {
-    setFieldTouched(field, true);
-    (handleChange(field) || noop)(value);
+  const handleRegisterByAccount = ({username, password}: AccountFormValue) => {
+    registerWithAccount(username, password);
   };
 
   return (
@@ -95,41 +77,49 @@ function LoginByAccount() {
           source={{uri: store?.ternantStore.logo?.logo}}
         />
       </View>
-      <View style={styles.content}>
-        <TextInput
-          style={styles.input}
-          label={formatMessage({id: 'login.username'})}
-          value={username}
-          onChangeText={handleChangeText('username')}
-          mode="outlined"
-          error={touched.username && Boolean(errors.username)}
-        />
-        <TextInput
-          style={styles.input}
-          label={formatMessage({id: 'login.password'})}
-          value={password}
-          onChangeText={handleChangeText('password')}
-          mode="outlined"
-          secureTextEntry
-          error={touched.password && Boolean(errors.password)}
-        />
-      </View>
-      <View style={styles.btnContainer}>
-        <Button
-          onPress={handleSubmit}
-          mode="contained"
-          disabled={Boolean(errors.password) || Boolean(errors.username)}
-          uppercase={false}
-          color={Colors.red500}
-          style={styles.login}>
-          {formatMessage({id: 'login.login'})}
-        </Button>
-        <TouchableOpacity onPress={handlePressForgotPwd}>
-          <Text style={styles.forgotTxt}>
-            {formatMessage({id: 'login.forgotPassword'})}
-          </Text>
-        </TouchableOpacity>
-      </View>
+      <Formik
+        initialValues={{
+          username: '',
+          password: '',
+        }}
+        validationSchema={AccountSchema}
+        onSubmit={handleRegisterByAccount}>
+        {({handleSubmit, isValid}) => (
+          <>
+            <View style={styles.content}>
+              <TextInputFormik
+                style={styles.input}
+                label={formatMessage({id: 'login.username'})}
+                mode="outlined"
+                name="username"
+              />
+              <TextInputFormik
+                style={styles.input}
+                label={formatMessage({id: 'login.password'})}
+                mode="outlined"
+                name="password"
+                secureTextEntry
+              />
+            </View>
+            <View style={styles.btnContainer}>
+              <Button
+                onPress={handleSubmit}
+                mode="contained"
+                disabled={!isValid}
+                uppercase={false}
+                color={Colors.red500}
+                style={styles.login}>
+                {formatMessage({id: 'login.login'})}
+              </Button>
+              <TouchableOpacity onPress={handlePressForgotPwd}>
+                <Text style={styles.forgotTxt}>
+                  {formatMessage({id: 'login.forgotPassword'})}
+                </Text>
+              </TouchableOpacity>
+            </View>
+          </>
+        )}
+      </Formik>
     </KeyboardAvoidingView>
   );
 }
