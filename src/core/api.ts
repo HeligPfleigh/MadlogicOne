@@ -1,7 +1,8 @@
 import axios from 'axios';
 
 import {TernantSetting} from './const';
-import mockTernant from '../configs/mockTernant.json';
+import mockTernant from '../mocks/mockTernant.json';
+import mockTernantAccount from '../mocks/mockTernant2.json';
 
 const API_SERVER = 'https://API_SERVER';
 
@@ -11,7 +12,14 @@ const instance = axios.create({
 });
 
 export const getTernantSetting = (
-  _clientCode: string,
-): Promise<TernantSetting> => Promise.resolve(mockTernant as any);
+  clientCode: string,
+): Promise<TernantSetting> => {
+  switch (clientCode) {
+    case '1':
+      return Promise.resolve(mockTernantAccount as any);
+    default:
+      return Promise.resolve(mockTernant as any);
+  }
+};
 
 export default instance;

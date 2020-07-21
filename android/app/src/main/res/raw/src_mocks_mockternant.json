@@ -7,8 +7,8 @@
   "color": "#FF0000",
   "about": "<h1>Madlogic</h1>",
   "registration": {
-    "registrationType": "ACCOUNT",
-    "secret": "c716ec680dd74c1eb89e08c323dde46d",
+    "registrationType": "EMAIL",
+    "secret": "c716ec680dd74c1eb89e08c323dde41d",
     "baseUrl": "https://portal-dev.madlogic.nl:20000",
     "callbackPrefix": "https://sqoony.com"
   },

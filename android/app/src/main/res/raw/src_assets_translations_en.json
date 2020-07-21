@@ -20,6 +20,8 @@
   "privacy.title": "Privacy",
   "forgotPassword.title": "Forgot password",
   "forgotPassword.submit": "Submit",
+  "forgotPassword.errors.email.required": "Email is required",
+  "forgotPassword.errors.email.invalid": "Invalid email",
   "broadcasts.title": "Broadcasts",
   "channels.title": "Channels",
   "channels.subscribe": "Subscribe",
