@@ -2,12 +2,11 @@ import React from 'react';
 import {
   TouchableOpacity,
   ImageBackground,
-  Text,
   StyleSheet,
   Platform,
 } from 'react-native';
 import {Event, triggerEvent} from 'react-native-madlogic';
-import {Colors} from 'react-native-paper';
+import {Colors, Text} from 'react-native-paper';
 import MaterialCommunityIcons from 'react-native-vector-icons/MaterialCommunityIcons';
 
 const styles = StyleSheet.create({

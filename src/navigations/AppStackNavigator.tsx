@@ -23,6 +23,7 @@ const AppStackNavigator = () => {
         headerBackTitleVisible: false,
         headerStyle: {backgroundColor: theme.colors.background},
         headerTitleStyle: {color: theme.colors.text},
+        headerTintColor: theme.colors.text,
       }}>
       <Stack.Screen
         name={NavigatorMap.AppTab}
