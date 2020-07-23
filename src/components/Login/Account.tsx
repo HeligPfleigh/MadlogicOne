@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useState, useEffect} from 'react';
 import {
   View,
   StyleSheet,
@@ -18,7 +18,11 @@ import NavigatorMap from '../../navigations/NavigatorMap';
 import {useStores} from '../../core/hooks/useStores';
 import {useGlobalStyles} from '../../core/hooks/useGlobalStyle';
 import TextInputFormik from '../Form/TextInput';
-import {registerWithAccount} from 'react-native-madlogic';
+import {
+  registerWithAccount,
+  eventEmitter,
+  MADLOGIC_SDK_EVENTS,
+} from 'react-native-madlogic';
 
 const styles = StyleSheet.create({
   imageContainer: {
@@ -61,13 +65,29 @@ function LoginByAccount() {
   const navigation = useNavigation();
   const store = useStores();
   const [globalStyles] = useGlobalStyles(theme);
+  const [disableBtn, setDisable] = useState(false);
 
   const handlePressForgotPwd = () =>
     navigation.navigate(NavigatorMap.ForgotPassword);
 
   const handleRegisterByAccount = ({username, password}: AccountFormValue) => {
     registerWithAccount(username, password);
+    setDisable(true);
   };
+
+  useEffect(() => {
+    const registerError = eventEmitter.addListener(
+      MADLOGIC_SDK_EVENTS.EVENT_REGISTER_ERROR,
+      () => {
+        store?.snackStore.setError('login.fail');
+        setDisable(false);
+      },
+    );
+    return () => {
+      registerError.remove();
+    };
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
 
   return (
     <KeyboardAvoidingView style={globalStyles.container}>
@@ -92,6 +112,7 @@ function LoginByAccount() {
                 label={formatMessage({id: 'login.username'})}
                 mode="outlined"
                 name="username"
+                autoCapitalize="none"
               />
               <TextInputFormik
                 style={styles.input}
@@ -105,7 +126,7 @@ function LoginByAccount() {
               <Button
                 onPress={handleSubmit}
                 mode="contained"
-                disabled={!isValid}
+                disabled={!isValid || disableBtn}
                 uppercase={false}
                 color={Colors.red500}
                 style={styles.login}>

@@ -18,6 +18,7 @@ import {AppTabParamsList} from '../navigations/types';
 import NavigatorMap from '../navigations/NavigatorMap';
 import {useStores} from '../core/hooks/useStores';
 import {event} from 'react-native-reanimated';
+import {CommonActions} from '@react-navigation/native';
 
 const styles = StyleSheet.create({
   item: {
@@ -88,7 +89,15 @@ function Programs({navigation}: ProgramsScreenProps) {
 
   const _renderItem = ({name, thumbnail, events}: Program) => {
     const handlePressJourney = () =>
-      navigation.navigate(NavigatorMap.Events as any, {events, name});
+      navigation.dispatch(
+        CommonActions.navigate({
+          name: NavigatorMap.Events,
+          params: {
+            events,
+            name,
+          },
+        }),
+      );
     return (
       <TouchableOpacity style={styles.item} onPress={handlePressJourney}>
         <ImageBackground

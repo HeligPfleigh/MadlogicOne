@@ -12,6 +12,7 @@
   "login.login": "TODO",
   "login.username": "TODO",
   "login.password": "TODO",
+  "login.fail": "TODO",
   "login.forgotPassword": "TODO",
   "login.errors.email.invalid": "TODO",
   "login.errors.email.required": "TODO",

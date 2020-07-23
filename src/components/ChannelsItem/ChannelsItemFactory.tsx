@@ -27,12 +27,11 @@ export default function ChannelItemFactory({
   const navigation = useNavigation();
   const handlePressSubscribe = () => joinSegment(name);
   const handlePressUnsubscribe = () => leaveSegment(name);
-  const handlePressSegment = () => {
-    navigation.navigate(NavigatorMap.ChannelDetail as any, {
+  const handlePressSegment = () =>
+    navigation.navigate(NavigatorMap.ChannelDetail, {
       segmentId: id,
       name,
     });
-  };
 
   let ChannelsItem;
   switch (style) {

@@ -12,6 +12,7 @@
   "login.login": "Login",
   "login.username": "Username",
   "login.password": "Password",
+  "login.fail": "Your credential is incorrect.",
   "login.forgotPassword": "Forgot your password",
   "login.errors.email.invalid": "Invalid email",
   "login.errors.email.required": "Email is required",
