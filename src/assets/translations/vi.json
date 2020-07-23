@@ -46,5 +46,6 @@
   "news.delete": "TODO",
   "news.share": "TODO",
   "news.error.loadData": "TODO",
-  "news.search": "TODO"
+  "news.search": "TODO",
+  "qrcode.instruction": "TODO"
 }

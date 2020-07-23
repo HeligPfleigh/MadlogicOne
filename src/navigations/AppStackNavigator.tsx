@@ -47,7 +47,11 @@ const AppStackNavigator = () => {
           title: route.params.name || NavigatorMap.Events,
         })}
       />
-      <Stack.Screen name={NavigatorMap.QRScanner} component={QRScannerScreen} />
+      <Stack.Screen
+        options={{header: () => null}}
+        name={NavigatorMap.QRScanner}
+        component={QRScannerScreen}
+      />
     </Stack.Navigator>
   );
 };

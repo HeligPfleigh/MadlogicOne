@@ -5,9 +5,13 @@ platform :ios, '10.0'
 
 target 'MadlogicOne' do
   use_frameworks!
+
   config = use_native_modules!
 
   use_react_native!(:path => config["reactNativePath"])
+
+  permissions_path = '../node_modules/react-native-permissions/ios'
+  pod 'Permission-Camera', :path => "#{permissions_path}/Camera.podspec"
 
   target 'MadlogicOneTests' do
     inherit! :complete
@@ -16,7 +20,17 @@ target 'MadlogicOne' do
 
   # Without flipper
   pre_install do |installer|
-    Pod::Installer::Xcode::TargetValidator.send(:define_method, :verify_no_static_framework_transitive_dependencies) {}
+    def installer.verify_no_static_framework_transitive_dependencies; end
+    # Convert all permission pods into static libraries
+    installer.pod_targets.each do |pod|
+      if pod.name.eql?('RNPermissions') || pod.name.start_with?('Permission-')
+        def pod.build_type;
+          # Uncomment one line depending on your CocoaPods version
+          Pod::BuildType.static_library # >= 1.9
+          # Pod::Target::BuildType.static_library # < 1.9
+        end
+      end
+    end
   end
 
   post_install do |installer|
