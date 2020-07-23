@@ -46,5 +46,6 @@
   "news.delete": "Delete",
   "news.share": "Share",
   "news.error.loadData": "Fail to load news",
-  "news.search": "Search"
+  "news.search": "Search",
+  "qrcode.instruction": "Center you camera to scan QR code"
 }

@@ -25,6 +25,8 @@ PODS:
     - MagicalRecord/Core (= 2.3.2)
   - MagicalRecord/Core (2.3.2)
   - ObjectMapper (3.3.0)
+  - Permission-Camera (2.1.5):
+    - RNPermissions
   - RCTRequired (0.63.0)
   - RCTTypeSafety (0.63.0):
     - FBLazyVector (= 0.63.0)
@@ -191,6 +193,14 @@ PODS:
     - React-cxxreact (= 0.63.0)
     - React-jsi (= 0.63.0)
   - React-jsinspector (0.63.0)
+  - react-native-camera (3.33.0):
+    - React
+    - react-native-camera/RCT (= 3.33.0)
+    - react-native-camera/RN (= 3.33.0)
+  - react-native-camera/RCT (3.33.0):
+    - React
+  - react-native-camera/RN (3.33.0):
+    - React
   - react-native-madlogic (1.0.0):
     - Alamofire (= 4.9.1)
     - Kingfisher (= 4.8.0)
@@ -280,6 +290,8 @@ PODS:
     - React
   - RNLocalize (1.4.0):
     - React
+  - RNPermissions (2.1.5):
+    - React
   - RNReanimated (1.9.0):
     - React
   - RNScreens (2.9.0):
@@ -299,6 +311,7 @@ DEPENDENCIES:
   - FBReactNativeSpec (from `../node_modules/react-native/Libraries/FBReactNativeSpec`)
   - Folly (from `../node_modules/react-native/third-party-podspecs/Folly.podspec`)
   - glog (from `../node_modules/react-native/third-party-podspecs/glog.podspec`)
+  - Permission-Camera (from `../node_modules/react-native-permissions/ios/Camera.podspec`)
   - RCTRequired (from `../node_modules/react-native/Libraries/RCTRequired`)
   - RCTTypeSafety (from `../node_modules/react-native/Libraries/TypeSafety`)
   - React (from `../node_modules/react-native/`)
@@ -311,6 +324,7 @@ DEPENDENCIES:
   - React-jsi (from `../node_modules/react-native/ReactCommon/jsi`)
   - React-jsiexecutor (from `../node_modules/react-native/ReactCommon/jsiexecutor`)
   - React-jsinspector (from `../node_modules/react-native/ReactCommon/jsinspector`)
+  - react-native-camera (from `../node_modules/react-native-camera`)
   - react-native-madlogic (from `../node_modules/react-native-madlogic`)
   - react-native-safe-area-context (from `../node_modules/react-native-safe-area-context`)
   - "react-native-slider (from `../node_modules/@react-native-community/slider`)"
@@ -329,6 +343,7 @@ DEPENDENCIES:
   - "RNCMaskedView (from `../node_modules/@react-native-community/masked-view`)"
   - RNGestureHandler (from `../node_modules/react-native-gesture-handler`)
   - RNLocalize (from `../node_modules/react-native-localize`)
+  - RNPermissions (from `../node_modules/react-native-permissions`)
   - RNReanimated (from `../node_modules/react-native-reanimated`)
   - RNScreens (from `../node_modules/react-native-screens`)
   - RNSVG (from `../node_modules/react-native-svg`)
@@ -359,6 +374,8 @@ EXTERNAL SOURCES:
     :podspec: "../node_modules/react-native/third-party-podspecs/Folly.podspec"
   glog:
     :podspec: "../node_modules/react-native/third-party-podspecs/glog.podspec"
+  Permission-Camera:
+    :path: "../node_modules/react-native-permissions/ios/Camera.podspec"
   RCTRequired:
     :path: "../node_modules/react-native/Libraries/RCTRequired"
   RCTTypeSafety:
@@ -379,6 +396,8 @@ EXTERNAL SOURCES:
     :path: "../node_modules/react-native/ReactCommon/jsiexecutor"
   React-jsinspector:
     :path: "../node_modules/react-native/ReactCommon/jsinspector"
+  react-native-camera:
+    :path: "../node_modules/react-native-camera"
   react-native-madlogic:
     :path: "../node_modules/react-native-madlogic"
   react-native-safe-area-context:
@@ -415,6 +434,8 @@ EXTERNAL SOURCES:
     :path: "../node_modules/react-native-gesture-handler"
   RNLocalize:
     :path: "../node_modules/react-native-localize"
+  RNPermissions:
+    :path: "../node_modules/react-native-permissions"
   RNReanimated:
     :path: "../node_modules/react-native-reanimated"
   RNScreens:
@@ -437,6 +458,7 @@ SPEC CHECKSUMS:
   Kingfisher: 976d828df2b24834c6a3f2fc4d82cdbd26552be1
   MagicalRecord: 53bed74b4323b930992a725be713e53b37d19755
   ObjectMapper: b612bf8c8e99c4dc0bb6013a51f7c27966ed5da9
+  Permission-Camera: 53d46bd722aea28d796e20f05fb3cbe6cde6ccb6
   RCTRequired: e46bb77db03887b3e200d34b08515c804669db99
   RCTTypeSafety: 270fed6675c42f80fb87b47d626ef3cede1505e6
   React: e008906ff1328f9bccb345ff4f7826397ad223fc
@@ -447,6 +469,7 @@ SPEC CHECKSUMS:
   React-jsi: 254710f3a97e587427bfbf3011dacec2af66a1fc
   React-jsiexecutor: 0e0cb4e170ca72d4bb1179843d08dcbea3d100ac
   React-jsinspector: fc661eff8edbfb7e22119382c13f33bcadde0f3c
+  react-native-camera: b95731eb91691ae7c8acdd496a1ef051ae2e65ff
   react-native-madlogic: 9b52c60d1ae3d2b808d0c836131ce92eaabf9e66
   react-native-safe-area-context: c39fc20a20cd66ebf1d56c6f8b8711142fbfee98
   react-native-slider: 05f11678260cb27c3d00a2dd1558b623be3ec8d2
@@ -467,6 +490,7 @@ SPEC CHECKSUMS:
   RNCMaskedView: f5c7d14d6847b7b44853f7acb6284c1da30a3459
   RNGestureHandler: 8f09cd560f8d533eb36da5a6c5a843af9f056b38
   RNLocalize: fc27ee5878ce5a3af73873fb2d8e866e0d1e6d84
+  RNPermissions: 1888705aebcc81714efa5dbff94351e4388ae012
   RNReanimated: b5ccb50650ba06f6e749c7c329a1bc3ae0c88b43
   RNScreens: c526239bbe0e957b988dacc8d75ac94ec9cb19da
   RNSVG: ce9d996113475209013317e48b05c21ee988d42e
@@ -476,6 +500,6 @@ SPEC CHECKSUMS:
   Yoga: 7d2edc5b410474191962e6dee88ee67f9b328b6b
   ZIPFoundation: 68c35eb2637c21abe56dc60b3277636443bc1501
 
-PODFILE CHECKSUM: 6de45627d864562ae8a21daa67da1cdad4855789
+PODFILE CHECKSUM: 6d6638e723f3cd9b5a584aa28e06bb0a4925d00a
 
 COCOAPODS: 1.9.3
