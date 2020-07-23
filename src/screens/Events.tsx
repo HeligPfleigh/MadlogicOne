@@ -20,14 +20,14 @@ export default function Events({route}: EventsScreenProps) {
   const [globalStyles] = useGlobalStyles(theme);
 
   return (
-    <View style={globalStyles.container}>
-      <SafeAreaView>
+    <SafeAreaView style={globalStyles.safeview}>
+      <View style={globalStyles.container}>
         <FlatList
           data={events}
           renderItem={({item}) => <EventItem {...item} />}
           keyExtractor={({id}: Event) => id}
         />
-      </SafeAreaView>
-    </View>
+      </View>
+    </SafeAreaView>
   );
 }

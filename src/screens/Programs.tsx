@@ -119,16 +119,16 @@ function Programs({navigation}: ProgramsScreenProps) {
   };
 
   return (
-    <View style={globalStyles.container}>
-      <SafeAreaView>
+    <SafeAreaView style={globalStyles.safeview}>
+      <View style={globalStyles.container}>
         <TabHeader />
         <FlatList
           data={programs}
           renderItem={({item}) => _renderItem(item)}
           keyExtractor={({id}: Program) => id}
         />
-      </SafeAreaView>
-    </View>
+      </View>
+    </SafeAreaView>
   );
 }
 

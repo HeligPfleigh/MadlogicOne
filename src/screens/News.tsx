@@ -80,8 +80,8 @@ function News() {
   };
 
   return (
-    <View style={globalStyles.container}>
-      <SafeAreaView>
+    <SafeAreaView style={globalStyles.safeview}>
+      <View style={globalStyles.container}>
         <TabHeader />
         <Searchbar
           placeholder={formatMessage({id: 'news.search'})}
@@ -104,8 +104,8 @@ function News() {
             <View style={globalStyles.flatlistFooter} />
           )}
         />
-      </SafeAreaView>
-    </View>
+      </View>
+    </SafeAreaView>
   );
 }
 
