@@ -33,6 +33,9 @@ export const useGlobalStyles = (theme: Theme) => {
       fontSize: 12,
       marginBottom: 8,
     },
+    safeview: {
+      flex: 1,
+    },
   });
 
   return [styles];
