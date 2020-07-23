@@ -31,7 +31,8 @@ const AuthStackNavigator = () => {
         name={NavigatorMap.Login}
         component={LoginScreen}
         options={{
-          title: formatMessage({id: 'login.title'}),
+          headerShown: false,
+          // title: formatMessage({id: 'login.title'}),
         }}
       />
       <Stack.Screen

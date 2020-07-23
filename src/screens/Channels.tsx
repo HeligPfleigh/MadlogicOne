@@ -47,8 +47,8 @@ function Channels() {
   }, [loadData]);
 
   return (
-    <View style={globalStyles.container}>
-      <SafeAreaView>
+    <SafeAreaView style={globalStyles.safeview}>
+      <View style={globalStyles.container}>
         <TabHeader />
         <FlatList
           refreshControl={
@@ -66,8 +66,8 @@ function Channels() {
             <View style={globalStyles.flatlistFooter} />
           )}
         />
-      </SafeAreaView>
-    </View>
+      </View>
+    </SafeAreaView>
   );
 }
 

@@ -6,6 +6,7 @@ import {
   TouchableOpacity,
   Text,
   Image,
+  SafeAreaView,
 } from 'react-native';
 import {Button, Colors, useTheme} from 'react-native-paper';
 import {useIntl} from 'react-intl';
@@ -90,58 +91,60 @@ function LoginByAccount() {
   }, []);
 
   return (
-    <KeyboardAvoidingView style={globalStyles.container}>
-      <View style={styles.imageContainer}>
-        <Image
-          style={globalStyles.fullFlexImage}
-          source={{uri: store?.ternantStore.logo?.logo}}
-        />
-      </View>
-      <Formik
-        initialValues={{
-          username: '',
-          password: '',
-        }}
-        validationSchema={AccountSchema}
-        onSubmit={handleRegisterByAccount}>
-        {({handleSubmit, isValid}) => (
-          <>
-            <View style={styles.content}>
-              <TextInputFormik
-                style={styles.input}
-                label={formatMessage({id: 'login.username'})}
-                mode="outlined"
-                name="username"
-                autoCapitalize="none"
-              />
-              <TextInputFormik
-                style={styles.input}
-                label={formatMessage({id: 'login.password'})}
-                mode="outlined"
-                name="password"
-                secureTextEntry
-              />
-            </View>
-            <View style={styles.btnContainer}>
-              <Button
-                onPress={handleSubmit}
-                mode="contained"
-                disabled={!isValid || disableBtn}
-                uppercase={false}
-                color={Colors.red500}
-                style={styles.login}>
-                {formatMessage({id: 'login.login'})}
-              </Button>
-              <TouchableOpacity onPress={handlePressForgotPwd}>
-                <Text style={styles.forgotTxt}>
-                  {formatMessage({id: 'login.forgotPassword'})}
-                </Text>
-              </TouchableOpacity>
-            </View>
-          </>
-        )}
-      </Formik>
-    </KeyboardAvoidingView>
+    <SafeAreaView style={globalStyles.safeview}>
+      <KeyboardAvoidingView style={globalStyles.container}>
+        <View style={styles.imageContainer}>
+          <Image
+            style={globalStyles.fullFlexImage}
+            source={{uri: store?.ternantStore.logo?.logo}}
+          />
+        </View>
+        <Formik
+          initialValues={{
+            username: '',
+            password: '',
+          }}
+          validationSchema={AccountSchema}
+          onSubmit={handleRegisterByAccount}>
+          {({handleSubmit, isValid}) => (
+            <>
+              <View style={styles.content}>
+                <TextInputFormik
+                  style={styles.input}
+                  label={formatMessage({id: 'login.username'})}
+                  mode="outlined"
+                  name="username"
+                  autoCapitalize="none"
+                />
+                <TextInputFormik
+                  style={styles.input}
+                  label={formatMessage({id: 'login.password'})}
+                  mode="outlined"
+                  name="password"
+                  secureTextEntry
+                />
+              </View>
+              <View style={styles.btnContainer}>
+                <Button
+                  onPress={handleSubmit}
+                  mode="contained"
+                  disabled={!isValid || disableBtn}
+                  uppercase={false}
+                  color={Colors.red500}
+                  style={styles.login}>
+                  {formatMessage({id: 'login.login'})}
+                </Button>
+                <TouchableOpacity onPress={handlePressForgotPwd}>
+                  <Text style={styles.forgotTxt}>
+                    {formatMessage({id: 'login.forgotPassword'})}
+                  </Text>
+                </TouchableOpacity>
+              </View>
+            </>
+          )}
+        </Formik>
+      </KeyboardAvoidingView>
+    </SafeAreaView>
   );
 }
 

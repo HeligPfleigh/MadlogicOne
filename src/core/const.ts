@@ -26,7 +26,6 @@ export interface Tab {
 
 export interface TernantSetting {
   name: string;
-  secret: string;
   registration: Registration;
   logo: Logo;
   color: string;
