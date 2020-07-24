@@ -12,6 +12,7 @@
   "login.login": "Login",
   "login.username": "Username",
   "login.password": "Password",
+  "login.fail": "Your credential is incorrect.",
   "login.forgotPassword": "Forgot your password",
   "login.errors.email.invalid": "Invalid email",
   "login.errors.email.required": "Email is required",
@@ -46,5 +47,6 @@
   "news.delete": "Delete",
   "news.share": "Share",
   "news.error.loadData": "Fail to load news",
-  "news.search": "Search"
+  "news.search": "Search",
+  "qrcode.instruction": "Center you camera to scan QR code"
 }

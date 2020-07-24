@@ -1,0 +1,34 @@
+{
+  "name": "Equipe",
+  "logo": {
+    "logo": "https://en.wikipedia.org/static/images/project-logos/enwiki.png",
+    "logoURL": "https://www.reddit.com/"
+  },
+  "color": "#FF0000",
+  "about": "<h1>Equipe</h1>",
+  "registration": {
+    "registrationType": "ADFS",
+    "secret": "",
+    "baseUrl": "https://sts.ecumulus.nl/adfs/oauth2/authorize?response_type=code&client_id=670fdc28-8d88-469b-8872-f149bf315b1f&redirect_uri=https://oauthcb.sqoony.com/&response_mode=query&resource=670fdc28-8d88-469b-8872-f149bf315b1f&client-request-id=37cce16e-7e3d-4e43-6e20-0080010000d5",
+    "callbackPrefix": "https://sqoony.com/"
+  },
+  "tabs": [
+    {
+      "icon": "",
+      "title": "News",
+      "type": "news",
+      "style": 1
+    },
+    {
+      "icon": "",
+      "title": "Channels",
+      "type": "channel",
+      "style": 2
+    },
+    {
+      "icon": "",
+      "title": "Journeys",
+      "type": "programs"
+    }
+  ]
+}
