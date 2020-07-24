@@ -63,6 +63,7 @@
     "babel-jest": "^25.1.0",
     "eslint": "^6.5.1",
     "jest": "^25.1.0",
+    "jest-transform-stub": "^2.0.0",
     "metro-react-native-babel-preset": "^0.59.0",
     "prettier": "^2.0.4",
     "react-test-renderer": "16.13.1",
@@ -70,6 +71,9 @@
   },
   "jest": {
     "preset": "react-native",
+    "setupFiles": [
+      "./jest/setup.js"
+    ],
     "moduleFileExtensions": [
       "ts",
       "tsx",
@@ -77,6 +81,10 @@
       "jsx",
       "json",
       "node"
-    ]
+    ],
+    "moduleNameMapper": {
+      ".+\\.(css|styl|less|sass|scss|png|jpg|ttf|woff|woff2)$": "jest-transform-stub",
+      "\\.(css|less)$": "identity-obj-proxy"
+    }
   }
 }
