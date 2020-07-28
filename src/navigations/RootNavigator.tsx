@@ -42,9 +42,17 @@ function RootNavigator() {
         <Stack.Screen name={NavigatorMap.Bootstrap} component={Bootstrap} />
       )}
       {store?.authorizationStore.isAuthorized ? (
-        <Stack.Screen name={NavigatorMap.AppStack} component={AppStack} />
+        <Stack.Screen
+          name={NavigatorMap.AppStack}
+          component={AppStack}
+          options={{animationEnabled: false}}
+        />
       ) : (
-        <Stack.Screen name={NavigatorMap.AuthStack} component={AuthStack} />
+        <Stack.Screen
+          name={NavigatorMap.AuthStack}
+          component={AuthStack}
+          options={{animationEnabled: false}}
+        />
       )}
     </Stack.Navigator>
   );
