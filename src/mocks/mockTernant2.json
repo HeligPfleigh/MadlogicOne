@@ -17,13 +17,13 @@
       "icon": "",
       "title": "News",
       "type": "news",
-      "style": 1
+      "style": 2
     },
     {
       "icon": "",
       "title": "Channels",
       "type": "channel",
-      "style": 2
+      "style": 1
     },
     {
       "icon": "",
