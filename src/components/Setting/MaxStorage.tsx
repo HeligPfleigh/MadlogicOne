@@ -1,4 +1,4 @@
-import React, {useState, useEffect} from 'react';
+import React, {useState, useEffect, useMemo} from 'react';
 import {observer} from 'mobx-react-lite';
 import Animated, {
   Value,
@@ -30,13 +30,21 @@ const styles = StyleSheet.create({
   storageTxt: {
     textAlign: 'center',
   },
+  center: {
+    justifyContent: 'center',
+  },
 });
 
 function MaxStorageSetting() {
+  // TODO
   const {formatMessage} = useIntl();
   const [isSwitchStorageOn, setIsSwitchStorageOn] = useState<boolean>(false);
+  const [storageAmount, setStorageAmount] = useState<number>(0);
 
-  const height = new Value(isSwitchStorageOn ? 0 : SLIDER_HEIGHT);
+  const height = useMemo(
+    () => new Value(isSwitchStorageOn ? 0 : SLIDER_HEIGHT),
+    [isSwitchStorageOn],
+  );
 
   const anim = timing(height, {
     duration: 200,
@@ -54,6 +62,7 @@ function MaxStorageSetting() {
   useEffect(() => {
     anim.start();
   }, [isSwitchStorageOn, anim]);
+
   return (
     <>
       <Animated.View style={styles.itemContainer}>
@@ -65,15 +74,17 @@ function MaxStorageSetting() {
         />
         <Text>{formatMessage({id: 'setting.max.storage'})}</Text>
       </Animated.View>
-      <Animated.View style={{height, justifyContent: 'center'}}>
+      <Animated.View style={[styles.center, {height}]}>
         <AnimatedSlider
           style={[styles.slider, {opacity}]}
           minimumTrackTintColor={Colors.blue500}
           thumbTintColor={Colors.blue500}
-          onValueChange={console.log}
+          onValueChange={setStorageAmount}
+          minimumValue={0}
+          maximumValue={100}
         />
         <Animated.Text style={[styles.storageTxt, {opacity}]}>
-          100MB
+          {`${storageAmount.toFixed(2)} MB`}
         </Animated.Text>
       </Animated.View>
     </>
