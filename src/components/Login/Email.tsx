@@ -95,6 +95,7 @@ function LoginByEmail() {
                   style={styles.input}
                   label={formatMessage({id: 'login.email'})}
                   mode="outlined"
+                  autoCapitalize="none"
                 />
               </View>
               <View style={styles.btnContainer}>

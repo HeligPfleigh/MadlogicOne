@@ -5,6 +5,7 @@ import {
   getChannels,
   MADLOGIC_SDK_EVENTS,
   eventEmitter,
+  sync,
 } from 'react-native-madlogic';
 import {useTheme} from 'react-native-paper';
 import {observer} from 'mobx-react-lite';
@@ -52,7 +53,7 @@ function Channels() {
         <TabHeader />
         <FlatList
           refreshControl={
-            <RefreshControl onRefresh={loadData} refreshing={refreshing} />
+            <RefreshControl onRefresh={sync} refreshing={refreshing} />
           }
           data={channels}
           renderItem={({item}) => (

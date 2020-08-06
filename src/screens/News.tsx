@@ -7,6 +7,7 @@ import {
   MADLOGIC_SDK_EVENTS,
   getBroadcasts,
   searchBroadcasts,
+  sync,
 } from 'react-native-madlogic';
 import {useTheme, Searchbar} from 'react-native-paper';
 import {useIntl} from 'react-intl';
@@ -53,16 +54,11 @@ function News() {
       loadData,
     );
 
-    const segmentChanged = eventEmitter.addListener(
-      MADLOGIC_SDK_EVENTS.EVENT_SEGMENT_CHANGED,
-      loadData,
-    );
     loadData();
     return () => {
       triggersChanged.remove();
       searchChanged.remove();
       broadcastWatched.remove();
-      segmentChanged.remove();
     };
   }, [loadData]);
 
@@ -90,7 +86,7 @@ function News() {
         />
         <FlatList
           refreshControl={
-            <RefreshControl onRefresh={loadData} refreshing={refreshing} />
+            <RefreshControl onRefresh={sync} refreshing={refreshing} />
           }
           data={broadcasts}
           renderItem={({item}) => (

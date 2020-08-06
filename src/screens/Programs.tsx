@@ -6,9 +6,16 @@ import {
   ImageBackground,
   TouchableOpacity,
   View,
+  RefreshControl,
 } from 'react-native';
 import {useTheme, Text, Colors} from 'react-native-paper';
-import {getPrograms, Program} from 'react-native-madlogic';
+import {
+  getPrograms,
+  Program,
+  eventEmitter,
+  MADLOGIC_SDK_EVENTS,
+  sync,
+} from 'react-native-madlogic';
 import {MaterialBottomTabScreenProps} from '@react-navigation/material-bottom-tabs';
 import {observer} from 'mobx-react-lite';
 
@@ -69,22 +76,34 @@ type ProgramsScreenProps = MaterialBottomTabScreenProps<
 
 function Programs({navigation}: ProgramsScreenProps) {
   const [programs, setPrograms] = useState<Program[]>([]);
+  const [refreshing, setRefreshing] = useState<boolean>(false);
   const theme = useTheme();
   const [globalStyles] = useGlobalStyles(theme);
   const store = useStores();
 
   const loadData = useCallback(async () => {
     try {
+      setRefreshing(true);
       const list = await getPrograms();
       setPrograms(list);
     } catch (error) {
       store?.snackStore.setError('programs.error.loadData');
+    } finally {
+      setRefreshing(false);
     }
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   useEffect(() => {
+    const synced = eventEmitter.addListener(
+      MADLOGIC_SDK_EVENTS.EVENT_SYNC_OK,
+      loadData,
+    );
+
     loadData();
+    return () => {
+      synced.remove();
+    };
   }, [loadData]);
 
   const _renderItem = ({name, thumbnail, events}: Program) => {
@@ -123,6 +142,9 @@ function Programs({navigation}: ProgramsScreenProps) {
       <View style={globalStyles.container}>
         <TabHeader />
         <FlatList
+          refreshControl={
+            <RefreshControl onRefresh={sync} refreshing={refreshing} />
+          }
           data={programs}
           renderItem={({item}) => _renderItem(item)}
           keyExtractor={({id}: Program) => id}

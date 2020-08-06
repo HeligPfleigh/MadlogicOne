@@ -5,6 +5,7 @@ import {
   getBroadcastsOfChannel,
   eventEmitter,
   MADLOGIC_SDK_EVENTS,
+  sync,
 } from 'react-native-madlogic';
 import {StackScreenProps} from '@react-navigation/stack';
 import {useTheme} from 'react-native-paper';
@@ -45,17 +46,15 @@ export default function ChannelDetail({route}: ChannelDetailScreenProps) {
   }, [route.params.segmentId]);
 
   useEffect(() => {
-    loadData();
-  }, [loadData]);
-
-  useEffect(() => {
-    const segmentChanged = eventEmitter.addListener(
-      MADLOGIC_SDK_EVENTS.EVENT_SEGMENT_CHANGED,
+    const triggersChanged = eventEmitter.addListener(
+      MADLOGIC_SDK_EVENTS.EVENT_TRIGGERS_CHANGED,
       loadData,
     );
 
+    loadData();
+
     return () => {
-      segmentChanged.remove();
+      triggersChanged.remove();
     };
   }, [loadData]);
 
@@ -64,7 +63,7 @@ export default function ChannelDetail({route}: ChannelDetailScreenProps) {
       <FlatList
         data={broadcasts}
         refreshControl={
-          <RefreshControl onRefresh={loadData} refreshing={refreshing} />
+          <RefreshControl onRefresh={sync} refreshing={refreshing} />
         }
         renderItem={({item}) => (
           <NewsItemFactory
