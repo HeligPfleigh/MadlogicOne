@@ -1,0 +1,1539 @@
+{
+  "project_info": {
+    "project_number": "299496294904",
+    "firebase_url": "https://pc2-app.firebaseio.com",
+    "project_id": "pc2-app",
+    "storage_bucket": "pc2-app.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:299496294904:android:fdf651c5a3052d6f",
+        "android_client_info": {
+          "package_name": "com.madlogic.cordovatest"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "299496294904-a7mn7ihv320m3t42ch0j7kphhmq3pjgt.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCmEd9lMiW0b_5PyA8-tqRcFuBzQvLCPCo"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "299496294904-a7mn7ihv320m3t42ch0j7kphhmq3pjgt.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "299496294904-83pjc5is739rl4siike8p9henifqdj8j.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "nl.madlogic.app-dev"
+              }
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:299496294904:android:e958c46409a0abad",
+        "android_client_info": {
+          "package_name": "com.madlogic.magic.staging"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "299496294904-a7mn7ihv320m3t42ch0j7kphhmq3pjgt.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCmEd9lMiW0b_5PyA8-tqRcFuBzQvLCPCo"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "299496294904-a7mn7ihv320m3t42ch0j7kphhmq3pjgt.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "299496294904-83pjc5is739rl4siike8p9henifqdj8j.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "nl.madlogic.app-dev"
+              }
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:299496294904:android:f7721fa44f0735eb",
+        "android_client_info": {
+          "package_name": "com.madlogic.magic.staging.debug"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "299496294904-a7mn7ihv320m3t42ch0j7kphhmq3pjgt.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCmEd9lMiW0b_5PyA8-tqRcFuBzQvLCPCo"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "299496294904-a7mn7ihv320m3t42ch0j7kphhmq3pjgt.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "299496294904-83pjc5is739rl4siike8p9henifqdj8j.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "nl.madlogic.app-dev"
+              }
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:299496294904:android:f820a3355fab8d40",
+        "android_client_info": {
+          "package_name": "com.madlogic.mboamersfoort"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "299496294904-a7mn7ihv320m3t42ch0j7kphhmq3pjgt.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCmEd9lMiW0b_5PyA8-tqRcFuBzQvLCPCo"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "299496294904-a7mn7ihv320m3t42ch0j7kphhmq3pjgt.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "299496294904-83pjc5is739rl4siike8p9henifqdj8j.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "nl.madlogic.app-dev"
+              }
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:299496294904:android:866eb37bdac0d7d6",
+        "android_client_info": {
+          "package_name": "com.madlogic.oman.staging"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "299496294904-a7mn7ihv320m3t42ch0j7kphhmq3pjgt.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCmEd9lMiW0b_5PyA8-tqRcFuBzQvLCPCo"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "299496294904-a7mn7ihv320m3t42ch0j7kphhmq3pjgt.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "299496294904-83pjc5is739rl4siike8p9henifqdj8j.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "nl.madlogic.app-dev"
+              }
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:299496294904:android:1ba5a2c9f0032cb3",
+        "android_client_info": {
+          "package_name": "com.madlogic.oman.staging.debug"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "299496294904-a7mn7ihv320m3t42ch0j7kphhmq3pjgt.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCmEd9lMiW0b_5PyA8-tqRcFuBzQvLCPCo"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "299496294904-a7mn7ihv320m3t42ch0j7kphhmq3pjgt.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "299496294904-83pjc5is739rl4siike8p9henifqdj8j.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "nl.madlogic.app-dev"
+              }
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:299496294904:android:23bb519a56d6626f",
+        "android_client_info": {
+          "package_name": "com.madlogic.plan4flex"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "299496294904-a7mn7ihv320m3t42ch0j7kphhmq3pjgt.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCmEd9lMiW0b_5PyA8-tqRcFuBzQvLCPCo"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "299496294904-a7mn7ihv320m3t42ch0j7kphhmq3pjgt.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "299496294904-83pjc5is739rl4siike8p9henifqdj8j.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "nl.madlogic.app-dev"
+              }
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:299496294904:android:5f4e92e659fe76a6",
+        "android_client_info": {
+          "package_name": "com.madlogic.plan4flex.debug"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "299496294904-a7mn7ihv320m3t42ch0j7kphhmq3pjgt.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCmEd9lMiW0b_5PyA8-tqRcFuBzQvLCPCo"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "299496294904-a7mn7ihv320m3t42ch0j7kphhmq3pjgt.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "299496294904-83pjc5is739rl4siike8p9henifqdj8j.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "nl.madlogic.app-dev"
+              }
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:299496294904:android:d1c3419d0a73a91e",
+        "android_client_info": {
+          "package_name": "com.madlogic.test.account"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "299496294904-a7mn7ihv320m3t42ch0j7kphhmq3pjgt.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCmEd9lMiW0b_5PyA8-tqRcFuBzQvLCPCo"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "299496294904-a7mn7ihv320m3t42ch0j7kphhmq3pjgt.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "299496294904-83pjc5is739rl4siike8p9henifqdj8j.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "nl.madlogic.app-dev"
+              }
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:299496294904:android:ed520970601458d9",
+        "android_client_info": {
+          "package_name": "com.madlogic.test.email"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "299496294904-a7mn7ihv320m3t42ch0j7kphhmq3pjgt.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCmEd9lMiW0b_5PyA8-tqRcFuBzQvLCPCo"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "299496294904-a7mn7ihv320m3t42ch0j7kphhmq3pjgt.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "299496294904-83pjc5is739rl4siike8p9henifqdj8j.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "nl.madlogic.app-dev"
+              }
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:299496294904:android:beecd3bf05299969",
+        "android_client_info": {
+          "package_name": "com.madlogic.test.email.debug"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "299496294904-a7mn7ihv320m3t42ch0j7kphhmq3pjgt.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCmEd9lMiW0b_5PyA8-tqRcFuBzQvLCPCo"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "299496294904-a7mn7ihv320m3t42ch0j7kphhmq3pjgt.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "299496294904-83pjc5is739rl4siike8p9henifqdj8j.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "nl.madlogic.app-dev"
+              }
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:299496294904:android:2d3fc906b40c0fc6",
+        "android_client_info": {
+          "package_name": "com.madlogic.trainm"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "299496294904-a7mn7ihv320m3t42ch0j7kphhmq3pjgt.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCmEd9lMiW0b_5PyA8-tqRcFuBzQvLCPCo"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "299496294904-a7mn7ihv320m3t42ch0j7kphhmq3pjgt.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "299496294904-83pjc5is739rl4siike8p9henifqdj8j.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "nl.madlogic.app-dev"
+              }
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:299496294904:android:cc8cd60310179feb",
+        "android_client_info": {
+          "package_name": "com.madlogic.trainm.debug"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "299496294904-a7mn7ihv320m3t42ch0j7kphhmq3pjgt.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCmEd9lMiW0b_5PyA8-tqRcFuBzQvLCPCo"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "299496294904-a7mn7ihv320m3t42ch0j7kphhmq3pjgt.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "299496294904-83pjc5is739rl4siike8p9henifqdj8j.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "nl.madlogic.app-dev"
+              }
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:299496294904:android:385ff70529d8817b",
+        "android_client_info": {
+          "package_name": "com.madlogic.vandenbosch.staging"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "299496294904-a7mn7ihv320m3t42ch0j7kphhmq3pjgt.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCmEd9lMiW0b_5PyA8-tqRcFuBzQvLCPCo"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "299496294904-a7mn7ihv320m3t42ch0j7kphhmq3pjgt.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "299496294904-83pjc5is739rl4siike8p9henifqdj8j.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "nl.madlogic.app-dev"
+              }
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:299496294904:android:7924a79a1a49ac02",
+        "android_client_info": {
+          "package_name": "com.madlogic.vandenbosch.staging.debug"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "299496294904-a7mn7ihv320m3t42ch0j7kphhmq3pjgt.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCmEd9lMiW0b_5PyA8-tqRcFuBzQvLCPCo"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "299496294904-a7mn7ihv320m3t42ch0j7kphhmq3pjgt.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "299496294904-83pjc5is739rl4siike8p9henifqdj8j.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "nl.madlogic.app-dev"
+              }
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:299496294904:android:d908c0ada7fec692",
+        "android_client_info": {
+          "package_name": "com.sqoony.demo"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "299496294904-a7mn7ihv320m3t42ch0j7kphhmq3pjgt.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCmEd9lMiW0b_5PyA8-tqRcFuBzQvLCPCo"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "299496294904-a7mn7ihv320m3t42ch0j7kphhmq3pjgt.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "299496294904-83pjc5is739rl4siike8p9henifqdj8j.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "nl.madlogic.app-dev"
+              }
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:299496294904:android:f897017df0330e8f",
+        "android_client_info": {
+          "package_name": "com.sqoony.demo.debug"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "299496294904-a7mn7ihv320m3t42ch0j7kphhmq3pjgt.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCmEd9lMiW0b_5PyA8-tqRcFuBzQvLCPCo"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "299496294904-a7mn7ihv320m3t42ch0j7kphhmq3pjgt.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "299496294904-83pjc5is739rl4siike8p9henifqdj8j.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "nl.madlogic.app-dev"
+              }
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:299496294904:android:57fefca317a02d76",
+        "android_client_info": {
+          "package_name": "com.sqoony.demo.uat"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "299496294904-a7mn7ihv320m3t42ch0j7kphhmq3pjgt.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCmEd9lMiW0b_5PyA8-tqRcFuBzQvLCPCo"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "299496294904-a7mn7ihv320m3t42ch0j7kphhmq3pjgt.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "299496294904-83pjc5is739rl4siike8p9henifqdj8j.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "nl.madlogic.app-dev"
+              }
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:299496294904:android:711f55f4f39e0d61",
+        "android_client_info": {
+          "package_name": "com.sqoony.demo.uat.debug"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "299496294904-a7mn7ihv320m3t42ch0j7kphhmq3pjgt.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCmEd9lMiW0b_5PyA8-tqRcFuBzQvLCPCo"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "299496294904-a7mn7ihv320m3t42ch0j7kphhmq3pjgt.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "299496294904-83pjc5is739rl4siike8p9henifqdj8j.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "nl.madlogic.app-dev"
+              }
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:299496294904:android:51239c511c1896e9",
+        "android_client_info": {
+          "package_name": "com.sqoony.equipe"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "299496294904-a7mn7ihv320m3t42ch0j7kphhmq3pjgt.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCmEd9lMiW0b_5PyA8-tqRcFuBzQvLCPCo"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "299496294904-a7mn7ihv320m3t42ch0j7kphhmq3pjgt.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "299496294904-83pjc5is739rl4siike8p9henifqdj8j.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "nl.madlogic.app-dev"
+              }
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:299496294904:android:1355bdcedbd7e43f",
+        "android_client_info": {
+          "package_name": "com.sqoony.equipe.debug"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "299496294904-a7mn7ihv320m3t42ch0j7kphhmq3pjgt.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCmEd9lMiW0b_5PyA8-tqRcFuBzQvLCPCo"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "299496294904-a7mn7ihv320m3t42ch0j7kphhmq3pjgt.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "299496294904-83pjc5is739rl4siike8p9henifqdj8j.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "nl.madlogic.app-dev"
+              }
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:299496294904:android:5632593f3386d8f7",
+        "android_client_info": {
+          "package_name": "com.sqoony.example"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "299496294904-a7mn7ihv320m3t42ch0j7kphhmq3pjgt.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCmEd9lMiW0b_5PyA8-tqRcFuBzQvLCPCo"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "299496294904-a7mn7ihv320m3t42ch0j7kphhmq3pjgt.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "299496294904-83pjc5is739rl4siike8p9henifqdj8j.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "nl.madlogic.app-dev"
+              }
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:299496294904:android:470b2dd4188f524a",
+        "android_client_info": {
+          "package_name": "com.sqoony.example.debug"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "299496294904-s23iedelp2k2ilnqr2qbsseervt2bilm.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.sqoony.example.debug",
+            "certificate_hash": "d0e6a99b47b462cde62dbae64225c90925337b09"
+          }
+        },
+        {
+          "client_id": "299496294904-a7mn7ihv320m3t42ch0j7kphhmq3pjgt.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCmEd9lMiW0b_5PyA8-tqRcFuBzQvLCPCo"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "299496294904-a7mn7ihv320m3t42ch0j7kphhmq3pjgt.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "299496294904-83pjc5is739rl4siike8p9henifqdj8j.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "nl.madlogic.app-dev"
+              }
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:299496294904:android:ec7341eec8a40d9d",
+        "android_client_info": {
+          "package_name": "com.sqoony.hightechcrit"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "299496294904-a7mn7ihv320m3t42ch0j7kphhmq3pjgt.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCmEd9lMiW0b_5PyA8-tqRcFuBzQvLCPCo"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "299496294904-a7mn7ihv320m3t42ch0j7kphhmq3pjgt.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "299496294904-83pjc5is739rl4siike8p9henifqdj8j.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "nl.madlogic.app-dev"
+              }
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:299496294904:android:5c9c7b533ec2997b",
+        "android_client_info": {
+          "package_name": "com.sqoony.hightechcrit.debug"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "299496294904-a7mn7ihv320m3t42ch0j7kphhmq3pjgt.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCmEd9lMiW0b_5PyA8-tqRcFuBzQvLCPCo"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "299496294904-a7mn7ihv320m3t42ch0j7kphhmq3pjgt.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "299496294904-83pjc5is739rl4siike8p9henifqdj8j.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "nl.madlogic.app-dev"
+              }
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:299496294904:android:527a8964ef216303",
+        "android_client_info": {
+          "package_name": "com.sqoony.kisspatent"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "299496294904-a7mn7ihv320m3t42ch0j7kphhmq3pjgt.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCmEd9lMiW0b_5PyA8-tqRcFuBzQvLCPCo"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "299496294904-a7mn7ihv320m3t42ch0j7kphhmq3pjgt.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "299496294904-83pjc5is739rl4siike8p9henifqdj8j.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "nl.madlogic.app-dev"
+              }
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:299496294904:android:e996d5d778e440f3",
+        "android_client_info": {
+          "package_name": "com.sqoony.kisspatent.debug"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "299496294904-a7mn7ihv320m3t42ch0j7kphhmq3pjgt.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCmEd9lMiW0b_5PyA8-tqRcFuBzQvLCPCo"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "299496294904-a7mn7ihv320m3t42ch0j7kphhmq3pjgt.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "299496294904-83pjc5is739rl4siike8p9henifqdj8j.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "nl.madlogic.app-dev"
+              }
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:299496294904:android:0f5e464a03e5194d",
+        "android_client_info": {
+          "package_name": "com.sqoony.pc2"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "299496294904-a7mn7ihv320m3t42ch0j7kphhmq3pjgt.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCmEd9lMiW0b_5PyA8-tqRcFuBzQvLCPCo"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "299496294904-a7mn7ihv320m3t42ch0j7kphhmq3pjgt.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "299496294904-83pjc5is739rl4siike8p9henifqdj8j.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "nl.madlogic.app-dev"
+              }
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:299496294904:android:4a83e6ec9d4fdef9",
+        "android_client_info": {
+          "package_name": "com.sqoony.pc2.debug"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "299496294904-a7mn7ihv320m3t42ch0j7kphhmq3pjgt.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCmEd9lMiW0b_5PyA8-tqRcFuBzQvLCPCo"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "299496294904-a7mn7ihv320m3t42ch0j7kphhmq3pjgt.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "299496294904-83pjc5is739rl4siike8p9henifqdj8j.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "nl.madlogic.app-dev"
+              }
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:299496294904:android:81670d05697e68fe",
+        "android_client_info": {
+          "package_name": "com.sqoony.roc"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "299496294904-a7mn7ihv320m3t42ch0j7kphhmq3pjgt.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCmEd9lMiW0b_5PyA8-tqRcFuBzQvLCPCo"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "299496294904-a7mn7ihv320m3t42ch0j7kphhmq3pjgt.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "299496294904-83pjc5is739rl4siike8p9henifqdj8j.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "nl.madlogic.app-dev"
+              }
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:299496294904:android:c55ab75e37a3380a",
+        "android_client_info": {
+          "package_name": "com.sqoony.roc.debug"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "299496294904-a7mn7ihv320m3t42ch0j7kphhmq3pjgt.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCmEd9lMiW0b_5PyA8-tqRcFuBzQvLCPCo"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "299496294904-a7mn7ihv320m3t42ch0j7kphhmq3pjgt.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "299496294904-83pjc5is739rl4siike8p9henifqdj8j.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "nl.madlogic.app-dev"
+              }
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:299496294904:android:c5426fbdfbe09443",
+        "android_client_info": {
+          "package_name": "com.sqoony.skilldrills"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "299496294904-a7mn7ihv320m3t42ch0j7kphhmq3pjgt.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCmEd9lMiW0b_5PyA8-tqRcFuBzQvLCPCo"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "299496294904-a7mn7ihv320m3t42ch0j7kphhmq3pjgt.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "299496294904-83pjc5is739rl4siike8p9henifqdj8j.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "nl.madlogic.app-dev"
+              }
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:299496294904:android:979a1a7f11830314",
+        "android_client_info": {
+          "package_name": "com.sqoony.skilldrills.debug"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "299496294904-a7mn7ihv320m3t42ch0j7kphhmq3pjgt.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCmEd9lMiW0b_5PyA8-tqRcFuBzQvLCPCo"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "299496294904-a7mn7ihv320m3t42ch0j7kphhmq3pjgt.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "299496294904-83pjc5is739rl4siike8p9henifqdj8j.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "nl.madlogic.app-dev"
+              }
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:299496294904:android:0dab14ed8317facc",
+        "android_client_info": {
+          "package_name": "com.sqoony.staging.debug"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "299496294904-guu131msq9o29ncncbsvuv3c31stuqos.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.sqoony.staging.debug",
+            "certificate_hash": "3c9a2cfcc9c72919cf3decb3416d3178937a27bd"
+          }
+        },
+        {
+          "client_id": "299496294904-a7mn7ihv320m3t42ch0j7kphhmq3pjgt.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCmEd9lMiW0b_5PyA8-tqRcFuBzQvLCPCo"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "299496294904-a7mn7ihv320m3t42ch0j7kphhmq3pjgt.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "299496294904-83pjc5is739rl4siike8p9henifqdj8j.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "nl.madlogic.app-dev"
+              }
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:299496294904:android:aaeb7baf9b7457f6",
+        "android_client_info": {
+          "package_name": "com.sqoony.tra"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "299496294904-a7mn7ihv320m3t42ch0j7kphhmq3pjgt.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCmEd9lMiW0b_5PyA8-tqRcFuBzQvLCPCo"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "299496294904-a7mn7ihv320m3t42ch0j7kphhmq3pjgt.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "299496294904-83pjc5is739rl4siike8p9henifqdj8j.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "nl.madlogic.app-dev"
+              }
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:299496294904:android:0d1436dd5fd78919",
+        "android_client_info": {
+          "package_name": "com.sqoony.tra.debug"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "299496294904-a7mn7ihv320m3t42ch0j7kphhmq3pjgt.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCmEd9lMiW0b_5PyA8-tqRcFuBzQvLCPCo"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "299496294904-a7mn7ihv320m3t42ch0j7kphhmq3pjgt.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "299496294904-83pjc5is739rl4siike8p9henifqdj8j.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "nl.madlogic.app-dev"
+              }
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:299496294904:android:c5bc9d8780f3c607",
+        "android_client_info": {
+          "package_name": "nl.arriva.sqoony"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "299496294904-a7mn7ihv320m3t42ch0j7kphhmq3pjgt.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCmEd9lMiW0b_5PyA8-tqRcFuBzQvLCPCo"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "299496294904-a7mn7ihv320m3t42ch0j7kphhmq3pjgt.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "299496294904-83pjc5is739rl4siike8p9henifqdj8j.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "nl.madlogic.app-dev"
+              }
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:299496294904:android:59c7d5f8d2d6e36c",
+        "android_client_info": {
+          "package_name": "nl.arriva.sqoony.debug"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "299496294904-a7mn7ihv320m3t42ch0j7kphhmq3pjgt.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCmEd9lMiW0b_5PyA8-tqRcFuBzQvLCPCo"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "299496294904-a7mn7ihv320m3t42ch0j7kphhmq3pjgt.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "299496294904-83pjc5is739rl4siike8p9henifqdj8j.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "nl.madlogic.app-dev"
+              }
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:299496294904:android:271de753c21a9fc6836e0d",
+        "android_client_info": {
+          "package_name": "nl.madlogic.academydemo"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "299496294904-a7mn7ihv320m3t42ch0j7kphhmq3pjgt.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCmEd9lMiW0b_5PyA8-tqRcFuBzQvLCPCo"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "299496294904-a7mn7ihv320m3t42ch0j7kphhmq3pjgt.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "299496294904-83pjc5is739rl4siike8p9henifqdj8j.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "nl.madlogic.app-dev"
+              }
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:299496294904:android:72bfc7edc9478fc4836e0d",
+        "android_client_info": {
+          "package_name": "nl.madlogic.academydemo.debug"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "299496294904-a7mn7ihv320m3t42ch0j7kphhmq3pjgt.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCmEd9lMiW0b_5PyA8-tqRcFuBzQvLCPCo"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "299496294904-a7mn7ihv320m3t42ch0j7kphhmq3pjgt.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "299496294904-83pjc5is739rl4siike8p9henifqdj8j.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "nl.madlogic.app-dev"
+              }
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:299496294904:android:60be793f3efa1f0a836e0d",
+        "android_client_info": {
+          "package_name": "nl.madlogic.app.dev"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "299496294904-a7mn7ihv320m3t42ch0j7kphhmq3pjgt.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCmEd9lMiW0b_5PyA8-tqRcFuBzQvLCPCo"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "299496294904-a7mn7ihv320m3t42ch0j7kphhmq3pjgt.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "299496294904-83pjc5is739rl4siike8p9henifqdj8j.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "nl.madlogic.app-dev"
+              }
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:299496294904:android:debcdc8a2453d7cd",
+        "android_client_info": {
+          "package_name": "nl.madlogic.sanofi"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "299496294904-a7mn7ihv320m3t42ch0j7kphhmq3pjgt.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCmEd9lMiW0b_5PyA8-tqRcFuBzQvLCPCo"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "299496294904-a7mn7ihv320m3t42ch0j7kphhmq3pjgt.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "299496294904-83pjc5is739rl4siike8p9henifqdj8j.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "nl.madlogic.app-dev"
+              }
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
