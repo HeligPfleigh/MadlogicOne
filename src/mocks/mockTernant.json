@@ -8,7 +8,7 @@
   "about": "<h1>This HTML snippet is now rendered with native components !</h1><h2>Enjoy a webview-free and blazing fast application</h2><img src=\"https://i.imgur.com/dHLmxfO.jpg?2\" /><em style=\"textAlign: center;\">Look at how happy this native cat is</em>",
   "registration": {
     "registrationType": "EMAIL",
-    "secret": "d783d8f919ea4169b4e463f75b21232c",
+    "secret": "c716ec680dd74c1eb89e08c323dde41d",
     "baseUrl": "https://portal-dev.madlogic.nl:20000",
     "callbackPrefix": "https://sqoony.com"
   },

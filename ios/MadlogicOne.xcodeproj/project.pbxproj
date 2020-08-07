@@ -16,7 +16,6 @@
 		2D02E4BD1E0B4A84006451C7 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 13B07FB51A68108700A75B9A /* Images.xcassets */; };
 		2D02E4BF1E0B4AB3006451C7 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 13B07FB71A68108700A75B9A /* main.m */; };
 		2DCD954D1E0B4F2C00145EB5 /* MadlogicOneTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 00E356F21AD99517003FC87E /* MadlogicOneTests.m */; };
-		894016B524DBFC18006195CE /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 894016B424DBFC18006195CE /* GoogleService-Info.plist */; };
 		89C7EB7A24BBF34B001D1B08 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 89C7EB7924BBF34B001D1B08 /* LaunchScreen.storyboard */; };
 		BAFB73CC0C740B107A729E9E /* Pods_MadlogicOne_MadlogicOneTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B03B9B1C10EF7E039C020502 /* Pods_MadlogicOne_MadlogicOneTests.framework */; };
 		CCF8320DAE424D766F056B79 /* libPods-MadlogicOne-tvOS.a in Frameworks */ = {isa = PBXBuildFile; fileRef = FCCEFA5B3E562A19CA1E9F6C /* libPods-MadlogicOne-tvOS.a */; };
@@ -59,7 +58,6 @@
 		444E1C5708C1A580BB4EB147 /* libPods-MadlogicOne-tvOSTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-MadlogicOne-tvOSTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		6B24663877D6E20EEE1D664E /* Pods-MadlogicOne-MadlogicOneTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MadlogicOne-MadlogicOneTests.debug.xcconfig"; path = "Target Support Files/Pods-MadlogicOne-MadlogicOneTests/Pods-MadlogicOne-MadlogicOneTests.debug.xcconfig"; sourceTree = "<group>"; };
 		7C05514578762391A6A56710 /* Pods-MadlogicOne-tvOSTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MadlogicOne-tvOSTests.release.xcconfig"; path = "Target Support Files/Pods-MadlogicOne-tvOSTests/Pods-MadlogicOne-tvOSTests.release.xcconfig"; sourceTree = "<group>"; };
-		894016B424DBFC18006195CE /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		894203A21059F4EF13A1104E /* Pods-MadlogicOne.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MadlogicOne.debug.xcconfig"; path = "Target Support Files/Pods-MadlogicOne/Pods-MadlogicOne.debug.xcconfig"; sourceTree = "<group>"; };
 		89C7EB7924BBF34B001D1B08 /* LaunchScreen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = LaunchScreen.storyboard; sourceTree = "<group>"; };
 		B03B9B1C10EF7E039C020502 /* Pods_MadlogicOne_MadlogicOneTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MadlogicOne_MadlogicOneTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -127,7 +125,6 @@
 		13B07FAE1A68108700A75B9A /* MadlogicOne */ = {
 			isa = PBXGroup;
 			children = (
-				894016B424DBFC18006195CE /* GoogleService-Info.plist */,
 				008F07F21AC5B25A0029DE68 /* main.jsbundle */,
 				13B07FAF1A68108700A75B9A /* AppDelegate.h */,
 				13B07FB01A68108700A75B9A /* AppDelegate.m */,
@@ -345,7 +342,6 @@
 			files = (
 				89C7EB7A24BBF34B001D1B08 /* LaunchScreen.storyboard in Resources */,
 				13B07FBF1A68108700A75B9A /* Images.xcassets in Resources */,
-				894016B524DBFC18006195CE /* GoogleService-Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -849,7 +845,7 @@
 					"-ObjC",
 					"-lc++",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = nl.madlogic.app.dev;
+				PRODUCT_BUNDLE_IDENTIFIER = "org.reactjs.native.example.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = MadlogicOne;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
@@ -872,7 +868,7 @@
 					"-ObjC",
 					"-lc++",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = nl.madlogic.app.dev;
+				PRODUCT_BUNDLE_IDENTIFIER = "org.reactjs.native.example.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = MadlogicOne;
 				SWIFT_VERSION = 5.0;
 				VERSIONING_SYSTEM = "apple-generic";

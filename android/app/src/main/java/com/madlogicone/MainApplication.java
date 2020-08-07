@@ -1,4 +1,4 @@
-package nl.madlogic.app.dev;
+package com.madlogicone;
 
 import android.app.Application;
 import android.content.Context;

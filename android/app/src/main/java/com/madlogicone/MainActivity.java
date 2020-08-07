@@ -1,4 +1,4 @@
-package nl.madlogic.app.dev;
+package com.madlogicone;
 
 import com.facebook.react.ReactActivity;
 
