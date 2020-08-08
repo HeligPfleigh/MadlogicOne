@@ -8,6 +8,9 @@ import com.facebook.react.ReactInstanceManager;
 import com.facebook.react.ReactNativeHost;
 import com.facebook.react.ReactPackage;
 import com.facebook.soloader.SoLoader;
+import com.sqoony.sdk.Sqoony;
+import com.sqoony.sdk.SqoonyCallback;
+
 import java.lang.reflect.InvocationTargetException;
 import java.util.List;
 
@@ -40,10 +43,94 @@ public class MainApplication extends Application implements ReactApplication {
     return mReactNativeHost;
   }
 
+
+  private class MSqoonyCallback implements SqoonyCallback {
+
+      @Override
+      public void registerOk(boolean b) {
+
+      }
+
+      @Override
+      public void registerError(String s) {
+
+      }
+
+      @Override
+      public void activatedOk() {
+
+      }
+
+      @Override
+      public void activatedError(String s) {
+
+      }
+
+      @Override
+      public void synced() {
+
+      }
+
+      @Override
+      public void syncFailed(String s) {
+
+      }
+
+      @Override
+      public void segmentsChanged() {
+
+      }
+
+      @Override
+      public void segmentsChangeError(String s) {
+
+      }
+
+      @Override
+      public void triggersChanged() {
+
+      }
+
+      @Override
+      public void automatedBroadcastsLocationChanged() {
+
+      }
+
+      @Override
+      public void broadcastsPlayedFromNotification(boolean b) {
+
+      }
+
+      @Override
+      public void onNotificationUnreadChange(int i) {
+
+      }
+
+      @Override
+      public void onCustomCTA(String s) {
+
+      }
+
+      @Override
+      public void onBroadcastView(String s) {
+
+      }
+
+      @Override
+      public void onBroadcastWatched(String s) {
+
+      }
+  }
+
+  private MSqoonyCallback mSqoonyCallback;
+
   @Override
   public void onCreate() {
     super.onCreate();
     SoLoader.init(this, /* native exopackage */ false);
+    // temporary fix for crashing when FCMService is trying to access application context before it is initialized
+    mSqoonyCallback = new MSqoonyCallback();
+    Sqoony.init("", "1.00", "", "204086430232", this, MainActivity.class, mSqoonyCallback);
     initializeFlipper(this, getReactNativeHost().getReactInstanceManager());
   }
 
