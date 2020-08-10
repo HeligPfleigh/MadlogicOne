@@ -137,12 +137,20 @@ android {
     }
 
     defaultConfig {
-        applicationId "nl.madlogic.app.dev"
+        applicationId "com.madlogicone"
         minSdkVersion rootProject.ext.minSdkVersion
         targetSdkVersion rootProject.ext.targetSdkVersion
         versionCode 1
         versionName "1.0"
         missingDimensionStrategy 'react-native-camera', 'general'
+    }
+
+    flavorDimensions "default"
+
+    productFlavors {
+        devMadlogic {
+            applicationId "nl.madlogic.app.dev"
+        }
     }
     splits {
         abi {
