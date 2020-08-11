@@ -9,13 +9,10 @@
 /* Begin PBXBuildFile section */
 		00E356F31AD99517003FC87E /* MadlogicOneTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 00E356F21AD99517003FC87E /* MadlogicOneTests.m */; };
 		11C4394605AED44ECA0C4E8A /* Pods_MadlogicOne.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EC9ACB5527243C1647ABBC79 /* Pods_MadlogicOne.framework */; };
-		13B07FBC1A68108700A75B9A /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 13B07FB01A68108700A75B9A /* AppDelegate.m */; };
 		13B07FBF1A68108700A75B9A /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 13B07FB51A68108700A75B9A /* Images.xcassets */; };
-		13B07FC11A68108700A75B9A /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 13B07FB71A68108700A75B9A /* main.m */; };
-		2D02E4BC1E0B4A80006451C7 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 13B07FB01A68108700A75B9A /* AppDelegate.m */; };
 		2D02E4BD1E0B4A84006451C7 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 13B07FB51A68108700A75B9A /* Images.xcassets */; };
-		2D02E4BF1E0B4AB3006451C7 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 13B07FB71A68108700A75B9A /* main.m */; };
 		2DCD954D1E0B4F2C00145EB5 /* MadlogicOneTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 00E356F21AD99517003FC87E /* MadlogicOneTests.m */; };
+		89208E0D24E295D400B6407F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89208E0C24E295D400B6407F /* AppDelegate.swift */; };
 		89C7EB7A24BBF34B001D1B08 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 89C7EB7924BBF34B001D1B08 /* LaunchScreen.storyboard */; };
 		BAFB73CC0C740B107A729E9E /* Pods_MadlogicOne_MadlogicOneTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B03B9B1C10EF7E039C020502 /* Pods_MadlogicOne_MadlogicOneTests.framework */; };
 		CCF8320DAE424D766F056B79 /* libPods-MadlogicOne-tvOS.a in Frameworks */ = {isa = PBXBuildFile; fileRef = FCCEFA5B3E562A19CA1E9F6C /* libPods-MadlogicOne-tvOS.a */; };
@@ -46,11 +43,8 @@
 		00E356F21AD99517003FC87E /* MadlogicOneTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MadlogicOneTests.m; sourceTree = "<group>"; };
 		0FE95A0B5163CC8722E86734 /* Pods-MadlogicOne-tvOSTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MadlogicOne-tvOSTests.debug.xcconfig"; path = "Target Support Files/Pods-MadlogicOne-tvOSTests/Pods-MadlogicOne-tvOSTests.debug.xcconfig"; sourceTree = "<group>"; };
 		13B07F961A680F5B00A75B9A /* MadlogicOne.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MadlogicOne.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		13B07FAF1A68108700A75B9A /* AppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AppDelegate.h; path = MadlogicOne/AppDelegate.h; sourceTree = "<group>"; };
-		13B07FB01A68108700A75B9A /* AppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AppDelegate.m; path = MadlogicOne/AppDelegate.m; sourceTree = "<group>"; };
 		13B07FB51A68108700A75B9A /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Images.xcassets; path = MadlogicOne/Images.xcassets; sourceTree = "<group>"; };
 		13B07FB61A68108700A75B9A /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = Info.plist; path = MadlogicOne/Info.plist; sourceTree = "<group>"; };
-		13B07FB71A68108700A75B9A /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = main.m; path = MadlogicOne/main.m; sourceTree = "<group>"; };
 		2D02E47B1E0B4A5D006451C7 /* MadlogicOne-tvOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "MadlogicOne-tvOS.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		2D02E4901E0B4A5D006451C7 /* MadlogicOne-tvOSTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "MadlogicOne-tvOSTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		36FAF09D231D877A7B0F7B40 /* Pods-MadlogicOne.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MadlogicOne.release.xcconfig"; path = "Target Support Files/Pods-MadlogicOne/Pods-MadlogicOne.release.xcconfig"; sourceTree = "<group>"; };
@@ -58,6 +52,9 @@
 		444E1C5708C1A580BB4EB147 /* libPods-MadlogicOne-tvOSTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-MadlogicOne-tvOSTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		6B24663877D6E20EEE1D664E /* Pods-MadlogicOne-MadlogicOneTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MadlogicOne-MadlogicOneTests.debug.xcconfig"; path = "Target Support Files/Pods-MadlogicOne-MadlogicOneTests/Pods-MadlogicOne-MadlogicOneTests.debug.xcconfig"; sourceTree = "<group>"; };
 		7C05514578762391A6A56710 /* Pods-MadlogicOne-tvOSTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MadlogicOne-tvOSTests.release.xcconfig"; path = "Target Support Files/Pods-MadlogicOne-tvOSTests/Pods-MadlogicOne-tvOSTests.release.xcconfig"; sourceTree = "<group>"; };
+		890B1B0B24E101CA00F315C7 /* MadlogicOne.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; name = MadlogicOne.entitlements; path = MadlogicOne/MadlogicOne.entitlements; sourceTree = "<group>"; };
+		89208E0B24E295D300B6407F /* MadlogicOne-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "MadlogicOne-Bridging-Header.h"; sourceTree = "<group>"; };
+		89208E0C24E295D400B6407F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = AppDelegate.swift; path = MadlogicOne/AppDelegate.swift; sourceTree = "<group>"; };
 		894203A21059F4EF13A1104E /* Pods-MadlogicOne.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MadlogicOne.debug.xcconfig"; path = "Target Support Files/Pods-MadlogicOne/Pods-MadlogicOne.debug.xcconfig"; sourceTree = "<group>"; };
 		89C7EB7924BBF34B001D1B08 /* LaunchScreen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = LaunchScreen.storyboard; sourceTree = "<group>"; };
 		B03B9B1C10EF7E039C020502 /* Pods_MadlogicOne_MadlogicOneTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MadlogicOne_MadlogicOneTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -125,13 +122,13 @@
 		13B07FAE1A68108700A75B9A /* MadlogicOne */ = {
 			isa = PBXGroup;
 			children = (
+				890B1B0B24E101CA00F315C7 /* MadlogicOne.entitlements */,
 				008F07F21AC5B25A0029DE68 /* main.jsbundle */,
-				13B07FAF1A68108700A75B9A /* AppDelegate.h */,
-				13B07FB01A68108700A75B9A /* AppDelegate.m */,
 				13B07FB51A68108700A75B9A /* Images.xcassets */,
 				13B07FB61A68108700A75B9A /* Info.plist */,
-				13B07FB71A68108700A75B9A /* main.m */,
 				89C7EB7924BBF34B001D1B08 /* LaunchScreen.storyboard */,
+				89208E0C24E295D400B6407F /* AppDelegate.swift */,
+				89208E0B24E295D300B6407F /* MadlogicOne-Bridging-Header.h */,
 			);
 			name = MadlogicOne;
 			sourceTree = "<group>";
@@ -294,7 +291,7 @@
 					};
 					13B07F861A680F5B00A75B9A = {
 						DevelopmentTeam = RG52Z63AYA;
-						LastSwiftMigration = 1120;
+						LastSwiftMigration = 1160;
 					};
 					2D02E47A1E0B4A5D006451C7 = {
 						CreatedOnToolsVersion = 8.2.1;
@@ -744,8 +741,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				13B07FBC1A68108700A75B9A /* AppDelegate.m in Sources */,
-				13B07FC11A68108700A75B9A /* main.m in Sources */,
+				89208E0D24E295D400B6407F /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -753,8 +749,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				2D02E4BF1E0B4AB3006451C7 /* main.m in Sources */,
-				2D02E4BC1E0B4A80006451C7 /* AppDelegate.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -786,6 +780,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 6B24663877D6E20EEE1D664E /* Pods-MadlogicOne-MadlogicOneTests.debug.xcconfig */;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				GCC_PREPROCESSOR_DEFINITIONS = (
 					"DEBUG=1",
@@ -809,6 +804,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = F552297214DDFF1D94FFAAF0 /* Pods-MadlogicOne-MadlogicOneTests.release.xcconfig */;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				COPY_PHASE_STRIP = NO;
 				INFOPLIST_FILE = MadlogicOneTests/Info.plist;
@@ -831,6 +827,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_ENTITLEMENTS = MadlogicOne/MadlogicOne.entitlements;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = RG52Z63AYA;
 				ENABLE_BITCODE = NO;
@@ -839,14 +836,16 @@
 					"FB_SONARKIT_ENABLED=1",
 				);
 				INFOPLIST_FILE = MadlogicOne/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				OTHER_LDFLAGS = (
 					"$(inherited)",
 					"-ObjC",
 					"-lc++",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = "org.reactjs.native.example.$(PRODUCT_NAME:rfc1034identifier)";
+				PRODUCT_BUNDLE_IDENTIFIER = nl.madlogic.app.dev;
 				PRODUCT_NAME = MadlogicOne;
+				SWIFT_OBJC_BRIDGING_HEADER = "MadlogicOne-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
 				VERSIONING_SYSTEM = "apple-generic";
@@ -859,17 +858,20 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_ENTITLEMENTS = MadlogicOne/MadlogicOne.entitlements;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = RG52Z63AYA;
 				INFOPLIST_FILE = MadlogicOne/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				OTHER_LDFLAGS = (
 					"$(inherited)",
 					"-ObjC",
 					"-lc++",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = "org.reactjs.native.example.$(PRODUCT_NAME:rfc1034identifier)";
+				PRODUCT_BUNDLE_IDENTIFIER = nl.madlogic.app.dev;
 				PRODUCT_NAME = MadlogicOne;
+				SWIFT_OBJC_BRIDGING_HEADER = "MadlogicOne-Bridging-Header.h";
 				SWIFT_VERSION = 5.0;
 				VERSIONING_SYSTEM = "apple-generic";
 			};

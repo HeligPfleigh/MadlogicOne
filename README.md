@@ -11,3 +11,7 @@
 ## Mocking
 
 - currently, the ClientCode screen is using mocked data => for login with ADFS, using code 0, with username and password, using code 1, with email only, using code 2
+
+## TODO
+
+- the `FCMService` is called before `Sqoony.init` => my temporary solution is init it `onCreate` of Application (need to find other better solution)
