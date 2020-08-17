@@ -1,4 +1,5 @@
 import {observable, action} from 'mobx';
+import noop from 'lodash/noop';
 
 import {SnackType} from '../const';
 
@@ -6,6 +7,11 @@ interface Action {
   label: string;
   onPress: () => void;
 }
+
+const defaultAction = {
+  label: '',
+  onPress: noop,
+};
 
 export default class SnackStore {
   @observable
@@ -15,15 +21,13 @@ export default class SnackStore {
   titleId: string = '';
 
   @observable
-  action: Action = {
-    label: '',
-    onPress: () => {},
-  };
+  action: Action = defaultAction;
 
   @action
-  setError(id: string) {
+  setError(id: string, newAction?: Action) {
     this.type = SnackType.ERROR;
     this.titleId = id;
+    this.action = newAction || defaultAction;
   }
 
   @action

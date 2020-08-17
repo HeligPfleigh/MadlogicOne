@@ -18,6 +18,7 @@
   "login.errors.email.required": "TODO",
   "login.errors.username.required": "TODO",
   "login.errors.password.required": "TODO",
+  "login.goBack": "TODO",
   "privacy.title": "TODO",
   "forgotPassword.title": "TODO",
   "forgotPassword.submit": "TODO",

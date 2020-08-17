@@ -26,14 +26,14 @@ function CustomSnackbar() {
     return null;
   }
 
-  // const action = store?.snackStore.action;
+  const action = store?.snackStore.action;
 
   return (
     <Snackbar
       duration={2000}
       visible={Boolean(store?.snackStore.titleId)}
       onDismiss={store?.snackStore.clearSnack}
-      // action={action}
+      action={action}
       style={styles[store?.snackStore.type]}>
       {formatMessage({id: store?.snackStore.titleId})}
     </Snackbar>

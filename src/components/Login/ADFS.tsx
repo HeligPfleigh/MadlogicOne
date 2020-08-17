@@ -8,7 +8,8 @@ import {
   eventEmitter,
   MADLOGIC_SDK_EVENTS,
 } from 'react-native-madlogic';
-// import {useNavigation} from '@react-navigation/native';
+import {useNavigation} from '@react-navigation/native';
+import {useIntl} from 'react-intl';
 
 import {useGlobalStyles} from '../../core/hooks/useGlobalStyle';
 import {useStores} from '../../core/hooks/useStores';
@@ -19,7 +20,8 @@ function ADFS() {
   const [globalStyles] = useGlobalStyles(theme);
   const store = useStores();
   const [visible, setVisible] = useState(true);
-  // const navigation = useNavigation();
+  const navigation = useNavigation();
+  const {formatMessage} = useIntl();
 
   const hideSpinner = () => setVisible(false);
 
@@ -45,8 +47,10 @@ function ADFS() {
     const registerError = eventEmitter.addListener(
       MADLOGIC_SDK_EVENTS.EVENT_REGISTER_ERROR,
       () => {
-        store?.snackStore.setError('login.fail');
-        // navigation.goBack();
+        store?.snackStore.setError('login.fail', {
+          label: formatMessage({id: 'login.goBack'}),
+          onPress: navigation.goBack,
+        });
       },
     );
     return () => {
