@@ -8,8 +8,9 @@
   "about": "<h1>Equipe</h1>",
   "registration": {
     "registrationType": "ADFS",
-    "secret": "",
-    "baseUrl": "https://sts.ecumulus.nl/adfs/oauth2/authorize?response_type=code&client_id=670fdc28-8d88-469b-8872-f149bf315b1f&redirect_uri=https://oauthcb.sqoony.com/&response_mode=query&resource=670fdc28-8d88-469b-8872-f149bf315b1f&client-request-id=37cce16e-7e3d-4e43-6e20-0080010000d5/",
+    "secret": "ca418269532a425386a6a6503635f28d",
+    "baseUrl": "https://api.madlogic.nl",
+    "oauthUrl": "https://sts.ecumulus.nl/adfs/oauth2/authorize?response_type=code&client_id=670fdc28-8d88-469b-8872-f149bf315b1f&redirect_uri=https://oauthcb.sqoony.com/&response_mode=query&resource=670fdc28-8d88-469b-8872-f149bf315b1f&client-request-id=37cce16e-7e3d-4e43-6e20-0080010000d5/",
     "callbackPrefix": "https://sqoony.com/"
   },
   "tabs": [

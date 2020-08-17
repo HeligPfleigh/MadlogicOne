@@ -8,6 +8,7 @@ export interface Registration {
   registrationType: RegistrationType;
   secret: string;
   baseUrl: string;
+  oauthUrl?: string;
   callbackPrefix?: string;
 }
 

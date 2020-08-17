@@ -63,7 +63,7 @@ function ADFS() {
     <SafeAreaView style={globalStyles.safeview}>
       <WebView
         source={{
-          uri: store?.ternantStore.registration?.baseUrl || '',
+          uri: store?.ternantStore.registration?.oauthUrl || '',
         }}
         onNavigationStateChange={handleNavigationStateChange}
         onLoad={hideSpinner}

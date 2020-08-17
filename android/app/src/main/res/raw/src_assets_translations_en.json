@@ -18,6 +18,7 @@
   "login.errors.email.required": "Email is required",
   "login.errors.username.required": "Username is required",
   "login.errors.password.required": "Password is required",
+  "login.goBack": "Go back",
   "privacy.title": "Privacy",
   "forgotPassword.title": "Forgot password",
   "forgotPassword.submit": "Submit",
