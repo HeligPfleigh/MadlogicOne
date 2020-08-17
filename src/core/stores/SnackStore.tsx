@@ -2,12 +2,23 @@ import {observable, action} from 'mobx';
 
 import {SnackType} from '../const';
 
+interface Action {
+  label: string;
+  onPress: () => void;
+}
+
 export default class SnackStore {
   @observable
   type: SnackType = SnackType.INFO;
 
   @observable
   titleId: string = '';
+
+  @observable
+  action: Action = {
+    label: '',
+    onPress: () => {},
+  };
 
   @action
   setError(id: string) {

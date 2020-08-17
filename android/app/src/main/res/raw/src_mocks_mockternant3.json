@@ -9,7 +9,7 @@
   "registration": {
     "registrationType": "ADFS",
     "secret": "",
-    "baseUrl": "https://sts.ecumulus.nl/adfs/oauth2/authorize?response_type=code&client_id=670fdc28-8d88-469b-8872-f149bf315b1f&redirect_uri=https://oauthcb.sqoony.com/&response_mode=query&resource=670fdc28-8d88-469b-8872-f149bf315b1f&client-request-id=37cce16e-7e3d-4e43-6e20-0080010000d5",
+    "baseUrl": "https://sts.ecumulus.nl/adfs/oauth2/authorize?response_type=code&client_id=670fdc28-8d88-469b-8872-f149bf315b1f&redirect_uri=https://oauthcb.sqoony.com/&response_mode=query&resource=670fdc28-8d88-469b-8872-f149bf315b1f&client-request-id=37cce16e-7e3d-4e43-6e20-0080010000d5/",
     "callbackPrefix": "https://sqoony.com/"
   },
   "tabs": [

@@ -1,9 +1,14 @@
-import React, {useState} from 'react';
+import React, {useState, useEffect} from 'react';
 import {SafeAreaView} from 'react-native';
 import {observer} from 'mobx-react-lite';
 import WebView, {WebViewNavigation} from 'react-native-webview';
 import {useTheme} from 'react-native-paper';
-import {registerMicrosoft} from 'react-native-madlogic';
+import {
+  registerMicrosoft,
+  eventEmitter,
+  MADLOGIC_SDK_EVENTS,
+} from 'react-native-madlogic';
+// import {useNavigation} from '@react-navigation/native';
 
 import {useGlobalStyles} from '../../core/hooks/useGlobalStyle';
 import {useStores} from '../../core/hooks/useStores';
@@ -14,6 +19,7 @@ function ADFS() {
   const [globalStyles] = useGlobalStyles(theme);
   const store = useStores();
   const [visible, setVisible] = useState(true);
+  // const navigation = useNavigation();
 
   const hideSpinner = () => setVisible(false);
 
@@ -34,6 +40,20 @@ function ADFS() {
       }
     }
   };
+
+  useEffect(() => {
+    const registerError = eventEmitter.addListener(
+      MADLOGIC_SDK_EVENTS.EVENT_REGISTER_ERROR,
+      () => {
+        store?.snackStore.setError('login.fail');
+        // navigation.goBack();
+      },
+    );
+    return () => {
+      registerError.remove();
+    };
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
 
   return (
     <SafeAreaView style={globalStyles.safeview}>
