@@ -10,7 +10,10 @@
 
 ## Mocking
 
-- currently, the ClientCode screen is using mocked data => for login with ADFS, using code 0, with username and password, using code 1, with email only, using code 2
+- currently, the ClientCode screen is using mocked data
+  - for login with ADFS, using code 0, username: tly@equipezorgbedrijven.nl, password: N6#&r35zU#D
+  - with username and password, using code 1, username: test@madlogic.nl, password: test123
+  - with email only, using arbitrary code and email
 
 ## TODO
 
