@@ -470,7 +470,7 @@ SPEC CHECKSUMS:
   React-jsiexecutor: 8ca588cc921e70590820ce72b8789b02c67cce38
   React-jsinspector: b14e62ebe7a66e9231e9581279909f2fc3db6606
   react-native-camera: 9dd96065b956306de03ef2a2efc3583019f95941
-  react-native-madlogic: 9b52c60d1ae3d2b808d0c836131ce92eaabf9e66
+  react-native-madlogic: 76f74e5e84985628835ddc03fe2db27cd89eddbb
   react-native-safe-area-context: 4c3249e4840225c61fcd215b136af0a737bccb79
   react-native-slider: b733e17fdd31186707146debf1f04b5d94aa1a93
   react-native-webview: e2c0bce9a1a7c7edd4eb30f0c3016fce216245ce
